@@ -1,0 +1,32 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: chassi-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: chassi
+      POSTGRES_PASSWORD: chassi
+      POSTGRES_DB: chassi
+    ports:
+      - "5432:5432"
+    volumes:
+      # Schema e seeds sao carregados em ordem alfabetica do diretorio /docker-entrypoint-initdb.d/
+      # Para garantir ordem: schema (00x_) -> seeds (0xx_).
+      - ./schema/001_schema.sql:/docker-entrypoint-initdb.d/00_001_schema.sql:ro
+      - ./schema/002_views.sql:/docker-entrypoint-initdb.d/00_002_views.sql:ro
+      - ./seed/010_catalogos.sql:/docker-entrypoint-initdb.d/01_010_catalogos.sql:ro
+      - ./seed/020_normas.sql:/docker-entrypoint-initdb.d/01_020_normas.sql:ro
+      - ./seed/030_processos.sql:/docker-entrypoint-initdb.d/01_030_processos.sql:ro
+      - ./seed/040_riscos.sql:/docker-entrypoint-initdb.d/01_040_riscos.sql:ro
+      - ./seed/050_vinculos.sql:/docker-entrypoint-initdb.d/01_050_vinculos.sql:ro
+      - ./seed/099_versao.sql:/docker-entrypoint-initdb.d/01_099_versao.sql:ro
+      # Volume persistente de dados
+      - chassi-pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U chassi -d chassi"]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+
+volumes:
+  chassi-pgdata:
