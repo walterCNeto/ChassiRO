@@ -172,7 +172,7 @@ públicos para inspeção e estudo. O **conteúdo do catálogo regulatório**
 (normas seedadas, processos, riscos, vínculos qualificados, materialidades
 default) é de uso comercial restrito e licenciado separadamente.
 
-Para licenciamento comercial: `chassi@wcn.com.br`.
+Para licenciamento comercial: walter.correa.neto@gmail.com
 
 ## Roadmap
 
@@ -189,5 +189,4 @@ sistemas de RH, custos, auditoria), módulo de cobertura por entidade
 
 ## Contato
 
-WCN Softwares · São Paulo  
-[chassi@wcn.com.br](mailto:chassi@wcn.com.br)
+walter.correa.neto@gmail.com
