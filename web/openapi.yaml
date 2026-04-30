@@ -3,7 +3,7 @@ openapi: 3.1.0
 info:
   title: Chassi de Controles Internos — API
   version: 0.1.0
-  summary: Catálogo regulatório versionado e consumível para conglomerados financeiros brasileiros.
+  summary: Catálogo regulatório versionado e colaborativo para o sistema financeiro brasileiro.
   description: |
     A API do Chassi de Controles Internos expõe um catálogo curado de **normas, processos,
     riscos e seus vínculos qualificados** aplicáveis a entidades reguladas pelo CMN, BCB,
@@ -11,23 +11,36 @@ info:
 
     ## Filosofia
 
-    A API é **whitelabel passiva**. O consumidor passa atributos categóricos da entidade
-    dele (tipo, segmento, atividades) e recebe a fatia aplicável. **Nenhum dado do cliente
-    é armazenado.** Não há multi-tenancy, não há perfil de cliente, não há histórico de
-    consultas pessoais.
+    A API é **leve e idempotente**. O consumidor passa atributos categóricos da entidade
+    dele (tipo, segmento, atividades) e recebe a fatia aplicável. **Nenhum dado do
+    consumidor é armazenado.** Não há multi-tenancy, não há perfil de cliente, não há
+    histórico de consultas pessoais.
 
-    O produto é o **catálogo curado e versionado**, não o estado do consumidor.
+    O valor está no **catálogo curado e versionado** — colaborativo, mantido pela
+    comunidade que o usa.
 
     ## Modalidades de consumo
 
     1. **API REST** (este documento) — chamadas idempotentes, cacheáveis
     2. **Snapshot baixável** — `GET /snapshot/json` ou `GET /snapshot/sqlite`
-    3. **SDK** (em desenvolvimento) — pacotes `@chassi/sdk` (npm) e `chassi-sdk` (PyPI)
+    3. **SDK** (em desenvolvimento) — pacotes `chassi-sdk` (npm e PyPI)
 
     ## Autenticação
 
-    Todas as rotas exigem o header `X-API-Key`. Chaves do tier *Free* têm rate limit de
-    60 req/min; *Pro* e *Enterprise*, conforme contrato.
+    Todas as rotas exigem o header `X-API-Key` (quando o serviço estiver hospedado
+    publicamente). Chaves são gratuitas e atribuídas com rate limit padrão para uso
+    razoável.
+
+    Alternativa: se você prefere não depender do serviço hospedado, baixe o snapshot
+    `chassi.json` ou `chassi.sqlite` e rode contra ele localmente — o conteúdo é
+    idêntico.
+
+    ## Licenciamento
+
+    - **Código** desta API e do schema: MIT License
+    - **Conteúdo do catálogo** (normas, processos, riscos, vínculos): CC BY 4.0
+
+    Veja o repositório no GitHub para os arquivos de licença e o guia de contribuição.
 
     ## Versionamento
 
@@ -36,16 +49,18 @@ info:
     consulte `GET /chassi/version`.
 
   contact:
-    name: WCN Softwares
-    email: chassi@wcn.com.br
+    name: Walter C. Neto
+    url: https://waltercneto.github.io/
+    email: walter.correa.neto@gmail.com
   license:
-    name: Proprietary
+    name: MIT (code) + CC BY 4.0 (data)
+    url: https://github.com/walterCNeto/ChassiRO
 
 servers:
-  - url: https://api.chassi.com.br/v1
-    description: Produção
-  - url: https://staging.api.chassi.com.br/v1
-    description: Homologação
+  - url: https://api.example.com/v1
+    description: Produção (em planejamento — substituir por host real após hospedagem)
+  - url: http://localhost:8000/v1
+    description: Local (FastAPI rodando em sua máquina)
 
 security:
   - apiKey: []
@@ -510,8 +525,8 @@ paths:
       tags: [Chassi]
       summary: Download do snapshot completo em SQLite
       description: |
-        Retorna um arquivo SQLite autocontido com o catálogo. Tier *Pro* e
-        *Enterprise*.
+        Retorna um arquivo SQLite autocontido com o catálogo.
+        Mesmo conteúdo do snapshot JSON, em formato indexado.
       responses:
         '200':
           description: Arquivo SQLite

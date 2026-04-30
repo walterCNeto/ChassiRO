@@ -8,7 +8,7 @@ estáticos (Cloudflare Pages, Netlify, Vercel, GitHub Pages, S3+CloudFront).
 
 ```
 web/
-├── index.html              Landing comercial
+├── index.html              Landing
 ├── docs.html               Reference da API (Redoc)
 ├── openapi.yaml            Especificação OpenAPI 3.1
 ├── redoc.standalone.js     Redoc empacotado (sem CDN)
@@ -28,29 +28,24 @@ Abre em `http://localhost:8765`.
 
 ## Como deploy
 
+### GitHub Pages (recomendado para projetos open source)
+
+1. Settings → Pages no GitHub
+2. Source: Deploy from branch
+3. Branch: `main` · Folder: `/web`
+4. Salvar — fica disponível em `https://walterCNeto.github.io/ChassiRO/`
+
 ### Cloudflare Pages / Netlify / Vercel
 
 Aponta o build pra essa pasta `web/` como diretório de saída. Sem build
 command.
 
-### GitHub Pages
-
-Move o conteúdo pra `docs/` ou pra branch `gh-pages` e ativa Pages no repo.
-
-### S3 + CloudFront
-
-Sync direto:
+### S3 + CloudFront (para hospedagem própria)
 
 ```bash
-aws s3 sync web/ s3://chassi.com.br/ --delete
+aws s3 sync web/ s3://seu-dominio/ --delete
 aws cloudfront create-invalidation --distribution-id XXX --paths '/*'
 ```
-
-## Domínios sugeridos
-
-- `chassi.com.br` ou `chassi.wcn.com.br` — landing (`index.html`)
-- `docs.chassi.com.br` ou rota `/docs` — Redoc (`docs.html`)
-- `api.chassi.com.br` — API REST (não incluída neste pacote — exige backend)
 
 ## Estética
 
@@ -85,6 +80,10 @@ rm -rf redoc.tgz package
 
 ## Notas
 
-A landing menciona endpoints (`api.chassi.com.br/v1/...`) que ainda não
-existem em produção. Quando a API for hospedada, os exemplos de código
-funcionarão diretamente. Até lá, eles servem como contrato visível.
+A landing menciona endpoints (`api.example.com/v1/...`) que ainda não
+existem hospedados publicamente. Quando a API for hospedada, os exemplos de
+código funcionarão diretamente. Até lá, eles servem como contrato visível.
+
+A landing também aponta diretamente pra o repositório no GitHub e pra o
+guia de contribuição — quem quiser começar a contribuir, o caminho está na
+landing.

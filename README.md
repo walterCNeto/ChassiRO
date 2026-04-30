@@ -1,28 +1,46 @@
 # Chassi de Controles Internos
 
-> Catálogo regulatório versionado para o sistema de controles internos das instituições financeiras brasileiras.
+> Catálogo regulatório versionado e colaborativo para o sistema de controles internos das instituições financeiras brasileiras.
 
 [![Status](https://img.shields.io/badge/status-alpha-9c2c25?style=flat-square)](https://github.com/walterCNeto/ChassiRO)
 [![Version](https://img.shields.io/badge/version-0.1.0-1a1814?style=flat-square)](./CHANGELOG.md)
 [![OpenAPI](https://img.shields.io/badge/OpenAPI-3.1-1a1814?style=flat-square)](./web/openapi.yaml)
-[![License](https://img.shields.io/badge/license-proprietary-3d3a35?style=flat-square)](#licença)
+[![License-Code](https://img.shields.io/badge/code-MIT-3d3a35?style=flat-square)](./LICENSE)
+[![License-Data](https://img.shields.io/badge/data-CC%20BY%204.0-3d3a35?style=flat-square)](./LICENSE-DATA)
+[![Contributions](https://img.shields.io/badge/contribuições-bem--vindas-4a5642?style=flat-square)](./CONTRIBUTING.md)
 
-Mapeia normas, processos, riscos e seus vínculos qualificados em um único modelo
-de dados — a base do sistema de controles internos exigido pela Res CMN 4.943
-e correlatas. Reguladores cobertos: **CMN · BCB · CVM · CNSP · SUSEP · PREVIC ·
-COAF · ANPD · ANBIMA · B3 · BSM**.
+Mapeia normas, processos, riscos e seus vínculos qualificados em um único
+modelo de dados — a base do sistema de controles internos exigido pela Res
+CMN 4.943 e correlatas. Reguladores cobertos: **CMN · BCB · CVM · CNSP ·
+SUSEP · PREVIC · COAF · ANPD · ANBIMA · B3 · BSM**.
 
-API whitelabel passiva — o consumidor passa atributos categóricos da entidade
-dele (tipo, segmento, atividades) e recebe a fatia aplicável. **Nenhum dado de
-cliente é armazenado.**
+API leve e idempotente — passa-se o conjunto categórico de atributos da
+entidade (tipo, segmento, atividades) e recebe-se a fatia aplicável.
+
+## Por que existe
+
+Toda instituição financeira convive com a mesma planilha esquecida — a lista
+das normas que se aplicam a ela e dos controles que materializam o
+cumprimento delas. Cada banco mantém isso isoladamente, mal, em silêncio, e
+com gente sênior demais para isso.
+
+O Chassi é a tentativa de **escrever esse mapa uma vez, de forma aberta e
+versionada**, mantido pelas próprias instituições que o usam. Catálogo
+regulatório é commons — ninguém deveria pagar por uma lista de normas.
+O que tem valor é a curadoria contínua, e curadoria distribuída é mais
+robusta que curadoria proprietária.
 
 ## Para quem
 
 Audiência primária: **bancos múltiplos, comerciais, de investimento e
-instituições do conglomerado prudencial**. O catálogo cobre, naturalmente, as
-atividades adjacentes que bancos exercem — distribuição de valores
-mobiliários (CVM), corretora coligada, asset management, e os reguladores que
-incidem sobre essas atividades.
+instituições do conglomerado prudencial**. O catálogo cobre, naturalmente,
+as atividades adjacentes que bancos exercem — distribuição de valores
+mobiliários (CVM), corretora coligada, asset management, e os reguladores
+que incidem sobre essas atividades.
+
+Mas qualquer instituição regulada pode usar — DTVMs, CTVMs,
+administradoras, seguradoras, gestoras. O catálogo se filtra pelos
+atributos da entidade.
 
 ## Como o chassi se encaixa na operação do banco
 
@@ -105,11 +123,16 @@ ChassiRO/
 │   ├── export/       CLI Python (to-json, to-sqlite, stats)
 │   └── docker-compose.yml
 │
-└── web/              Landing institucional + docs OpenAPI
-    ├── index.html    Landing comercial
-    ├── docs.html     Reference da API (Redoc)
-    ├── openapi.yaml  Especificação OpenAPI 3.1
-    └── redoc.standalone.js
+├── web/              Landing + docs OpenAPI
+│   ├── index.html    Landing
+│   ├── docs.html     Reference da API (Redoc)
+│   ├── openapi.yaml  Especificação OpenAPI 3.1
+│   └── redoc.standalone.js
+│
+├── LICENSE           MIT (código)
+├── LICENSE-DATA      CC BY 4.0 (catálogo)
+├── CONTRIBUTING.md   Como contribuir
+└── CODE_OF_CONDUCT.md
 ```
 
 ## Status de cada componente
@@ -121,7 +144,7 @@ ChassiRO/
 | Landing + docs          | ✅ v0.1.0       | Estático, deploy em qualquer hosting              |
 | API REST (FastAPI)      | 🚧 planejado   | Próxima iteração                                  |
 | Camada de IA (tradução) | 🚧 planejado   | Conectores para RCSA, BIA, RH, Custos             |
-| SDK npm / pip           | 📅 Q3          | Após API estável                                  |
+| SDK npm / pip           | 📅 futuro      | Após API estável                                  |
 | Validação regulatória   | 🚧 contínuo    | Conferência contra base oficial dos reguladores   |
 
 ## Quickstart
@@ -144,14 +167,7 @@ python -m http.server 8765
 # abre http://localhost:8765/index.html
 ```
 
-## Filosofia
-
-> O moat é o catálogo curado e versionado, não o código.
-
-Toda instituição financeira convive com a mesma planilha esquecida — a lista
-das normas que se aplicam a ela e dos controles que materializam o
-cumprimento delas. O Chassi a escreve uma vez, versiona, mantém. O
-consumidor passa atributos, recebe a fatia.
+## Estrutura conceitual
 
 Três camadas de federação compõem o catálogo:
 
@@ -163,16 +179,32 @@ Hierarquias paralelas P0→P4 (processos) e R0→R4 (riscos) com vínculos
 qualificados em três tipos: `primária` (o processo é dono), `secundária`
 (contribui), `informativa` (princípios apenas).
 
-## Licença
+## Como contribuir
 
-Copyright © 2026 WCN Softwares.
+Toda contribuição que melhore precisão, cobertura ou usabilidade é
+bem-vinda. Os tipos mais comuns:
 
-Esquema de dados, scripts de export e código de apresentação são tornados
-públicos para inspeção e estudo. O **conteúdo do catálogo regulatório**
-(normas seedadas, processos, riscos, vínculos qualificados, materialidades
-default) é de uso comercial restrito e licenciado separadamente.
+- Adicionar uma norma nova publicada por algum regulador
+- Corrigir vigência, status ou aplicabilidade de uma norma existente
+- Adicionar processos ou riscos em níveis P3/P4 e R2/R3/R4 (pouco populados na v0.1)
+- Corrigir bugs no schema, export, landing ou docs
+- Melhorar documentação e exemplos
 
-Para licenciamento comercial: walter.correa.neto@gmail.com
+Veja o **[guia de contribuição](./CONTRIBUTING.md)** para o passo a passo. O
+processo é leve — para correções pequenas, vai direto no PR; para mudanças
+grandes, abra uma Issue antes.
+
+## Licenças
+
+- **Código** (schema SQL, scripts Python, HTML/CSS/JS, OpenAPI, configs):
+  [MIT License](./LICENSE) — uso livre, inclusive comercial
+- **Conteúdo do catálogo** (normas seedadas, processos, riscos, vínculos
+  qualificados, materialidades, descrições): [CC BY 4.0](./LICENSE-DATA) —
+  uso livre com atribuição
+
+A separação é proposital: ferramentas devem se proliferar livremente, mas
+quem usar o catálogo deve referenciar o esforço coletivo da comunidade que
+o curou.
 
 ## Roadmap
 
@@ -184,9 +216,21 @@ indicadores de denúncia do BACEN.
 sistemas de RH, custos, auditoria), módulo de cobertura por entidade
 (relatórios automáticos de gap), tracker de mudanças com diff semântico.
 
-**v1.0** — auditoria regulatória independente do conteúdo, certificação por
-órgão técnico, SLA contratual, on-prem opcional.
+**v1.0** — auditoria regulatória independente do conteúdo, governança
+formal com múltiplos mantenedores, processo de release versionado.
+
+## Mantenedor
+
+[Walter C. Neto](https://waltercneto.github.io/) — mantenedor inicial.
+
+Quando contribuidores recorrentes aparecerem, são convidados a se tornar
+co-mantenedores. O modelo é informal e cresce conforme a necessidade.
 
 ## Contato
 
-walter.correa.neto@gmail.com
+Para discussões, dúvidas e propostas, **abra uma Issue** — é o canal
+preferido porque a discussão fica pública e arquivada.
+
+Para temas que não cabem em Issue (questões de segurança, código de
+conduta, parceria institucional):
+[walter.correa.neto@gmail.com](mailto:walter.correa.neto@gmail.com).

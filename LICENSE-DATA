@@ -1,0 +1,81 @@
+Chassi de Controles Internos — Catálogo Regulatório
+Licenciado sob Creative Commons Attribution 4.0 International (CC BY 4.0)
+
+Copyright (c) 2026 Walter C. Neto and contributors
+
+================================================================================
+
+You are free to:
+
+  Share — copy and redistribute the material in any medium or format
+  Adapt — remix, transform, and build upon the material
+          for any purpose, even commercially
+
+The licensor cannot revoke these freedoms as long as you follow the license
+terms.
+
+Under the following terms:
+
+  Attribution — You must give appropriate credit, provide a link to the
+                license, and indicate if changes were made. You may do so
+                in any reasonable manner, but not in any way that suggests
+                the licensor endorses you or your use.
+
+  No additional restrictions — You may not apply legal terms or technological
+                               measures that legally restrict others from
+                               doing anything the license permits.
+
+================================================================================
+
+Notices:
+
+You do not have to comply with the license for elements of the material in
+the public domain or where your use is permitted by an applicable exception
+or limitation.
+
+No warranties are given. The license may not give you all of the permissions
+necessary for your intended use. For example, other rights such as publicity,
+privacy, or moral rights may limit how you use the material.
+
+THE CONTENT IS PROVIDED "AS IS" AND COMES WITH NO GUARANTEE OF ACCURACY,
+COMPLETENESS, OR FITNESS FOR ANY PARTICULAR PURPOSE. The catalog is a
+volunteer-curated collection. Numbers, dates, and statuses of regulatory
+norms must be independently verified against the official sources of each
+regulator before any operational use.
+
+================================================================================
+
+Full legal code: https://creativecommons.org/licenses/by/4.0/legalcode
+Human-readable summary: https://creativecommons.org/licenses/by/4.0/
+
+================================================================================
+
+How to attribute:
+
+When redistributing or using the catalog data in derivative works, include
+attribution along these lines:
+
+    "Catalog data from Chassi de Controles Internos
+    (https://github.com/walterCNeto/ChassiRO),
+    licensed under CC BY 4.0"
+
+In machine-readable contexts (datasets, APIs that re-expose the data), the
+attribution can be carried in a metadata field. Reasonable adaptation of the
+attribution format to the medium is permitted.
+
+================================================================================
+
+What this license covers:
+
+This CC BY 4.0 license applies to the DATA CONTENT of the catalog:
+
+  - The seeded list of regulators, types of entity, segments, canonical
+    activities, norms, articles, processes, risks
+  - The qualified linkages between norms, processes, and risks
+  - The default materiality values in the P×R matrix
+  - The narrative descriptions, comments, and notes within the seeds
+  - The applicability declarations (which norms apply to whom)
+
+The SOFTWARE in this repository (SQL schema, Python tools, HTML/CSS/JS of
+the landing and docs, OpenAPI specification, configuration, build scripts)
+is licensed separately under the MIT License. See LICENSE for details.

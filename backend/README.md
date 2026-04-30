@@ -1,11 +1,11 @@
 # Chassi de Controles Internos — Backend
 
-Catálogo regulatório versionado para o sistema de controles internos das
-instituições financeiras brasileiras. Mapeia normas, processos, riscos e
-seus vínculos qualificados em um único modelo de dados.
+Catálogo regulatório versionado e colaborativo para o sistema de controles
+internos das instituições financeiras brasileiras. Mapeia normas, processos,
+riscos e seus vínculos qualificados em um único modelo de dados.
 
-> Modelo de produto: API regulatória whitelabel passiva. **Não recebe dado de cliente.**
-> O consumidor passa atributos da entidade dele (CNPJ, segmento, atividades) e recebe a fatia aplicável.
+> API leve e idempotente. O consumidor passa atributos categóricos da
+> entidade dele (tipo, segmento, atividades) e recebe a fatia aplicável.
 
 ## O que tem aqui
 
@@ -68,7 +68,7 @@ chassi_versions             versionamento semantico (is_current = TRUE em apenas
 chassi_changelog            log de adicoes/remocoes/modificacoes
 
 api_keys                    operacional - hash apenas
-api_usage_log               operacional - sem payload (mantem produto whitelabel)
+api_usage_log               operacional - sem payload
 ```
 
 ### Hierarquia paralela P x R
@@ -132,15 +132,14 @@ SELECT * FROM v_chassi_stats;
 
 ## Modalidades de consumo
 
-### 1. Snapshot baixavel (recomendado para o MVP)
+### 1. Snapshot baixavel
 
 ```bash
 make export-json     # gera chassi.json (~500KB-2MB)
 make export-sqlite   # gera chassi.sqlite (autocontido)
 ```
 
-O cliente baixa, importa para o ambiente dele e roda offline. Sem
-dependencia operacional do servico WCN.
+O cliente baixa, importa para o ambiente dele e roda offline.
 
 ### 2. API REST (proxima iteracao)
 
@@ -151,17 +150,16 @@ GET /v1/processos?nucleo=B&nivel_max=2
 GET /v1/instancia    # passa o cartao da entidade, recebe a fatia ativa
 ```
 
-### 3. SDK / biblioteca (npm/pip)
+### 3. SDK / biblioteca (npm/pip - futuro)
 
-Pacote que embute o snapshot e a engine de filtragem. Atualizacoes via
-package manager.
+Pacote que embute o snapshot e a engine de filtragem.
 
 ## Como filtrar a fatia aplicavel a uma instituicao
 
 Pseudocodigo:
 
 ```python
-# Atributos do cliente (passados na consulta - nao armazenados)
+# Atributos da instituicao (passados na consulta - nao armazenados)
 entity = {
     "tipo_entidade": "ENT_BANCO_MULTIPLO",
     "segmento": "S2",
@@ -173,7 +171,7 @@ SELECT n.*
 FROM normas n
 WHERE n.status = 'vigente'
   AND (
-    -- Sem restricao de tipo OU tipo do cliente esta na lista
+    -- Sem restricao de tipo OU tipo do consumidor esta na lista
     NOT EXISTS (SELECT 1 FROM norma_aplicabilidade_tipo_entidade WHERE norma_id = n.id)
     OR EXISTS (SELECT 1 FROM norma_aplicabilidade_tipo_entidade
                WHERE norma_id = n.id AND tipo_entidade_id = :tipo_entidade)
@@ -211,6 +209,9 @@ Ao adicionar uma norma:
 4. INSERT em `vinculo_norma_processo` com tipo_vinculo
 5. INSERT em `vinculo_norma_risco` com tipo_vinculo
 
+Veja o [guia de contribuicao](../CONTRIBUTING.md) para o passo a passo de
+um Pull Request.
+
 ## Limitacoes conhecidas (v0.1.0)
 
 - Numeros, datas e status das normas seedadas precisam ser **revalidados
@@ -221,13 +222,14 @@ Ao adicionar uma norma:
 - Cobertura de cartas-circulares e oficios da B3/BSM e parcial.
 - Sem biblioteca de KRIs nem de controles-modelo (pretendido para v0.2).
 
-## Filosofia do produto
+## Filosofia
 
-> O moat e o **catalogo curado e versionado**, nao o codigo.
-> O codigo e simples - publico, ate. O que e dificil de reproduzir e a
-> curadoria regulatoria continua.
+> O valor esta no **catalogo curado e versionado**, nao no codigo.
+> O codigo e simples - publico, sob MIT. O que e dificil de reproduzir
+> sozinho e a curadoria regulatoria continua - e por isso a curadoria
+> e colaborativa.
 
-Por isso o produto nao recebe dado de cliente. Toda inteligencia esta no
-chassi; o cliente passa atributos e recebe filtragem. Isso e o que permite
-tres modalidades de consumo (API, snapshot, SDK) compartilharem o mesmo
-nucleo logico.
+Por isso a API e leve e nao recebe dado da instituicao. Toda inteligencia
+esta no chassi; o cliente passa atributos e recebe filtragem. Isso e o que
+permite tres modalidades de consumo (API, snapshot, SDK) compartilharem o
+mesmo nucleo logico.

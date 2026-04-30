@@ -283,7 +283,7 @@ CREATE TABLE chassi_versions (
     is_current      BOOLEAN NOT NULL DEFAULT FALSE
 );
 
-COMMENT ON TABLE chassi_versions IS 'Versionamento semântico do chassi como produto. is_current=TRUE em apenas 1 linha.';
+COMMENT ON TABLE chassi_versions IS 'Versionamento semântico do chassi. is_current=TRUE em apenas 1 linha.';
 
 CREATE UNIQUE INDEX idx_chassi_versions_current
     ON chassi_versions(is_current) WHERE is_current = TRUE;

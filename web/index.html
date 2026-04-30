@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Chassi de Controles Internos — o catálogo regulatório, executável</title>
-<meta name="description" content="Catálogo regulatório versionado e consumível para conglomerados financeiros brasileiros. API whitelabel passiva. Snapshot baixável. Versionamento semântico.">
+<meta name="description" content="Catálogo regulatório versionado e colaborativo para o sistema de controles internos das instituições financeiras brasileiras. Open source, MIT + CC BY 4.0.">
 <meta property="og:title" content="Chassi de Controles Internos">
 <meta property="og:description" content="O catálogo regulatório, executável.">
 <meta property="og:type" content="website">
@@ -1004,7 +1004,7 @@
     <nav class="primary">
       <a href="#manifesto">Sobre</a>
       <a href="#modalidades">Como funciona</a>
-      <a href="#preco">Preços</a>
+      <a href="#contribuir">Contribuir</a>
       <a href="docs.html" class="docs">Docs</a>
       <a href="docs.html" class="cta">API ↗</a>
     </nav>
@@ -1142,21 +1142,25 @@
 
       <p>
         O <strong>Chassi de Controles Internos</strong> existe para resolver isso de
-        uma única vez. Um catálogo curado, versionado em SemVer, expondo
-        normas, processos, riscos e seus vínculos qualificados — o tipo de
-        ativo que <em>uma indústria inteira</em> precisa, mas que ninguém
-        consegue justificar manter sozinho.
+        uma única vez, em aberto. Um catálogo curado, versionado em SemVer,
+        expondo normas, processos, riscos e seus vínculos qualificados — o
+        tipo de ativo que <em>uma indústria inteira</em> precisa, mas que
+        ninguém consegue justificar manter sozinho.
       </p>
 
       <p>
-        Não somos um SaaS de controles internos. Não armazenamos seu CNPJ, sua estrutura,
-        suas posições, sua estratégia. <strong>Recebemos atributos. Devolvemos
-        a fatia aplicável.</strong> Nada mais transita. Por design.
+        Não é um SaaS de controles internos. Não armazenamos CNPJ,
+        estrutura, posições, estratégia. <strong>Recebemos atributos.
+        Devolvemos a fatia aplicável.</strong> Nada mais transita. Por
+        design — e por licença.
       </p>
 
       <p>
-        O moat é o catálogo, não o código. E catálogo é trabalho — não
-        commodity.
+        O valor está no catálogo, não no código. Código é simples — público,
+        sob MIT. Catálogo é trabalho de curadoria contínua, e é exatamente
+        por isso que a curadoria é <em>colaborativa</em>: ninguém deveria
+        manter isso sozinho, e ninguém deveria pagar pelo que pode ser
+        coletivo.
       </p>
     </div>
   </div>
@@ -1263,7 +1267,7 @@
     </div>
 
     <pre class="code-block active" data-block="curl"><span class="com"># Banco múltiplo S2 com câmbio comercial e crédito PJ</span>
-curl https://api.chassi.com.br/v1/instancia \
+curl https://api.example.com/v1/instancia \
   -H <span class="str">"X-API-Key: $CHASSI_KEY"</span> \
   -G \
   -d <span class="str">"tipo_entidade=ENT_BANCO_MULTIPLO"</span> \
@@ -1640,62 +1644,60 @@ console.<span class="fn">log</span>(fatia.normas_aplicaveis.length); <span class
 <!-- ============================================== -->
 <!-- PRICING                                        -->
 <!-- ============================================== -->
-<section class="pricing" id="preco">
+<section class="pricing" id="contribuir">
   <div class="wrap">
     <div class="section-header">
-      <div class="h-eyebrow">§ VII — Comercial</div>
+      <div class="h-eyebrow">§ VII — Como contribuir</div>
       <h2 class="marg" data-marg="07">
-        Três tiers. <em>Um catálogo.</em>
+        Catálogo é trabalho. <em>Coletivo, melhor.</em>
       </h2>
     </div>
 
     <div class="pricing-grid">
 
       <div class="tier">
-        <div class="tier-name">Free</div>
-        <h3>Public</h3>
-        <p class="tier-meta">Para fintechs, pesquisadores, e quem quer experimentar antes de assinar.</p>
-        <div class="price-amount">R$ 0</div>
-        <div class="price-period">por mês</div>
+        <div class="tier-name">Modo I</div>
+        <h3>Use</h3>
+        <p class="tier-meta">Não precisa pedir permissão. Baixe, leia, instancie no seu ambiente, integre nas ferramentas que você já tem.</p>
+        <div class="price-amount" style="font-size: 38px; line-height: 1.1; letter-spacing: -0.02em; margin-top: 10px;">livre</div>
+        <div class="price-period">MIT (código) · CC BY 4.0 (catálogo)</div>
         <ul class="features">
-          <li class="feature">60 req/min, sem SLA</li>
-          <li class="feature">Endpoints públicos: catálogos, normas, processos, riscos</li>
-          <li class="feature">Snapshot JSON sob demanda</li>
-          <li class="feature">Comunidade — sem suporte direto</li>
+          <li class="feature">Snapshot JSON ou SQLite — autocontido, offline</li>
+          <li class="feature">Schema Postgres replicável em sua infra</li>
+          <li class="feature">Sem cadastro, sem rate limit, sem dependência</li>
+          <li class="feature">Atribuição obrigatória ao redistribuir</li>
         </ul>
-        <a href="docs.html" class="btn btn-ghost">Começar agora</a>
+        <a href="https://github.com/walterCNeto/ChassiRO" class="btn btn-ghost">Ver no GitHub →</a>
       </div>
 
       <div class="tier featured">
-        <div class="tier-name">Recomendado</div>
-        <h3>Pro</h3>
-        <p class="tier-meta">Para bancos médios, asset managers e seguradoras com obrigação contínua de controles internos.</p>
-        <div class="price-amount">R$ 3.900</div>
-        <div class="price-period">por mês · por instituição</div>
+        <div class="tier-name">Modo II</div>
+        <h3>Contribua</h3>
+        <p class="tier-meta">Encontrou uma norma faltando, um vínculo mal classificado, uma vigência errada? Abra um Pull Request.</p>
+        <div class="price-amount" style="font-size: 38px; line-height: 1.1; letter-spacing: -0.02em; margin-top: 10px;">PR aberto</div>
+        <div class="price-period">qualquer pessoa pode propor</div>
         <ul class="features">
-          <li class="feature">Rate limit 1.000 req/min, SLA 99,9%</li>
-          <li class="feature">Snapshot JSON e SQLite ilimitados</li>
-          <li class="feature">Webhooks de mudanças no chassi</li>
-          <li class="feature">Changelog estruturado por instituição</li>
-          <li class="feature">Suporte prioritário por e-mail</li>
+          <li class="feature">Templates de Issue para nova norma, correção, bug</li>
+          <li class="feature">Revisão pelo mantenedor — merge em dias, não meses</li>
+          <li class="feature">Atribuição automática no histórico do Git</li>
+          <li class="feature">Conteúdo precisa de fonte oficial verificável</li>
         </ul>
-        <a href="mailto:chassi@wcn.com.br?subject=Pro" class="btn btn-primary">Falar com o time</a>
+        <a href="https://github.com/walterCNeto/ChassiRO/blob/main/CONTRIBUTING.md" class="btn btn-primary">Como contribuir →</a>
       </div>
 
       <div class="tier">
-        <div class="tier-name">Custom</div>
-        <h3>Enterprise</h3>
-        <p class="tier-meta">Para conglomerados e instituições S1/S2 com requisitos contratuais específicos.</p>
-        <div class="price-amount">Sob medida</div>
-        <div class="price-period">contrato anual</div>
+        <div class="tier-name">Modo III</div>
+        <h3>Mantenha</h3>
+        <p class="tier-meta">Contribuidores recorrentes são convidados a se tornar co-mantenedores. O modelo é informal e cresce conforme a necessidade.</p>
+        <div class="price-amount" style="font-size: 38px; line-height: 1.1; letter-spacing: -0.02em; margin-top: 10px;">por convite</div>
+        <div class="price-period">após contribuições consistentes</div>
         <ul class="features">
-          <li class="feature">Snapshot mensal entregue (on-prem opcional)</li>
-          <li class="feature">SLA negociado, IP fixo, peering</li>
-          <li class="feature">Workshop de implementação (40h)</li>
-          <li class="feature">Acesso ao roadmap e prioridade na curadoria</li>
-          <li class="feature">Conta dedicada</li>
+          <li class="feature">Direito a aprovar PRs de outras pessoas</li>
+          <li class="feature">Voz na direção do roadmap</li>
+          <li class="feature">Co-autoria nos releases</li>
+          <li class="feature">Sem obrigação de tempo mínimo</li>
         </ul>
-        <a href="mailto:chassi@wcn.com.br?subject=Enterprise" class="btn btn-ghost">Conversar</a>
+        <a href="https://github.com/walterCNeto/ChassiRO/issues" class="btn btn-ghost">Issues abertas →</a>
       </div>
 
     </div>
@@ -1717,47 +1719,81 @@ console.<span class="fn">log</span>(fatia.normas_aplicaveis.length); <span class
 
       <div>
         <details class="q">
-          <summary>Vocês são um SaaS de controles internos? RCSA?</summary>
+          <summary>É um SaaS? Vocês vendem isso?</summary>
           <div class="answer">
-            Nenhum dos dois. Somos um catálogo regulatório consumível —
+            Não. O Chassi é um <strong>bem público colaborativo</strong>.
+            Código sob MIT, conteúdo do catálogo sob CC BY 4.0. Catálogo
+            regulatório é commons — ninguém deveria pagar por uma lista de
+            normas. O que tem valor é a curadoria contínua, e curadoria
+            distribuída é mais robusta que curadoria proprietária.
+          </div>
+        </details>
+
+        <details class="q">
+          <summary>Posso usar comercialmente?</summary>
+          <div class="answer">
+            Sim. A licença CC BY 4.0 do conteúdo permite uso comercial,
+            inclusive em produtos pagos. A única exigência é
+            <strong>atribuição</strong> — referenciar este repositório
+            quando você redistribui ou re-expõe os dados em derivados.
+            O código (MIT) é igualmente livre para uso comercial.
+          </div>
+        </details>
+
+        <details class="q">
+          <summary>Como contribuir com uma norma nova?</summary>
+          <div class="answer">
+            Abre uma Issue no GitHub usando o template "Adicionar uma norma
+            nova", descrevendo a norma, sua aplicabilidade e os processos
+            que ela toca. Depois um Pull Request adicionando os INSERTs nos
+            seeds. O processo é leve — para correções pequenas, vai direto
+            no PR. Veja o
+            <a href="https://github.com/walterCNeto/ChassiRO/blob/main/CONTRIBUTING.md">guia de contribuição</a>.
+          </div>
+        </details>
+
+        <details class="q">
+          <summary>É um SaaS de controles internos? RCSA?</summary>
+          <div class="answer">
+            Nenhum dos dois. O Chassi é um catálogo regulatório consumível —
             normas, processos, riscos e seus vínculos qualificados. O
             sistema de controles internos é o que sua instituição opera,
             seguindo a Res CMN 4.943; o RCSA (autoavaliação, art. 38 da
             4.557) é uma das técnicas que você executa dentro dele. O
-            chassi é a base que sustenta as duas coisas — entregamos a
-            árvore de processos e a árvore de riscos amarradas às normas
-            aplicáveis, para que sua ferramenta interna ou de terceiros
-            pare de gastar esforço no que é commodity.
+            chassi é a base que sustenta as duas coisas.
+          </div>
+        </details>
+
+        <details class="q">
+          <summary>Quem revisa as contribuições?</summary>
+          <div class="answer">
+            Hoje, o mantenedor inicial
+            (<a href="https://waltercneto.github.io/">Walter C. Neto</a>).
+            Conforme contribuidores recorrentes apareçam, eles são convidados
+            a se tornar co-mantenedores. Toda mudança no catálogo precisa de
+            <strong>fonte oficial verificável</strong> — link para a norma
+            no site do regulador, comunicado oficial, ou texto consolidado.
           </div>
         </details>
 
         <details class="q">
           <summary>Vocês armazenam meus dados?</summary>
           <div class="answer">
-            Não armazenamos dados de cliente. A API é passiva: você passa
-            atributos categóricos (tipo de entidade, segmento, atividades
-            canônicas) e nós devolvemos a fatia. Não recebemos CNPJ, posição,
-            estratégia, controles. Telemetria operacional registra apenas
-            volume de chamadas — nunca o conteúdo das queries.
-          </div>
-        </details>
-
-        <details class="q">
-          <summary>Quem mantém a curadoria?</summary>
-          <div class="answer">
-            A WCN Softwares, com revisão periódica e roadmap público. Cada
-            release é assinado, versionado em SemVer e acompanhado de
-            changelog estruturado. Em tier Pro/Enterprise o cliente recebe
-            webhooks quando uma norma é alterada, revogada ou adicionada.
+            Não. A API é leve e idempotente: você passa atributos
+            categóricos (tipo de entidade, segmento, atividades canônicas)
+            e recebe a fatia. Não recebemos CNPJ, posição, estratégia ou
+            controles — e se quisesse não receber nada, basta usar o
+            snapshot offline. Telemetria operacional registra apenas
+            volume de chamadas, nunca o conteúdo das queries.
           </div>
         </details>
 
         <details class="q">
           <summary>O snapshot tem o mesmo conteúdo da API?</summary>
           <div class="answer">
-            Sim. Snapshot e API consomem o mesmo schema canônico — só mudam a
-            modalidade de entrega. JSON e SQLite são gerados na mesma
-            transação que serve a API, garantindo paridade.
+            Sim. Snapshot e API consomem o mesmo schema canônico — só mudam
+            a modalidade de entrega. JSON e SQLite são gerados a partir do
+            mesmo Postgres que serve a API, garantindo paridade.
           </div>
         </details>
 
@@ -1768,18 +1804,9 @@ console.<span class="fn">log</span>(fatia.normas_aplicaveis.length); <span class
             de 30 normas. A v0.2 expande para top-150 normas BACEN incluindo
             cartas-circulares, e adiciona detalhe P3/P4 com controles-modelo.
             Numeração, datas e status devem ser revalidados contra a base
-            oficial dos reguladores antes do uso operacional.
-          </div>
-        </details>
-
-        <details class="q">
-          <summary>Vocês competem com Refinitiv, Thomson Reuters ou similares?</summary>
-          <div class="answer">
-            Não na mesma camada. Aqueles produtos vendem feeds de regulação
-            global, em inglês, em formato textual. O Chassi é um modelo de
-            dados em português, especializado no aparato regulatório
-            brasileiro, com vínculos qualificados a processos e riscos —
-            algo que feeds textuais não entregam.
+            oficial dos reguladores antes do uso operacional. Aliás, ajudar
+            a auditar isso linha-a-linha é uma das contribuições mais
+            valiosas que se pode fazer.
           </div>
         </details>
       </div>
@@ -1794,44 +1821,45 @@ console.<span class="fn">log</span>(fatia.normas_aplicaveis.length); <span class
   <div class="wrap">
     <div>
       <div class="brand-foot">Chassi.</div>
-      <span class="tag">WCN Softwares · São Paulo · MMXXVI</span>
+      <span class="tag">Projeto colaborativo · MMXXVI</span>
       <p style="font-size: 14.5px; line-height: 1.6; color: rgba(245,240,230,0.65); max-width: 36ch;">
-        Catálogo regulatório versionado para o sistema financeiro brasileiro.
+        Catálogo regulatório versionado para o sistema de controles
+        internos das instituições financeiras brasileiras.
       </p>
     </div>
 
     <div>
       <span class="tag">Produto</span>
       <ul>
-        <li><a href="docs.html">API REST</a></li>
+        <li><a href="docs.html">API Reference</a></li>
         <li><a href="#modalidades">Snapshot</a></li>
         <li><a href="docs.html">OpenAPI 3.1</a></li>
-        <li><a href="#preco">Preços</a></li>
+        <li><a href="#contribuir">Como contribuir</a></li>
       </ul>
     </div>
 
     <div>
       <span class="tag">Recursos</span>
       <ul>
-        <li><a href="docs.html">Documentação</a></li>
-        <li><a href="#manifesto">Manifesto</a></li>
-        <li><a href="#code">Exemplos</a></li>
-        <li><a href="#">Changelog</a></li>
+        <li><a href="https://github.com/walterCNeto/ChassiRO">GitHub</a></li>
+        <li><a href="https://github.com/walterCNeto/ChassiRO/blob/main/CONTRIBUTING.md">Guia de contribuição</a></li>
+        <li><a href="https://github.com/walterCNeto/ChassiRO/blob/main/CHANGELOG.md">Changelog</a></li>
+        <li><a href="https://github.com/walterCNeto/ChassiRO/issues">Issues</a></li>
       </ul>
     </div>
 
     <div>
-      <span class="tag">Contato</span>
+      <span class="tag">Mantenedor</span>
       <ul>
-        <li><a href="mailto:chassi@wcn.com.br">chassi@wcn.com.br</a></li>
-        <li><a href="#">LinkedIn</a></li>
-        <li><a href="#">GitHub</a></li>
+        <li><a href="https://waltercneto.github.io/">Walter C. Neto</a></li>
+        <li><a href="mailto:walter.correa.neto@gmail.com">E-mail</a></li>
+        <li><a href="https://github.com/walterCNeto/ChassiRO/issues">Abrir uma Issue</a></li>
       </ul>
     </div>
 
     <div class="legal">
-      <span>© MMXXVI WCN Softwares — todos os direitos reservados</span>
-      <span>v 0.1.0 · OpenAPI 3.1 · MIT (catálogo: licença comercial)</span>
+      <span>v 0.1.0 · OpenAPI 3.1 · MIT (código) + CC BY 4.0 (catálogo)</span>
+      <span>mantido por <a href="https://waltercneto.github.io/" style="color:rgba(245,240,230,0.7);">Walter C. Neto</a> e contribuidores</span>
     </div>
   </div>
 </footer>

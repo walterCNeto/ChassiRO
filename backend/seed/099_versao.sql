@@ -30,6 +30,6 @@ Pendentes para v0.2:
 TRUE);
 
 INSERT INTO chassi_changelog (version_id, change_type, entity_type, entity_id, description) VALUES
-('CV_0_1_0', 'add', 'chassi', 'v0.1.0', 'Versao inicial completa do chassi universal');
+('CV_0_1_0', 'add', 'chassi', 'v0.1.0', 'Versao inicial completa do Chassi de Controles Internos');
 
 COMMIT;
