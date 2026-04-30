@@ -1,5 +1,5 @@
 -- ============================================================
--- Chassi Universal de RCSA - DDL
+-- Chassi de Controles Internos - DDL
 -- Postgres 16
 -- Compatível com SQLite após adaptação (CHECK em vez de ENUM, sem ltree)
 -- ============================================================

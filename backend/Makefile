@@ -1,4 +1,4 @@
-# Chassi Universal de RCSA - Makefile
+# Chassi de Controles Internos - Makefile
 # ============================================================
 
 .PHONY: help up down reset psql stats export-json export-sqlite export-all install clean
@@ -7,7 +7,7 @@ DC := docker compose
 PYTHON := python3
 
 help:
-	@echo "Chassi Universal de RCSA - comandos disponiveis"
+	@echo "Chassi de Controles Internos - comandos disponiveis"
 	@echo ""
 	@echo "  make up              Sobe Postgres e carrega schema+seeds (primeira vez)"
 	@echo "  make down            Para Postgres (mantem dados)"

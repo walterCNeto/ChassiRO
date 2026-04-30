@@ -1,4 +1,4 @@
-# Chassi Universal de RCSA — Web (landing + docs)
+# Chassi de Controles Internos — Web (landing + docs)
 
 Pacote estático com landing institucional e documentação OpenAPI 3.1 da API.
 Sem build step. Sem framework. Deploy em qualquer hosting de arquivos

@@ -1,13 +1,16 @@
-# Chassi Universal de RCSA
+# Chassi de Controles Internos — Backend
 
-Catalogo regulatorio versionado e consumivel para conglomerados financeiros brasileiros. Mapeia normas, processos, riscos e seus vinculos qualificados em um unico modelo de dados.
+Catálogo regulatório versionado para o sistema de controles internos das
+instituições financeiras brasileiras. Mapeia normas, processos, riscos e
+seus vínculos qualificados em um único modelo de dados.
 
-> Modelo de produto: API regulatoria whitelabel passiva. **Nao recebe dado de cliente.** O consumidor passa atributos da entidade dele (CNPJ, segmento, atividades) e recebe a fatia aplicavel.
+> Modelo de produto: API regulatória whitelabel passiva. **Não recebe dado de cliente.**
+> O consumidor passa atributos da entidade dele (CNPJ, segmento, atividades) e recebe a fatia aplicável.
 
 ## O que tem aqui
 
 ```
-chassi-rcsa/
+backend/
 ├── schema/
 │   ├── 001_schema.sql      DDL completo (Postgres 16)
 │   └── 002_views.sql       Views analiticas
@@ -70,7 +73,10 @@ api_usage_log               operacional - sem payload (mantem produto whitelabel
 
 ### Hierarquia paralela P x R
 
-Decisao chave: processos e riscos seguem hierarquias paralelas. Controles alocam no nivel mais granular do risco (R3/R4) e agregam para cima. Mesma logica para processos. P3/P4 sao opcionais por instancia - sao ativados quando o processo e critico ou regulado em detalhe.
+Decisao chave: processos e riscos seguem hierarquias paralelas. Controles
+alocam no nivel mais granular do risco (R3/R4) e agregam para cima. Mesma
+logica para processos. P3/P4 sao opcionais por instancia - sao ativados
+quando o processo e critico ou regulado em detalhe.
 
 ### Vinculo qualificado
 
@@ -80,13 +86,24 @@ Vinculos norma-processo nao sao binarios. Tres niveis:
 - **secundaria** - contribui mas nao e o dono
 - **informativa** - principios apenas (norma estruturante de ordem superior)
 
-Isso permite distinguir cobertura efetiva (so primaria) de cobertura nominal (qualquer vinculo).
+Isso permite distinguir cobertura efetiva (so primaria) de cobertura
+nominal (qualquer vinculo).
 
 ### Tres camadas de federacao
 
 - **Nucleo Conglomerado (CG)** - riscos so existem no nivel agregado: contagio intragrupo, concentracao consolidada, conflito estrutural, arbitragem regulatoria interna
 - **Nucleos Setoriais (B, MC, S, P, C)** - bancario, mercado de capitais, seguros, previdencia, capitalizacao
 - **Nucleo Universal (U)** - processos e riscos comuns a qualquer entidade regulada
+
+## Aplicacoes suportadas
+
+O chassi serve as varias aplicacoes do sistema de controles internos:
+
+- **Mapeamento de processos e controles** - base de processos hierarquizada
+- **RCSA** (autoavaliacao de riscos e controles, art. 38 da Res 4.557)
+- **Gap analysis** regulatorio por entidade e segmento
+- **Plano de monitoramento de controles**
+- **Reporte regulatorio** estruturado
 
 ## Views analiticas (cinco lentes)
 
@@ -122,7 +139,8 @@ make export-json     # gera chassi.json (~500KB-2MB)
 make export-sqlite   # gera chassi.sqlite (autocontido)
 ```
 
-O cliente baixa, importa para o ambiente dele e roda offline. Sem dependencia operacional do servico WCN.
+O cliente baixa, importa para o ambiente dele e roda offline. Sem
+dependencia operacional do servico WCN.
 
 ### 2. API REST (proxima iteracao)
 
@@ -135,7 +153,8 @@ GET /v1/instancia    # passa o cartao da entidade, recebe a fatia ativa
 
 ### 3. SDK / biblioteca (npm/pip)
 
-Pacote que embute o snapshot e a engine de filtragem. Atualizacoes via package manager.
+Pacote que embute o snapshot e a engine de filtragem. Atualizacoes via
+package manager.
 
 ## Como filtrar a fatia aplicavel a uma instituicao
 
@@ -171,7 +190,9 @@ WHERE n.status = 'vigente'
   );
 ```
 
-A logica e: **vazio = sem restricao**. Se uma norma nao tem nenhum tipo de entidade listado, ela aplica a qualquer tipo compativel com o regulador. Se tem lista, aplica somente a quem esta na lista.
+A logica e: **vazio = sem restricao**. Se uma norma nao tem nenhum tipo de
+entidade listado, ela aplica a qualquer tipo compativel com o regulador.
+Se tem lista, aplica somente a quem esta na lista.
 
 ## Adicionando normas, processos ou vinculos
 
@@ -192,7 +213,9 @@ Ao adicionar uma norma:
 
 ## Limitacoes conhecidas (v0.1.0)
 
-- Numeros, datas e status das normas seedadas precisam ser **revalidados contra a base oficial dos reguladores** antes de uso operacional. O seed usa marcos publicos mas nao foi auditado linha a linha.
+- Numeros, datas e status das normas seedadas precisam ser **revalidados
+  contra a base oficial dos reguladores** antes de uso operacional. O seed
+  usa marcos publicos mas nao foi auditado linha a linha.
 - P3/P4 detalhados ainda nao estao seedados - apenas P0+P1, com P2 seletivos.
 - R2/R3/R4 ainda nao estao seedados.
 - Cobertura de cartas-circulares e oficios da B3/BSM e parcial.
@@ -201,10 +224,10 @@ Ao adicionar uma norma:
 ## Filosofia do produto
 
 > O moat e o **catalogo curado e versionado**, nao o codigo.
-> O codigo e simples - publico, ate. O que e dificil de reproduzir e a curadoria regulatoria continua.
+> O codigo e simples - publico, ate. O que e dificil de reproduzir e a
+> curadoria regulatoria continua.
 
-Por isso o produto nao recebe dado de cliente. Toda inteligencia esta no chassi; o cliente passa atributos e recebe filtragem. Isso e o que permite tres modalidades de consumo (API, snapshot, SDK) compartilharem o mesmo nucleo logico.
-
-## Licenca
-
-A definir antes do release publico.
+Por isso o produto nao recebe dado de cliente. Toda inteligencia esta no
+chassi; o cliente passa atributos e recebe filtragem. Isso e o que permite
+tres modalidades de consumo (API, snapshot, SDK) compartilharem o mesmo
+nucleo logico.

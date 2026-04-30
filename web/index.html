@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Chassi Universal de RCSA — o catálogo regulatório, executável</title>
+<title>Chassi de Controles Internos — o catálogo regulatório, executável</title>
 <meta name="description" content="Catálogo regulatório versionado e consumível para conglomerados financeiros brasileiros. API whitelabel passiva. Snapshot baixável. Versionamento semântico.">
-<meta property="og:title" content="Chassi Universal de RCSA">
+<meta property="og:title" content="Chassi de Controles Internos">
 <meta property="og:description" content="O catálogo regulatório, executável.">
 <meta property="og:type" content="website">
 
@@ -654,6 +654,110 @@
   .anatomy-viz svg { width: 100%; height: auto; }
 
   /* ============================================== */
+  /* OPERAÇÃO                                       */
+  /* ============================================== */
+
+  section.operation {
+    padding: 110px 0 100px;
+    border-bottom: 1px solid var(--rule);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .op-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 70px;
+    align-items: start;
+  }
+  @media (max-width: 980px) { .op-grid { grid-template-columns: 1fr; gap: 40px; } }
+
+  .op-text h3 {
+    font-family: var(--serif);
+    font-variation-settings: "opsz" 144, "SOFT" 30, "WONK" 1;
+    font-size: 26px;
+    line-height: 1.05;
+    font-weight: 380;
+    letter-spacing: -0.02em;
+    margin-bottom: 12px;
+    margin-top: 28px;
+  }
+  .op-text h3:first-child { margin-top: 0; }
+  .op-text p {
+    font-size: 16px;
+    line-height: 1.62;
+    color: var(--ink-soft);
+    margin-bottom: 14px;
+  }
+  .op-text p strong { color: var(--ink); }
+  .op-text code {
+    font-family: var(--mono);
+    background: var(--paper-deep);
+    padding: 1px 6px;
+    font-size: 13px;
+    border-radius: 1px;
+  }
+
+  .op-equation {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    border-top: 1px solid var(--ink);
+    border-bottom: 1px solid var(--ink);
+    padding: 18px 26px;
+    margin: 18px 0 6px;
+    background: var(--paper-warm);
+  }
+  .op-equation .frac {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: var(--serif);
+    font-variation-settings: "opsz" 144, "SOFT" 0, "WONK" 0;
+    font-style: italic;
+    font-size: 28px;
+    line-height: 1;
+  }
+  .op-equation .frac .num-top {
+    border-bottom: 1.5px solid var(--ink);
+    padding: 0 10px 6px;
+  }
+  .op-equation .frac .num-bot {
+    padding: 6px 10px 0;
+  }
+  .op-equation .approx {
+    font-family: var(--serif);
+    font-variation-settings: "opsz" 144, "SOFT" 0, "WONK" 0;
+    font-size: 28px;
+    color: var(--ink);
+  }
+  .op-equation .zero {
+    font-family: var(--serif);
+    font-variation-settings: "opsz" 144, "SOFT" 0, "WONK" 0;
+    font-size: 28px;
+    color: var(--stamp);
+    font-weight: 360;
+  }
+  .op-equation .legenda {
+    font-family: var(--mono);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--ink-mute);
+    margin-left: 12px;
+    border-left: 1px solid var(--rule);
+    padding-left: 16px;
+  }
+
+  .op-viz {
+    background: var(--paper-warm);
+    border: 1px solid var(--rule);
+    padding: 32px 24px;
+    position: relative;
+  }
+  .op-viz svg { width: 100%; height: auto; display: block; }
+
+  /* ============================================== */
   /* PRICING                                        */
   /* ============================================== */
 
@@ -956,7 +1060,7 @@
 
           <text fill="#9c2c25" font-family="IBM Plex Mono, monospace" font-size="13" letter-spacing="3" font-weight="500">
             <textPath href="#stampCircle" startOffset="0">
-              CHASSI · UNIVERSAL DE RCSA · v 0.1.0 · CHASSI · UNIVERSAL DE RCSA · v 0.1.0 ·
+              CHASSI · CONTROLES INTERNOS · v 0.1.0 · CHASSI · CONTROLES INTERNOS · v 0.1.0 ·
             </textPath>
           </text>
         </g>
@@ -1037,7 +1141,7 @@
       </p>
 
       <p>
-        O <strong>Chassi Universal de RCSA</strong> existe para resolver isso de
+        O <strong>Chassi de Controles Internos</strong> existe para resolver isso de
         uma única vez. Um catálogo curado, versionado em SemVer, expondo
         normas, processos, riscos e seus vínculos qualificados — o tipo de
         ativo que <em>uma indústria inteira</em> precisa, mas que ninguém
@@ -1045,7 +1149,7 @@
       </p>
 
       <p>
-        Não somos um SaaS de RCSA. Não armazenamos seu CNPJ, sua estrutura,
+        Não somos um SaaS de controles internos. Não armazenamos seu CNPJ, sua estrutura,
         suas posições, sua estratégia. <strong>Recebemos atributos. Devolvemos
         a fatia aplicável.</strong> Nada mais transita. Por design.
       </p>
@@ -1211,13 +1315,194 @@ console.<span class="fn">log</span>(fatia.normas_aplicaveis.length); <span class
 </section>
 
 <!-- ============================================== -->
+<!-- OPERAÇÃO                                       -->
+<!-- ============================================== -->
+<section class="operation">
+  <div class="wrap">
+    <div class="section-header">
+      <div class="h-eyebrow">§ V — Operação</div>
+      <h2 class="marg" data-marg="05">
+        Onde o chassi <em>se encaixa</em> no banco.
+      </h2>
+    </div>
+
+    <div class="op-grid">
+      <div class="op-text">
+        <h3>O catálogo é o núcleo estável.</h3>
+        <p>
+          O conteúdo regulatório varia muito pouco no tempo. Normas são
+          publicadas, alteradas ou revogadas, mas a topologia do que existe
+          — <em>quem regula o quê, qual processo é dono, qual risco é
+          endereçado</em> — é estrutura. Da matemática:
+        </p>
+
+        <div class="op-equation" aria-label="derivada do Chassi Geral em relação ao tempo é aproximadamente zero">
+          <span class="frac">
+            <span class="num-top">d(CG)</span>
+            <span class="num-bot">dt</span>
+          </span>
+          <span class="approx">≈</span>
+          <span class="zero">0</span>
+          <span class="legenda">núcleo<br>estável</span>
+        </div>
+
+        <h3>Os sistemas-satélites do banco mudam.</h3>
+        <p>
+          Cada banco já tem <strong>RCSA</strong> em planilha ou ferramenta
+          proprietária, <strong>BIA</strong> na área de continuidade, sistemas
+          de <strong>RH</strong> (PeopleSoft e congêneres), <strong>sistema
+          de custos</strong>, <strong>plano de auditoria</strong>, áreas de
+          resultado. Cada um inventou o próprio mapa de processos, a própria
+          taxonomia de riscos, o próprio glossário.
+        </p>
+
+        <h3>A IA é o tradutor.</h3>
+        <p>
+          Uma camada de IA recebe a saída heterogênea desses sistemas e a
+          encaixa no vocabulário canônico do chassi. Uma matriz exportada do
+          PeopleSoft, uma planilha de BIA, um plano de auditoria —
+          tudo é normalizado contra os mesmos <code>processo_id</code> e
+          <code>risco_id</code> do catálogo.
+        </p>
+
+        <h3>O resultado: ambiente de controles coerente.</h3>
+        <p>
+          Indicadores agregáveis pela hierarquia <code>N0 → N4</code>,
+          apontamentos rastreáveis até a norma de origem, cobertura
+          mensurável distinguindo nominal de efetiva via vínculos
+          qualificados. Em outras palavras, <strong>o que toda área de
+          controles internos quer ter, sem reinventar a base.</strong>
+        </p>
+      </div>
+
+      <div class="op-viz" aria-hidden="true">
+        <svg viewBox="0 0 540 720" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <style>
+              .label    { font-family: 'IBM Plex Mono', monospace; font-size: 11px; fill: #1a1814; letter-spacing: 0.04em; }
+              .label-cg { font-family: 'IBM Plex Mono', monospace; font-size: 12px; fill: #9c2c25; letter-spacing: 0.16em; font-weight: 500; }
+              .label-mute { font-family: 'IBM Plex Mono', monospace; font-size: 9.5px; fill: #6b665d; letter-spacing: 0.14em; text-transform: uppercase; }
+              .satellite-box { fill: #faf6ee; stroke: #1a1814; stroke-width: 1.1; }
+              .ai-box   { fill: #1a1814; stroke: #1a1814; stroke-width: 1; }
+              .ai-text  { font-family: 'Fraunces', serif; font-size: 13px; fill: #f5f0e6; font-style: italic; }
+              .cg-box   { fill: #f5f0e6; stroke: #9c2c25; stroke-width: 2; }
+              .arrow-soft { stroke: #6b665d; stroke-width: 0.7; fill: none; marker-end: url(#arr-soft); stroke-dasharray: 2 3; }
+              .arrow-strong { stroke: #9c2c25; stroke-width: 1.4; fill: none; marker-end: url(#arr-strong); }
+              .out-box  { fill: #faf6ee; stroke: #4a5642; stroke-width: 1.1; }
+              .out-label { font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; fill: #4a5642; letter-spacing: 0.04em; }
+              .input-box { fill: #faf6ee; stroke: #6b665d; stroke-width: 0.8; stroke-dasharray: 3 2; }
+              .input-label { font-family: 'IBM Plex Mono', monospace; font-size: 10px; fill: #6b665d; letter-spacing: 0.04em; }
+            </style>
+            <marker id="arr-soft" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+              <path d="M 0 0 L 10 5 L 0 10 z" fill="#6b665d"/>
+            </marker>
+            <marker id="arr-strong" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+              <path d="M 0 0 L 10 5 L 0 10 z" fill="#9c2c25"/>
+            </marker>
+          </defs>
+
+          <!-- HEADER do diagrama -->
+          <text x="270" y="22" text-anchor="middle" class="label-mute">FIG. — ARQUITETURA OPERACIONAL</text>
+
+          <!-- INPUT TOPO: novas normas (entrada externa, contínua) -->
+          <rect class="input-box" x="120" y="48" width="300" height="40" rx="0"/>
+          <text x="270" y="64" text-anchor="middle" class="input-label">novas normas — entrada contínua</text>
+          <text x="270" y="80" text-anchor="middle" class="label-mute">CMN · BCB · CVM · SUSEP · ANBIMA</text>
+
+          <!-- seta vertical do input pro chassi -->
+          <line x1="270" y1="92" x2="270" y2="120" class="arrow-strong"/>
+
+          <!-- SATÉLITES: 4 caixas em volta -->
+          <!-- Esquerda 1: RCSA -->
+          <rect class="satellite-box" x="20" y="160" width="100" height="44"/>
+          <text x="70" y="180" text-anchor="middle" class="label">RCSA</text>
+          <text x="70" y="196" text-anchor="middle" class="label-mute">art. 38 · 4.557</text>
+
+          <!-- Esquerda 2: BIA -->
+          <rect class="satellite-box" x="20" y="220" width="100" height="44"/>
+          <text x="70" y="240" text-anchor="middle" class="label">BIA</text>
+          <text x="70" y="256" text-anchor="middle" class="label-mute">continuidade</text>
+
+          <!-- Direita 1: RH / PeopleSoft -->
+          <rect class="satellite-box" x="420" y="160" width="100" height="44"/>
+          <text x="470" y="180" text-anchor="middle" class="label">RH</text>
+          <text x="470" y="196" text-anchor="middle" class="label-mute">PeopleSoft etc.</text>
+
+          <!-- Direita 2: Custos -->
+          <rect class="satellite-box" x="420" y="220" width="100" height="44"/>
+          <text x="470" y="240" text-anchor="middle" class="label">Custos</text>
+          <text x="470" y="256" text-anchor="middle" class="label-mute">alocação</text>
+
+          <!-- Esquerda 3: Auditoria -->
+          <rect class="satellite-box" x="20" y="280" width="100" height="44"/>
+          <text x="70" y="300" text-anchor="middle" class="label">Auditoria</text>
+          <text x="70" y="316" text-anchor="middle" class="label-mute">plano anual</text>
+
+          <!-- Direita 3: Áreas Resultado -->
+          <rect class="satellite-box" x="420" y="280" width="100" height="44"/>
+          <text x="470" y="300" text-anchor="middle" class="label">Resultados</text>
+          <text x="470" y="316" text-anchor="middle" class="label-mute">áreas de neg.</text>
+
+          <!-- CAMADA IA -->
+          <rect class="ai-box" x="80" y="360" width="380" height="44"/>
+          <text x="270" y="380" text-anchor="middle" class="ai-text">Camada de IA — tradução</text>
+          <text x="270" y="396" text-anchor="middle" class="label-mute" style="fill:#d8d0bf;">fontes heterogêneas → vocabulário do chassi</text>
+
+          <!-- setas dos satélites pra IA -->
+          <path d="M 120 182 Q 175 270 175 360" class="arrow-soft"/>
+          <path d="M 120 242 Q 200 290 230 360" class="arrow-soft"/>
+          <path d="M 120 302 Q 200 330 270 360" class="arrow-soft"/>
+          <path d="M 420 182 Q 365 270 365 360" class="arrow-soft"/>
+          <path d="M 420 242 Q 340 290 310 360" class="arrow-soft"/>
+          <path d="M 420 302 Q 340 330 270 360" class="arrow-soft"/>
+
+          <!-- CHASSI GERAL (CG) - o coração -->
+          <rect class="cg-box" x="60" y="430" width="420" height="180"/>
+          <text x="270" y="465" text-anchor="middle" class="label-cg">CHASSI GERAL · CG</text>
+
+          <!-- divisor interno -->
+          <line x1="100" y1="480" x2="440" y2="480" stroke="#9c2c25" stroke-width="0.6" stroke-dasharray="2 2"/>
+
+          <!-- conteúdo do CG -->
+          <text x="270" y="505" text-anchor="middle" class="label">normas × processos × riscos</text>
+          <text x="270" y="525" text-anchor="middle" class="label-mute">hierarquias N0 → N4 / R0 → R4</text>
+
+          <!-- equação dentro do CG -->
+          <g transform="translate(178, 555)">
+            <text x="0" y="0" font-family="Fraunces, serif" font-size="14" font-style="italic" fill="#9c2c25">d</text>
+            <text x="9" y="0" font-family="Fraunces, serif" font-size="14" font-style="italic" fill="#9c2c25">(CG)</text>
+            <line x1="-2" y1="6" x2="42" y2="6" stroke="#9c2c25" stroke-width="0.8"/>
+            <text x="0" y="22" font-family="Fraunces, serif" font-size="14" font-style="italic" fill="#9c2c25">dt</text>
+            <text x="55" y="13" font-family="Fraunces, serif" font-size="16" fill="#9c2c25">≈</text>
+            <text x="78" y="13" font-family="Fraunces, serif" font-size="16" fill="#9c2c25">0</text>
+            <text x="100" y="13" class="label-mute">núcleo estável</text>
+          </g>
+
+          <!-- seta IA → CG -->
+          <line x1="270" y1="404" x2="270" y2="430" class="arrow-strong"/>
+
+          <!-- seta CG → output -->
+          <line x1="270" y1="610" x2="270" y2="640" class="arrow-strong"/>
+
+          <!-- OUTPUT: Ambiente de controles -->
+          <rect class="out-box" x="40" y="650" width="460" height="50"/>
+          <text x="270" y="670" text-anchor="middle" class="out-label">indicadores · apontamentos · cobertura</text>
+          <text x="270" y="688" text-anchor="middle" class="out-label" style="font-size:11px;">→ ambiente de controles coerente</text>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================== -->
 <!-- ANATOMIA                                       -->
 <!-- ============================================== -->
 <section class="anatomy">
   <div class="wrap">
     <div class="section-header">
-      <div class="h-eyebrow">§ V — Anatomia</div>
-      <h2 class="marg" data-marg="05">
+      <div class="h-eyebrow">§ VI — Anatomia</div>
+      <h2 class="marg" data-marg="06">
         Hierarquia paralela — <em>P × R.</em>
       </h2>
     </div>
@@ -1358,8 +1643,8 @@ console.<span class="fn">log</span>(fatia.normas_aplicaveis.length); <span class
 <section class="pricing" id="preco">
   <div class="wrap">
     <div class="section-header">
-      <div class="h-eyebrow">§ VI — Comercial</div>
-      <h2 class="marg" data-marg="06">
+      <div class="h-eyebrow">§ VII — Comercial</div>
+      <h2 class="marg" data-marg="07">
         Três tiers. <em>Um catálogo.</em>
       </h2>
     </div>
@@ -1384,7 +1669,7 @@ console.<span class="fn">log</span>(fatia.normas_aplicaveis.length); <span class
       <div class="tier featured">
         <div class="tier-name">Recomendado</div>
         <h3>Pro</h3>
-        <p class="tier-meta">Para bancos médios, asset managers e seguradoras com obrigação contínua de RCSA.</p>
+        <p class="tier-meta">Para bancos médios, asset managers e seguradoras com obrigação contínua de controles internos.</p>
         <div class="price-amount">R$ 3.900</div>
         <div class="price-period">por mês · por instituição</div>
         <ul class="features">
@@ -1424,7 +1709,7 @@ console.<span class="fn">log</span>(fatia.normas_aplicaveis.length); <span class
   <div class="wrap">
     <div class="faq-grid">
       <aside>
-        <div class="h-eyebrow" style="margin-bottom: 18px;">§ VII — Perguntas honestas</div>
+        <div class="h-eyebrow" style="margin-bottom: 18px;">§ VIII — Perguntas honestas</div>
         <h2 class="display" style="font-size: clamp(36px, 5vw, 60px);">
           O que costumam <em style="color:var(--stamp);font-style:italic;">perguntar.</em>
         </h2>
@@ -1432,13 +1717,17 @@ console.<span class="fn">log</span>(fatia.normas_aplicaveis.length); <span class
 
       <div>
         <details class="q">
-          <summary>Vocês são um RCSA SaaS?</summary>
+          <summary>Vocês são um SaaS de controles internos? RCSA?</summary>
           <div class="answer">
-            Não. Somos um catálogo regulatório consumível. RCSA é o que você
-            faz — nós entregamos a base normativa, a árvore de processos e a
-            árvore de riscos, qualificadas e versionadas, para que sua
-            ferramenta de RCSA (interna ou de terceiros) pare de gastar
-            esforço no que é commodity.
+            Nenhum dos dois. Somos um catálogo regulatório consumível —
+            normas, processos, riscos e seus vínculos qualificados. O
+            sistema de controles internos é o que sua instituição opera,
+            seguindo a Res CMN 4.943; o RCSA (autoavaliação, art. 38 da
+            4.557) é uma das técnicas que você executa dentro dele. O
+            chassi é a base que sustenta as duas coisas — entregamos a
+            árvore de processos e a árvore de riscos amarradas às normas
+            aplicáveis, para que sua ferramenta interna ou de terceiros
+            pare de gastar esforço no que é commodity.
           </div>
         </details>
 

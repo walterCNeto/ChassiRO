@@ -1,11 +1,11 @@
 openapi: 3.1.0
 
 info:
-  title: Chassi Universal de RCSA — API
+  title: Chassi de Controles Internos — API
   version: 0.1.0
   summary: Catálogo regulatório versionado e consumível para conglomerados financeiros brasileiros.
   description: |
-    A API do Chassi Universal de RCSA expõe um catálogo curado de **normas, processos,
+    A API do Chassi de Controles Internos expõe um catálogo curado de **normas, processos,
     riscos e seus vínculos qualificados** aplicáveis a entidades reguladas pelo CMN, BCB,
     CVM, CNSP, SUSEP, PREVIC, COAF, ANPD e auto-reguladores (B3, BSM, ANBIMA).
 

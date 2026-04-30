@@ -7,7 +7,7 @@ BEGIN;
 
 INSERT INTO chassi_versions (id, version, released_at, notas, is_current) VALUES
 ('CV_0_1_0', '0.1.0', NOW(),
-'Versao inicial do chassi universal de RCSA.
+'Versao inicial do Chassi de Controles Internos.
 
 Cobertura:
 - 12 reguladores

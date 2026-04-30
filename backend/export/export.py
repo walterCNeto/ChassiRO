@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Export do chassi universal de RCSA para formatos consumiveis.
+Export do Chassi de Controles Internos para formatos consumiveis.
 
 Uso:
     python export.py to-json    [--output chassi.json]
@@ -95,7 +95,7 @@ def fetch_table(conn: psycopg.Connection, table: str) -> list[dict]:
 
 @click.group()
 def cli():
-    """Chassi Universal de RCSA - ferramentas de export."""
+    """Chassi de Controles Internos - ferramentas de export."""
     pass
 
 
@@ -111,7 +111,7 @@ def stats():
         sys.exit(1)
 
     click.echo("=" * 50)
-    click.echo("CHASSI UNIVERSAL DE RCSA - ESTATISTICAS")
+    click.echo("CHASSI DE CONTROLES INTERNOS - ESTATISTICAS")
     click.echo("=" * 50)
     click.echo(f"Versao atual:               {s['versao_atual']}")
     click.echo(f"Reguladores ativos:         {s['reguladores_ativos']}")
