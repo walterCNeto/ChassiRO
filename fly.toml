@@ -1,50 +1,35 @@
-# =============================================================
-# fly.toml - Chassi de Controles Internos - API
-# =============================================================
+# fly.toml app configuration file generated for chassiro-api on 2026-04-30T17:12:34-03:00
 #
-# Antes do primeiro deploy:
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
-#   1. Instale flyctl: https://fly.io/docs/hands-on/install-flyctl/
-#   2. flyctl auth signup     (ou flyctl auth login)
-#   3. flyctl launch --no-deploy --copy-config
-#      (responda nao quando perguntar sobre Postgres e Redis)
-#   4. Edite o nome do app abaixo (deve ser unico em fly.dev)
-#   5. flyctl deploy
-#
-# =============================================================
 
-# Nome do app (precisa ser unico globalmente em fly.dev)
-# Sugestao: "chassi-ro-api" ou "chassiro-api" (qualquer um, mude se ja existir)
-app = "chassiro-api"
-
-# Regiao primaria. Sao Paulo = "gru". Outras: "iad" (Virginia), "scl" (Santiago)
-primary_region = "gru"
+app = 'chassiro-api'
+primary_region = 'gru'
 
 [build]
-  dockerfile = "Dockerfile"
+  dockerfile = 'Dockerfile'
 
 [env]
-  PORT = "8000"
-  CHASSI_SNAPSHOT_PATH = "/app/chassi.json"
+  CHASSI_SNAPSHOT_PATH = '/app/chassi.json'
+  PORT = '8000'
 
-# HTTP service - auto-escala 0-1 maquina
 [http_service]
   internal_port = 8000
   force_https = true
-  auto_stop_machines = "stop"
+  auto_stop_machines = 'stop'
   auto_start_machines = true
   min_machines_running = 0
-  processes = ["app"]
+  processes = ['app']
 
   [[http_service.checks]]
-    interval = "30s"
-    timeout = "5s"
-    grace_period = "10s"
-    method = "GET"
-    path = "/health"
+    interval = '30s'
+    timeout = '5s'
+    grace_period = '10s'
+    method = 'GET'
+    path = '/health'
 
-# VM bem pequena - API e leve, snapshot tem 180KB
 [[vm]]
-  size = "shared-cpu-1x"
-  memory = "256mb"
+  size = 'shared-cpu-1x'
+  memory = '256mb'
   cpus = 1
+  memory_mb = 256
