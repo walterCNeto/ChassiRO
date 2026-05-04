@@ -1023,9 +1023,9 @@
       </div>
 
       <h1 class="hero-title display">
-        <span class="br">O direito</span>
-        <span class="br">regulatório,</span>
-        <span class="br"><em>executável.</em></span>
+        <span class="br">Chassi de riscos</span>
+        <span class="br">combinado ao arcabouço regulatório,</span>
+        <span class="br"><em>de forma executável.</em></span>
       </h1>
 
       <p class="hero-lede">
@@ -1127,25 +1127,32 @@
 
     <div class="manifesto-body">
       <p class="lead">
-        Mapear o que se aplica é trabalho que toda instituição faz, mal, em
-        silêncio, e com gente sênior demais para isso.
+        O mapeamento de processos em uma instituição financeira é um meio para encontrar os riscos e pontos
+        de controle necessário para mitigar esses riscos. De uma forma geral, os processos são próprios da IF.
+        Entretanto, os riscos podem ser categorizados em temas de um chassi mais estável, baseado nos princípios
+        e normas regulatórias e prudenciais. Então, o objetivo principal desse chassi padrão é oferecer um meio
+        padronizado de apresentação do ambiente de controles para os riscos a partir de uma ferramenta que deveria se
+        conectar a qualquer realidade local, de forma que o "para" seja atingido a partir de qualquer "de" em linguagem
+        de padronização e descrição de processos.
       </p>
 
       <p>
-        A regulação financeira brasileira é uma máquina de produzir normas. CMN,
+        A regulação financeira brasileira é bem robusta. CMN,
         BCB, CVM, SUSEP, COAF, ANPD, B3, BSM, ANBIMA — cada um com seu próprio
         instrumento, sua própria periodicidade, sua própria forma de revogar
-        coisas tacitamente. O resultado é uma planilha esquecida em cada banco,
-        em cada seguradora, em cada gestora — desatualizada na semana seguinte
-        à publicação.
+        e alterar normas e complementar. Essas alterações normalmente ampliam a cobertura
+        de riscos e, em alguns casos, alteram as métricas de gestão de riscos vigentes.
       </p>
 
       <p>
         O <strong>Chassi de Controles Internos</strong> existe para resolver isso de
-        uma única vez, em aberto. Um catálogo curado, versionado em SemVer,
+        uma única vez, em aberto. Um catálogo curado, versionado,
         expondo normas, processos, riscos e seus vínculos qualificados — o
         tipo de ativo que <em>uma indústria inteira</em> precisa, mas que
-        ninguém consegue justificar manter sozinho.
+        ninguém consegue justificar manter sozinho. Esse chassi tem o objetivo de ser 
+        agnóstico em relação à realidade local de cada instituição financeira, permitindo uma
+        visualização padronizada do ambiente de controles para os principais temas de riscos inerentes
+        que qualquer IF tem apenas pelo exercício de sua atividade fim.
       </p>
 
       <p>
@@ -1195,7 +1202,7 @@
         <h3>API REST</h3>
         <p>
           Endpoints idempotentes, cacheáveis, documentados em OpenAPI 3.1.
-          Passe o cartão categórico da entidade — tipo, segmento, atividades —
+          Passe a descrição da entidade — tipo, segmento, atividades —
           e receba a fatia aplicável.
         </p>
         <div class="status">● em produção</div>
@@ -1242,7 +1249,7 @@
       </div>
       <div class="stat">
         <span class="num">97</span>
-        <div class="stat-label">Vínculos norma×processo</div>
+        <div class="stat-label">Vínculos norma vs processo</div>
         <div class="stat-meta">Qualificados em três tipos: <span class="small-caps">primária, secundária, informativa</span> — distinguindo cobertura nominal de cobertura efetiva.</div>
       </div>
     </div>
@@ -1334,7 +1341,7 @@ console.<span class="fn">log</span>(fatia.contagens);
     <div class="section-header">
       <div class="h-eyebrow">§ V — Operação</div>
       <h2 class="marg" data-marg="05">
-        Onde o chassi <em>se encaixa</em> no banco.
+        Onde o chassi <em>se encaixa</em> na IF.
       </h2>
     </div>
 
@@ -1342,30 +1349,23 @@ console.<span class="fn">log</span>(fatia.contagens);
       <div class="op-text">
         <h3>O catálogo é o núcleo estável.</h3>
         <p>
-          O conteúdo regulatório varia muito pouco no tempo. Normas são
+          O conteúdo regulatório é relativamente estável. Normas são
           publicadas, alteradas ou revogadas, mas a topologia do que existe
           — <em>quem regula o quê, qual processo é dono, qual risco é
-          endereçado</em> — é estrutura. Da matemática:
+          endereçado</em> — é estrutura.
         </p>
 
-        <div class="op-equation" aria-label="derivada do Chassi Geral em relação ao tempo é aproximadamente zero">
-          <span class="frac">
-            <span class="num-top">d(CG)</span>
-            <span class="num-bot">dt</span>
-          </span>
-          <span class="approx">≈</span>
-          <span class="zero">0</span>
-          <span class="legenda">núcleo<br>estável</span>
-        </div>
-
-        <h3>Os sistemas-satélites do banco mudam.</h3>
+        <h3>Os sistemas e processos da IF mudam.</h3>
         <p>
-          Cada banco já tem <strong>RCSA</strong> em planilha ou ferramenta
+          Cada IF já tem <strong>RCSA</strong> em planilha ou ferramenta
           proprietária, <strong>BIA</strong> na área de continuidade, sistemas
-          de <strong>RH</strong> (PeopleSoft e congêneres), <strong>sistema
+          de <strong>RH</strong> (PeopleSoft por exemplo), <strong>sistema
           de custos</strong>, <strong>plano de auditoria</strong>, áreas de
-          resultado. Cada um inventou o próprio mapa de processos, a própria
-          taxonomia de riscos, o próprio glossário.
+          resultado. Cada um criou o próprio mapa de processos, a própria
+          taxonomia de riscos, o próprio glossário e isso não deveria ser um problema
+          pois cada área entende sua forma de atuação da maneira mais eficiente com 
+          base na sua proposta de mapeamento, cobertura, análise e compreensão do arcabouço
+          regulatório.
         </p>
 
         <h3>A IA é o tradutor.</h3>
@@ -1383,7 +1383,7 @@ console.<span class="fn">log</span>(fatia.contagens);
           apontamentos rastreáveis até a norma de origem, cobertura
           mensurável distinguindo nominal de efetiva via vínculos
           qualificados. Em outras palavras, <strong>o que toda área de
-          controles internos quer ter, sem reinventar a base.</strong>
+          controles internos quer ter, sem abrir mão das bases internas das áreas.</strong>
         </p>
       </div>
 
@@ -1538,7 +1538,7 @@ console.<span class="fn">log</span>(fatia.contagens);
         <p>
           Norma e processo não se relacionam de forma binária. Três níveis
           distinguem cobertura efetiva de cobertura nominal:
-          <code>primária</code> (o processo é dono do cumprimento),
+          <code>primária</code> (o processo é a materialização do cumprimento),
           <code>secundária</code> (contribui), <code>informativa</code>
           (princípios apenas).
         </p>
@@ -1696,7 +1696,7 @@ console.<span class="fn">log</span>(fatia.contagens);
       <div class="tier">
         <div class="tier-name">Modo III</div>
         <h3>Mantenha</h3>
-        <p class="tier-meta">Contribuidores recorrentes são convidados a se tornar co-mantenedores. O modelo é informal e cresce conforme a necessidade.</p>
+        <p class="tier-meta">Participantes recorrentes são convidados a se tornar co-mantenedores. O modelo é informal e cresce conforme a necessidade.</p>
         <div class="price-amount" style="font-size: 38px; line-height: 1.1; letter-spacing: -0.02em; margin-top: 10px;">por convite</div>
         <div class="price-period">após contribuições consistentes</div>
         <ul class="features">
