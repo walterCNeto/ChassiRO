@@ -1889,6 +1889,32 @@ cd ChassiRO/tools</span>
         </details>
 
         <details class="q">
+          <summary>Posso usar em ambiente corporativo regulado?</summary>
+          <div class="answer">
+            Sim, e a forma recomendada é usar o <strong>snapshot
+            offline</strong>. Baixe <code>chassi.json</code> ou
+            <code>chassi.sqlite</code> uma vez, versione junto com sua
+            aplicação, e consuma localmente — equivalente a usar uma
+            biblioteca instalada na sua infra. Zero comunicação externa,
+            zero metadata vazando, zero dependência de disponibilidade de
+            terceiros. Para protótipos e exploração, a API ao vivo em
+            <code>chassiro-api.fly.dev</code> está disponível, mas em
+            ambientes com governança rigorosa de fluxo de dados externos
+            (bancos, asset managers, seguradoras), prefira o snapshot.
+            <br><br>
+            A API <strong>não recebe dados confidenciais</strong> por
+            design: o payload aceito são atributos categóricos canônicos
+            (<code>ENT_BANCO_MULTIPLO</code>, <code>S2</code>,
+            <code>ATV_CREDITO_PJ</code>) — não há campo para CNPJ, nome de
+            instituição, posições, estratégia ou controles. Não armazenamos
+            nada entre chamadas, não temos autenticação, não temos
+            persistência por usuário. O código é open source (MIT) e
+            auditável. Mesmo assim, o caminho de menor atrito com áreas de
+            SI é sempre o snapshot.
+          </div>
+        </details>
+
+        <details class="q">
           <summary>O snapshot tem o mesmo conteúdo da API?</summary>
           <div class="answer">
             Sim. Snapshot e API consomem o mesmo schema canônico — só mudam
