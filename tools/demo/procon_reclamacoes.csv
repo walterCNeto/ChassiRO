@@ -1,0 +1,29 @@
+﻿id;data;uf;categoria_procon;assunto;status;procedencia;valor_em_disputa
+PROCON-001;15/07/2025;MG;Cartao de credito;Aumento de limite sem solicitacao;Encerrado;Improcedente;12000
+PROCON-002;16/11/2025;SP;Cartao de credito;Aumento de limite sem solicitacao;Encerrado;Procedente;2400
+PROCON-003;02/08/2025;SP;Credito consignado;Margem consignavel excedida;Encerrado;Improcedente;4800
+PROCON-004;23/05/2025;RJ;Credito consignado;Margem consignavel excedida;Encerrado;Procedente;850
+PROCON-005;23/01/2026;SP;Servico nao prestado;Conta digital nao ativada apos cadastro completo;Encerrado;Procedente;4800
+PROCON-006;08/08/2025;SC;Servico nao prestado;Conta digital nao ativada apos cadastro completo;Encerrado;Procedente;1500
+PROCON-007;14/12/2025;SP;Credito consignado;Margem consignavel excedida;Encerrado;Procedente;4800
+PROCON-008;10/08/2025;SC;Cartao de credito;Aumento de limite sem solicitacao;Encerrado;Improcedente;4800
+PROCON-009;09/02/2026;RJ;Cartao de credito;Compras nao reconhecidas em fatura;Encerrado;Procedente;4800
+PROCON-010;19/07/2025;RJ;Credito consignado;Margem consignavel excedida;Encerrado;Improcedente;2400
+PROCON-011;07/11/2025;BA;Cobranca indevida;Cobranca de servico nao contratado;Encerrado;Procedente;12000
+PROCON-012;03/09/2025;SP;Servico nao prestado;Conta digital nao ativada apos cadastro completo;Encerrado;Improcedente;2400
+PROCON-013;21/12/2025;PR;Cobranca indevida;Cobranca de servico nao contratado;Encerrado;Procedente;350
+PROCON-014;18/06/2025;BA;Cobranca indevida;Cobranca de servico nao contratado;Encerrado;Procedente;350
+PROCON-015;19/12/2025;SC;Tarifas bancarias;Cobranca de tarifa de manutencao em conta poupanca;Encerrado;Procedente;350
+PROCON-016;10/03/2026;BA;Servico nao prestado;Conta digital nao ativada apos cadastro completo;Encerrado;Procedente;1500
+PROCON-017;27/12/2025;PR;Tarifas bancarias;Cobranca de TED nao acordada;Encerrado;Procedente;12000
+PROCON-018;12/12/2025;RJ;Tarifas bancarias;Cobranca de TED nao acordada;Encerrado;Improcedente;2400
+PROCON-019;25/02/2026;RS;Cartao de credito;Aumento de limite sem solicitacao;Encerrado;Procedente;1500
+PROCON-020;19/08/2025;BA;Conta corrente;Bloqueio de conta sem aviso;Encerrado;Improcedente;350
+PROCON-021;15/03/2026;SC;Cartao de credito;Aumento de limite sem solicitacao;Encerrado;Procedente;1500
+PROCON-022;09/12/2025;RS;Cartao de credito;Aumento de limite sem solicitacao;Encerrado;Procedente;4800
+PROCON-023;11/09/2025;RJ;Cartao de credito;Compras nao reconhecidas em fatura;Encerrado;Procedente;2400
+PROCON-024;01/09/2025;SP;Cartao de credito;Aumento de limite sem solicitacao;Encerrado;Improcedente;4800
+PROCON-025;17/05/2025;SP;Tarifas bancarias;Cobranca de tarifa de manutencao em conta poupanca;Em andamento;Em andamento;350
+PROCON-026;20/01/2026;RJ;Cobranca indevida;Cobranca de servico nao contratado;Encerrado;Procedente;2400
+PROCON-027;16/03/2026;RS;Conta corrente;Bloqueio de conta sem aviso;Encerrado;Procedente;350
+PROCON-028;26/08/2025;BA;Credito consignado;Margem consignavel excedida;Encerrado;Procedente;12000

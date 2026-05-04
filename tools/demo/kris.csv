@@ -1,0 +1,40 @@
+﻿kri_id;nome;area;categoria_interna;valor_atual;limite_verde;limite_amarelo;limite_vermelho;unidade;status_mes;historico_6m;atualizado_em
+KRI-001;VaR diário 1d 99%;Tesouraria;Risco de mercado;0.42;0.50;0.75;1.00;qtd;Verde;verde,verde,verde,verde,verde,verde;30/04/2026
+KRI-002;Limite NOP cambial;Tesouraria;Volatilidade cambial;62;70;85;100;qtd;Verde;verde,verde,amarelo,verde,verde,verde;30/04/2026
+KRI-003;LCR (Liquidity Coverage);Tesouraria;Risco de liquidez intradia;138;120;100;80;qtd;Verde;verde,verde,verde,verde,verde,verde;30/04/2026
+KRI-004;Chargebacks PIX (R$ MM/mês);PIX e Pagamentos;Risco de fraude externa;8.4;2.0;5.0;7.0;qtd;Vermelho;verde,amarelo,amarelo,vermelho,vermelho,vermelho;30/04/2026
+KRI-005;Taxa de fraude PIX (bps);PIX e Pagamentos;Risco de fraude externa;12.3;3.0;7.0;10.0;qtd;Vermelho;verde,verde,amarelo,amarelo,vermelho,vermelho;30/04/2026
+KRI-006;Disponibilidade PIX;PIX e Pagamentos;Indisponibilidade de sistemas;99.92;99.95;99.90;99.80;qtd;Amarelo;verde,verde,verde,amarelo,verde,amarelo;30/04/2026
+KRI-007;Inadimplência > 90d PJ;Crédito PJ;Inadimplência relevante;3.8;2.5;4.0;5.5;qtd;Amarelo;verde,verde,amarelo,amarelo,amarelo,amarelo;30/04/2026
+KRI-008;Concentração top-10 PJ;Crédito PJ;Concentração de carteira;31;25;35;45;qtd;Amarelo;verde,verde,amarelo,amarelo,amarelo,amarelo;30/04/2026
+KRI-009;Cobertura de provisão / NPL;Crédito PJ;Erro em provisão (4966);94;100;85;70;qtd;Amarelo;verde,verde,verde,amarelo,amarelo,amarelo;30/04/2026
+KRI-010;Tentativas de phishing detectadas;Cibersegurança;Cyber - phishing;847;200;500;800;qtd;Vermelho;verde,verde,amarelo,amarelo,vermelho,vermelho;30/04/2026
+KRI-011;Vulnerabilidades críticas abertas;Cibersegurança;Falha em controle de acesso;23;5;15;25;qtd;Amarelo;verde,verde,amarelo,amarelo,amarelo,amarelo;30/04/2026
+KRI-012;MTTD - Mean Time To Detect (h);Cibersegurança;Cyber - ransomware;4.2;2.0;4.0;8.0;qtd;Amarelo;verde,verde,verde,amarelo,amarelo,amarelo;30/04/2026
+KRI-013;Patches críticos atrasados;Cibersegurança;Falha em controle de acesso;12;0;3;10;qtd;Vermelho;verde,verde,amarelo,amarelo,vermelho,vermelho;30/04/2026
+KRI-014;RDR enviadas no prazo (%);PLD;Atraso em RDR (regulador);94;99;95;90;qtd;Amarelo;verde,verde,verde,amarelo,amarelo,amarelo;30/04/2026
+KRI-015;Cadastro KYC pendente PJ (%);PLD;Lavagem - documentação cliente;3.4;1.0;2.5;5.0;qtd;Amarelo;verde,amarelo,amarelo,amarelo,amarelo,amarelo;30/04/2026
+KRI-016;Tracking error vs. benchmark;Asset Management;Marcação a mercado divergente;0.23;0.50;1.00;2.00;qtd;Verde;verde,verde,verde,verde,verde,verde;30/04/2026
+KRI-017;Suitability não casado;Asset Management;Suitability inadequado;0.4;1.0;3.0;5.0;qtd;Verde;verde,verde,verde,verde,verde,verde;30/04/2026
+KRI-018;Best execution slippage médio;Asset Management;Best execution;1.2;3.0;5.0;8.0;qtd;Verde;verde,verde,verde,verde,verde,verde;30/04/2026
+KRI-019;Disponibilidade core banking;TI Corporativo;Indisponibilidade de sistemas;99.94;99.95;99.90;99.80;qtd;Amarelo;verde,verde,verde,amarelo,amarelo,amarelo;30/04/2026
+KRI-020;Backlog Ouvidoria;Ouvidoria;Reclamação BCB Procedente;142;80;120;180;qtd;Amarelo;verde,verde,amarelo,amarelo,amarelo,amarelo;30/04/2026
+KRI-021;Reclamações BCB Procedentes (mês);Ouvidoria;Reclamação BCB Procedente;47;30;60;90;qtd;Verde;verde,verde,verde,verde,verde,verde;30/04/2026
+KRI-022;DPIA realizadas (%);Privacidade e Dados;Vazamento de dados pessoais;78;95;85;70;qtd;Amarelo;verde,amarelo,amarelo,amarelo,amarelo,amarelo;30/04/2026
+KRI-023;Tempo de resposta titular LGPD (dias);Privacidade e Dados;Vazamento de dados pessoais;13.2;10.0;15.0;20.0;qtd;Verde;amarelo,verde,verde,verde,verde,verde;30/04/2026
+KRI-024;Inadimplência PF acima 90d;Crédito PF;Inadimplência relevante;4.1;3.5;5.0;6.5;qtd;Verde;verde,verde,verde,verde,verde,verde;30/04/2026
+KRI-025;Reconciliação custódia breaks abertos;BackOffice Custódia;Custódia - reconciliação;9;5;15;30;qtd;Verde;verde,verde,verde,verde,verde,verde;30/04/2026
+KRI-026;Suitability mismatch (Distribuição);Distribuição;Suitability inadequado;1.8;2.0;4.0;7.0;qtd;Verde;verde,verde,verde,verde,verde,verde;30/04/2026
+KRI-027;Adesão ao Código de Conduta (%);Compliance;Conduta de mercado;87;95;85;75;qtd;Amarelo;amarelo,amarelo,amarelo,amarelo,amarelo,amarelo;30/04/2026
+KRI-028;Cobertura plano de auditoria (%);Auditoria Interna;Reclamação BCB Procedente;78;90;80;70;qtd;Amarelo;verde,amarelo,amarelo,amarelo,amarelo,amarelo;30/04/2026
+KRI-029;RTO médio (BCM tests);Continuidade;Continuidade - falha em DR;4.8;4.0;6.0;10.0;qtd;Amarelo;verde,amarelo,amarelo,amarelo,amarelo,amarelo;30/04/2026
+KRI-030;Adesão a treinamento PLD (%);PLD;Lavagem - documentação cliente;92;95;90;85;qtd;Amarelo;verde,verde,amarelo,amarelo,amarelo,amarelo;30/04/2026
+KRI-031;Turnover voluntário mesas-chave;Recursos Humanos;Risco de fraude interna;8.4;10.0;15.0;20.0;qtd;Verde;verde,verde,verde,verde,verde,verde;30/04/2026
+KRI-032;Provisões trabalhistas vs. parecer;Jurídico;Reclamação BCB Procedente;108;100;110;120;qtd;Amarelo;verde,verde,verde,amarelo,amarelo,amarelo;30/04/2026
+KRI-033;Net Open Position cambial;Mesa de Cambio;Volatilidade cambial;78;70;85;100;qtd;Amarelo;verde,verde,verde,amarelo,amarelo,amarelo;30/04/2026
+KRI-034;Spread médio FX (bps);Mesa de Cambio;Volatilidade cambial;23;30;50;80;qtd;Verde;verde,verde,verde,verde,verde,verde;30/04/2026
+KRI-035;Funding wholesale concentração top-5;Tesouraria;Funding wholesale;32;30;40;55;qtd;Amarelo;verde,verde,verde,amarelo,amarelo,amarelo;30/04/2026
+KRI-036;Volatilidade NIM trimestral;Tesouraria;Descasamento ALM;3.8;5.0;8.0;12.0;qtd;Verde;verde,verde,verde,verde,verde,verde;30/04/2026
+KRI-037;Exposição climática (carteira);Crédito PJ;ESG - greenwashing;12;10;15;25;qtd;Amarelo;verde,verde,amarelo,amarelo,amarelo,amarelo;30/04/2026
+KRI-038;Despesas ESG (% PR);Compliance;ESG - greenwashing;0.3;0.5;0.3;0.1;qtd;Amarelo;amarelo,amarelo,amarelo,amarelo,amarelo,amarelo;30/04/2026
+KRI-039;Volume de SARs (suspeita);PLD;Lavagem - tipologia nova;67;30;60;100;qtd;Amarelo;verde,verde,verde,amarelo,amarelo,amarelo;30/04/2026

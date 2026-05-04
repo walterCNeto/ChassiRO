@@ -1,0 +1,40 @@
+﻿risco_id_chassi;risco_nome;materialidade;comentario_interno;aprovado_por;data_aprovacao;proxima_revisao
+R0.U.1;Risco de Credito;5;Carteira de credito = 38% PR. Maior exposicao da casa.;Carlos Mendes (CRO);15/01/2026;15/07/2026
+R0.U.2;Risco de Mercado;3;Trading book limitado. Banking book maior, exposicao a juros.;Carlos Mendes (CRO);15/01/2026;15/07/2026
+R0.U.3;Risco de Liquidez;5;LCR e NSFR sao restricao binding. Funding wholesale relevante.;Carlos Mendes (CRO);15/01/2026;15/07/2026
+R0.U.4;Risco Operacional;5;9 nucleos de processo. Ampla exposicao operacional.;Carlos Mendes (CRO);15/01/2026;15/07/2026
+R0.U.5;Risco Cibernetico;5;Banco digital com PIX 24x7. Vetor critico em 2025/26.;Carlos Mendes (CRO);15/01/2026;15/07/2026
+R0.U.6;Risco de Conformidade;4;Regulacao densa: BCB, CVM, ANBIMA, LGPD.;Carlos Mendes (CRO);15/01/2026;15/07/2026
+R0.U.7;Risco de Conduta;4;Distribuicao a varejo + distribuicao a investidor qualificado.;Carlos Mendes (CRO);15/01/2026;15/07/2026
+R0.U.8;Risco de PLD-FT;5;Volume relevante de cambio + clientes high-risk.;Carlos Mendes (CRO);15/01/2026;15/07/2026
+R0.U.9;Risco Estrategico;3;Plano estrategico aprovado e em execucao.;Carlos Mendes (CRO);15/01/2026;15/07/2026
+R0.U.10;Risco Reputacional;4;Marca em construcao. Mídia adversa pode ter impacto.;Carlos Mendes (CRO);15/01/2026;15/07/2026
+R0.U.11;Risco Socioambiental e Climatico;3;Carteira tem 12% de exposicao climatica (agro+constr).;Carlos Mendes (CRO);15/01/2026;15/07/2026
+R0.U.12;Risco de Modelo;4;Modelos de credito, de mercado e de PLD em uso intensivo.;Carlos Mendes (CRO);15/01/2026;15/07/2026
+R0.U.13;Risco de Privacidade (LGPD);4;Base de 1.2M titulares. ANPD ativa.;Carlos Mendes (CRO);15/01/2026;15/07/2026
+R0.B.1;Risco de descasamento de prazos (gap);4;ALM monitorado. Limites do CMN sob controle.;Carlos Mendes (CRO);15/01/2026;15/07/2026
+R0.B.2;Risco de pre-pagamento e recompra;3;Carteira mid-market. Pre-pagamento moderado.;Carlos Mendes (CRO);15/01/2026;15/07/2026
+R0.B.3;Risco de funding wholesale;4;Top-5 funders = 32% do funding total.;Carlos Mendes (CRO);15/01/2026;15/07/2026
+R0.B.4;Risco de imagem em corrida bancaria;3;Base de varejo dispersa, mas pequena.;Carlos Mendes (CRO);15/01/2026;15/07/2026
+R0.MC.1;Risco de adequacao (suitability);4;Distribuicao a varejo qualificado. API mensal.;Carlos Mendes (CRO);15/01/2026;15/07/2026
+R0.MC.2;Risco de execucao (best execution);3;Ordens via corretora coligada. Slippage monitorado.;Carlos Mendes (CRO);15/01/2026;15/07/2026
+R0.MC.3;Risco de marcacao a mercado;4;NTN-B + debentures + acoes. Bloomberg como referencia.;Carlos Mendes (CRO);15/01/2026;15/07/2026
+R0.MC.4;Risco de segregacao patrimonial;4;Asset administra R$8bi. Segregacao patrimonial robusta.;Carlos Mendes (CRO);15/01/2026;15/07/2026
+R0.MC.5;Risco de liquidacao (settlement);3;B3 + SELIC + CETIP. Volume operacional moderado.;Carlos Mendes (CRO);15/01/2026;15/07/2026
+R0.MC.6;Risco de chinese wall;3;Banco + Asset + Corretora. Chinese walls fisicas.;Carlos Mendes (CRO);15/01/2026;15/07/2026
+R0.MC.7;Risco de conflito (gestor x distribuidor);3;Asset distribui via corretora coligada.;Carlos Mendes (CRO);15/01/2026;15/07/2026
+R0.S.1;Risco de subscricao;1;Sem operacao de seguros propria.;Carlos Mendes (CRO);15/01/2026;15/07/2026
+R0.S.2;Risco de provisionamento;1;Sem operacao de seguros propria.;Carlos Mendes (CRO);15/01/2026;15/07/2026
+R0.S.3;Risco de sinistralidade;1;Sem operacao de seguros propria.;Carlos Mendes (CRO);15/01/2026;15/07/2026
+R0.S.4;Risco de catastrofe;1;Sem operacao de seguros propria.;Carlos Mendes (CRO);15/01/2026;15/07/2026
+R0.S.5;Risco de longevidade;1;Sem operacao de seguros/previdencia.;Carlos Mendes (CRO);15/01/2026;15/07/2026
+R0.S.6;Risco de mortalidade;1;Sem operacao de seguros propria.;Carlos Mendes (CRO);15/01/2026;15/07/2026
+R0.S.7;Risco de invalidez/morbidade;1;Sem operacao de seguros propria.;Carlos Mendes (CRO);15/01/2026;15/07/2026
+R0.S.8;Risco de contraparte de resseguro;1;Sem operacao de seguros propria.;Carlos Mendes (CRO);15/01/2026;15/07/2026
+R0.S.9;Risco de cancelamento (lapse);1;Sem operacao de seguros propria.;Carlos Mendes (CRO);15/01/2026;15/07/2026
+R0.CG.1;Risco de contagio intragrupo;3;3 entidades coligadas. Operacoes intragrupo limitadas.;Carlos Mendes (CRO);15/01/2026;15/07/2026
+R0.CG.2;Risco de concentracao consolidada;3;Concentracao monitorada via consolidacao.;Carlos Mendes (CRO);15/01/2026;15/07/2026
+R0.CG.3;Risco de conflito estrutural;3;Distribuicao + gestao + custodia coligadas.;Carlos Mendes (CRO);15/01/2026;15/07/2026
+R0.CG.4;Risco de arbitragem regulatoria interna;2;Operacoes intragrupo padronizadas.;Carlos Mendes (CRO);15/01/2026;15/07/2026
+R0.CG.5;Risco de modelo agregado;2;Modelos consolidados anualmente.;Carlos Mendes (CRO);15/01/2026;15/07/2026
+R0.CG.6;Risco reputacional cruzado;3;Marca compartilhada entre coligadas.;Carlos Mendes (CRO);15/01/2026;15/07/2026

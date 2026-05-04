@@ -121,13 +121,26 @@ ChassiRO/
 │   ├── schema/       DDL e views
 │   ├── seed/         Catálogos, normas, processos, riscos, vínculos
 │   ├── export/       CLI Python (to-json, to-sqlite, stats)
+│   ├── chassi.json   Snapshot canônico do catálogo
 │   └── docker-compose.yml
 │
-├── web/              Landing + docs OpenAPI
+├── api/              API REST FastAPI (deploy em chassiro-api.fly.dev)
+│   ├── main.py       Endpoints
+│   ├── loader.py     Carrega snapshot
+│   └── schemas.py    Modelos Pydantic
+│
+├── tools/            Pipeline analítico (Python)
+│   ├── analisar.py   Lê CSVs internos + 6 fontes externas → parecer + nine-box
+│   ├── README.md     Documentação do pipeline
+│   ├── demo/         13 CSVs sintéticos (Banco Modelo S.A.)
+│   └── output/       Outputs gerados como exemplo
+│
+├── docs/             Landing + docs OpenAPI + manual
 │   ├── index.html    Landing
 │   ├── docs.html     Reference da API (Redoc)
 │   ├── openapi.yaml  Especificação OpenAPI 3.1
-│   └── redoc.standalone.js
+│   ├── manual.pdf    Manual de uso do pipeline (PDF)
+│   └── chassiro-tools-demo.zip   Pacote de download da landing
 │
 ├── LICENSE           MIT (código)
 ├── LICENSE-DATA      CC BY 4.0 (catálogo)
@@ -142,7 +155,8 @@ ChassiRO/
 | Schema Postgres + seeds | ✅ v0.1.0       | 28 normas, 245 processos, 90 riscos, 97 vínculos |
 | Export JSON / SQLite    | ✅ v0.1.0       | 174KB JSON · 160KB SQLite                         |
 | Landing + docs          | ✅ v0.1.0       | Estático, deploy em qualquer hosting              |
-| API REST (FastAPI)      | 🚧 planejado   | Próxima iteração                                  |
+| API REST (FastAPI)      | ✅ v0.1.0       | Deployada em `chassiro-api.fly.dev`               |
+| Pipeline analítico      | ✅ v0.1.0       | `tools/analisar.py` + 13 CSVs demo + manual PDF   |
 | Camada de IA (tradução) | 🚧 planejado   | Conectores para RCSA, BIA, RH, Custos             |
 | SDK npm / pip           | 📅 futuro      | Após API estável                                  |
 | Validação regulatória   | 🚧 contínuo    | Conferência contra base oficial dos reguladores   |
@@ -159,10 +173,21 @@ make install         # deps Python
 make export-all      # gera chassi.json + chassi.sqlite
 ```
 
-### Web (landing + docs)
+### Pipeline analítico
 
 ```bash
-cd web
+cd tools
+python -m pip install requests
+python analisar.py --offline         # usa snapshot ../backend/chassi.json
+# outputs em output/: nine_box.html, parecer.md, resultado_consolidado.csv
+```
+
+Manual completo: [`docs/manual.pdf`](docs/manual.pdf).
+
+### Landing + docs
+
+```bash
+cd docs
 python -m http.server 8765
 # abre http://localhost:8765/index.html
 ```

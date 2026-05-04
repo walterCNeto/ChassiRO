@@ -1,0 +1,67 @@
+﻿id;origem;area;categoria_interna;severidade;status;data_abertura;data_limite;descricao
+AP-0001;Auditoria Interna;Tesouraria;Falha em controle de acesso;Crítico;Aberto;20/01/2026;15/06/2026;Acesso de operadores ao SLP fora do procedimento padrão durante o fechamento de Q4. Identificadas 12 transações sem aprovação dual.
+AP-0002;Auditoria Externa;Tesouraria;Marcação a mercado divergente;Crítico;Aberto;26/02/2026;30/05/2026;Divergências sistemáticas em marcação de NTN-B longas vs. ANBIMA na ordem de 8-15 bps, sem justificativa documentada.
+AP-0003;BCB;Tesouraria;Risco de liquidez intradia;Crítico;Aberto;16/03/2026;20/05/2026;Inspeção identificou 3 episódios de exposição intradia acima do limite interno sem alerta automático ao CRO.
+AP-0004;Gestão;PIX e Pagamentos;Risco de fraude externa;Alto;Em remediação;24/03/2026;15/06/2026;Aumento de 340% em chargebacks PIX em fev/2026 vs. baseline. Painel de fraude identifica padrão de mules.
+AP-0005;Gestão;PIX e Pagamentos;Risco de fraude externa;Alto;Em remediação;27/03/2026;01/06/2026;Falha em validação de chave PIX duplicada permitiu 47 transferências indevidas (~R$ 280k).
+AP-0006;Gestão;PIX e Pagamentos;Risco de fraude externa;Médio;Em remediação;04/04/2026;23/07/2026;Tentativas de phishing direcionadas a clientes PJ via WhatsApp falsificando atendentes.
+AP-0007;Auditoria Interna;Crédito PJ;Erro em provisão (4966);Médio;Aberto;24/03/2026;10/06/2026;Política de crédito não atualizada para clientes do agronegócio com exposição climática.
+AP-0008;Auditoria Interna;Crédito PJ;Concentração de carteira;Médio;Em remediação;25/03/2026;09/08/2026;Documentação de garantias incompleta em 14 contratos amostrados (sample size 50).
+AP-0009;Auditoria Interna;Crédito PJ;Erro em provisão (4966);Médio;Aberto;07/12/2025;13/08/2026;Modelo de rating PJ com data de validação vencida há 8 meses.
+AP-0010;Gestão;Crédito PJ;Inadimplência relevante;Médio;Aberto;13/12/2025;12/07/2026;Concentração setorial em construção civil 4pp acima do limite interno.
+AP-0011;Gestão;Crédito PJ;Concentração de carteira;Médio;Aberto;04/01/2026;12/06/2026;Recuperação judicial de cliente top-50 sem flag automático no CRM.
+AP-0012;Auditoria Interna;Crédito PJ;Erro em provisão (4966);Médio;Aberto;30/12/2025;13/07/2026;Atraso médio na renovação de cadastro PJ (KYC) acima do SLA em 23%.
+AP-0013;Compliance;Crédito PJ;Modelo de credito desatualizado;Médio;Aberto;04/12/2025;06/08/2026;Limite operacional de 3 mesas excedido em ocorrências esporádicas.
+AP-0014;Auditoria Interna;Crédito PJ;Erro em provisão (4966);Médio;Aberto;10/11/2025;06/07/2026;Provisão IFRS 9 em segmento middle market subestimada vs. backtesting.
+AP-0015;Auditoria Interna;Cibersegurança;Falha em controle de acesso;Alto;Aberto;15/04/2026;05/07/2026;Tentativa de ransomware bloqueada por EDR em estação de TI Corporativo. 2ª no trimestre.
+AP-0016;Auditoria Interna;Cibersegurança;Cyber - phishing;Alto;Aberto;16/03/2026;14/07/2026;EOL de Windows Server 2012 em ambientes legados (3 servidores ainda ativos).
+AP-0017;Auditoria Interna;Cibersegurança;Cyber - ransomware;Médio;Em remediação;09/02/2026;01/06/2026;Política de senha não atualizada para padrão NIST 2024 em 4 sistemas legados.
+AP-0018;Auditoria Interna;Cibersegurança;Cyber - phishing;Médio;Em remediação;10/01/2026;18/07/2026;Não-conformidade no controle de chaves de API em pipelines de CI/CD.
+AP-0019;Auditoria Interna;Cibersegurança;Falha em controle de acesso;Crítico;Aberto;31/03/2026;04/06/2026;Falha em rotacionar credenciais privilegiadas em sistema de risco de mercado.
+AP-0020;BCB;PLD;Atraso em RDR (regulador);Alto;Em remediação;12/02/2026;30/05/2026;Atraso em comunicações ao COAF acima do prazo regulamentar em 7 ocorrências do trimestre.
+AP-0021;Auditoria Interna;PLD;Lavagem - documentação cliente;Médio;Em remediação;17/03/2026;29/06/2026;KYC pendente em 3.4% da base PJ ativa (target = 1%).
+AP-0022;Compliance;PLD;Sanções OFAC;Crítico;Aberto;17/04/2026;15/05/2026;Match em listas restritivas de 2 contrapartes em operações de câmbio NDF requer revisão imediata.
+AP-0023;Gestão;Asset Management;Best execution;Baixo;Fechado;07/12/2025;31/03/2026;Revisão de procedimento de best execution para exotic options. Fechado após atualização do manual.
+AP-0024;CVM;Mesa de Cambio;Falha de processamento;Médio;Aberto;03/10/2025;29/06/2026;Limite de Net Open Position diário ultrapassado em 2 ocasiões sem justificativa.
+AP-0025;Autoavaliação;Mesa de Cambio;Limite de exposição cambial;Alto;Fechado;05/03/2026;31/07/2026;Spread de FX em operações <USD 50k acima do benchmark de mercado em 18 ops.
+AP-0026;Gestão;Mesa de Cambio;Limite de exposição cambial;Médio;Aberto;28/09/2025;18/06/2026;Conferência de operações off-shore não documentada em 6 trades de NDF.
+AP-0027;Autoavaliação;Mesa de Cambio;Limite de exposição cambial;Médio;Fechado;13/03/2026;13/06/2026;Plataforma Reuters fora do ar em 3 episódios sem ativação de contingência.
+AP-0028;Compliance;Crédito PF;Inadimplência relevante;Médio;Aberto;23/12/2025;26/07/2026;Análise score F+G acima do permitido em campanhas de carnê digital.
+AP-0029;Auditoria Externa;Crédito PF;Modelo de credito desatualizado;Médio;Aberto;19/08/2025;02/06/2026;Fila de cobrança automatizada com falha em segmentar inadimplentes <90d vs. >90d.
+AP-0030;Auditoria Externa;Crédito PF;Modelo de credito desatualizado;Alto;Em remediação;27/11/2025;18/08/2026;Recuperação de crédito PF abaixo do orçado em 18% no trimestre.
+AP-0031;CVM;Crédito PF;Conduta de mercado;Baixo;Aberto;19/12/2025;01/06/2026;Cessão de carteira PF com cláusulas de coobrigação não revisadas pelo jurídico.
+AP-0032;CVM;TI Corporativo;Acesso indevido a sistema;Alto;Aberto;13/02/2026;03/06/2026;Capacity planning desatualizado em 4 ambientes produtivos.
+AP-0033;Compliance;TI Corporativo;Falha de processamento;Médio;Em remediação;25/09/2025;02/07/2026;Backup automático de DB de risco operacional não validado mensalmente conforme política.
+AP-0034;CVM;TI Corporativo;Acesso indevido a sistema;Médio;Fechado;05/04/2026;10/08/2026;Mudanças emergenciais em produção acima da janela permitida (12 ocorrências/mês).
+AP-0035;Autoavaliação;TI Corporativo;Indisponibilidade de sistemas;Baixo;Fechado;18/10/2025;29/05/2026;Inventário de ativos de TI com 23% de itens sem responsável designado.
+AP-0036;CVM;TI Corporativo;Falha em controle de acesso;Alto;Aberto;27/11/2025;18/07/2026;Política de DevSecOps sem gates de segurança obrigatórios em pipelines.
+AP-0037;Gestão;Compliance;Conduta de mercado;Baixo;Fechado;09/11/2025;04/08/2026;Treinamento de Código de Conduta com 87% de adesão (target 95%).
+AP-0038;Auditoria Externa;Compliance;Conduta de mercado;Médio;Aberto;10/04/2026;30/07/2026;Política de presentes e brindes não revisada em 18 meses.
+AP-0039;CVM;Compliance;Falha em fechamento contábil;Crítico;Fechado;04/11/2025;14/06/2026;Mapeamento de PEPs (pessoas politicamente expostas) com 12 cadastros pendentes.
+AP-0040;Auditoria Externa;Compliance;Atraso em RDR (regulador);Baixo;Fechado;26/02/2026;16/08/2026;Conflito de interesse declarado por colaborador sem aprovação no comitê.
+AP-0041;Compliance;Ouvidoria;Conduta de mercado;Alto;Fechado;05/02/2026;31/05/2026;SLA de resposta a reclamações ANBIMA acima de 10 dias úteis.
+AP-0042;Gestão;Ouvidoria;Conduta de mercado;Alto;Em remediação;06/09/2025;11/06/2026;Backlog de ouvidoria em 142 casos (média trimestral 95).
+AP-0043;Autoavaliação;Ouvidoria;Reclamação Procon;Médio;Fechado;01/10/2025;10/07/2026;Resposta à Ouvidoria Geral do BCB com inconsistências em 3 manifestações.
+AP-0044;Auditoria Interna;Ouvidoria;Conduta de mercado;Alto;Aberto;31/03/2026;29/07/2026;Métrica de procedência ANBIMA acima do peer group em 0.4 pontos.
+AP-0045;Gestão;Distribuição;Best execution;Alto;Aberto;11/03/2026;13/06/2026;Suitability não revisado para clientes com mudança de perfil declarada.
+AP-0046;Auditoria Interna;Distribuição;Suitability inadequado;Baixo;Aberto;10/12/2025;19/06/2026;Vídeos de offerings sem disclaimer regulatório obrigatório em 3 episódios.
+AP-0047;Auditoria Externa;Distribuição;Conflito de interesse fundo x banco;Médio;Fechado;11/08/2025;15/06/2026;Comissões de distribuição com regra de incentivo divergente do prospecto em 2 produtos.
+AP-0048;Compliance;Distribuição;Conflito de interesse fundo x banco;Médio;Aberto;02/09/2025;29/06/2026;Material de marketing de FIDC enviado a investidor não-qualificado (1 caso isolado).
+AP-0049;CVM;BackOffice Custódia;Falha de processamento;Médio;Fechado;19/02/2026;22/05/2026;Reconciliação de SELIC em D+1 com 6 quebras no mês.
+AP-0050;Autoavaliação;BackOffice Custódia;Falha de processamento;Médio;Fechado;04/12/2025;08/06/2026;Procedimento de breaks em CETIP sem aprovação dual em 4 ocorrências.
+AP-0051;Gestão;BackOffice Custódia;Custódia - reconciliação;Médio;Em remediação;19/11/2025;13/07/2026;Posições em custódia qualificada não atualizadas no portal do cliente em D+0.
+AP-0052;Compliance;Auditoria Interna;Falha de processamento;Baixo;Em remediação;19/02/2026;21/05/2026;Cobertura do plano de auditoria 78% (target 90%).
+AP-0053;Gestão;Auditoria Interna;Atraso em RDR (regulador);Baixo;Fechado;10/12/2025;05/06/2026;Plano 2026 com 3 itens críticos repassados para 2027 sem justificativa formal.
+AP-0054;CVM;Privacidade e Dados;Falha em controle de acesso;Médio;Fechado;11/03/2026;05/06/2026;Mapeamento de tratamento de dados sensíveis incompleto em 2 sistemas.
+AP-0055;Auditoria Interna;Privacidade e Dados;Falha em controle de acesso;Baixo;Aberto;21/08/2025;20/06/2026;DPIA não realizada em novo produto de open finance.
+AP-0056;Autoavaliação;Privacidade e Dados;Falha em controle de acesso;Baixo;Fechado;04/08/2025;03/06/2026;Resposta a titular além do prazo da LGPD em 8 casos.
+AP-0057;BCB;Privacidade e Dados;Vazamento de dados pessoais;Alto;Aberto;10/03/2026;18/08/2026;Vendor com tratamento de dados pessoais sem cláusula DPA em 4 contratos.
+AP-0058;Auditoria Interna;Recursos Humanos;Falha de processamento;Alto;Em remediação;20/01/2026;22/05/2026;Política de diversidade e inclusão sem indicadores objetivos de monitoramento.
+AP-0059;Auditoria Interna;Recursos Humanos;Conduta de mercado;Baixo;Aberto;07/03/2026;09/08/2026;Atraso em homologação de horas extras em mesa de operações (3 colaboradores).
+AP-0060;CVM;Recursos Humanos;Risco de fraude interna;Alto;Fechado;05/12/2025;28/07/2026;Programa de onboarding sem treinamento mandatório de Código de Conduta para 12 novos.
+AP-0061;Auditoria Interna;Jurídico;Reclamação Procon;Médio;Em remediação;31/10/2025;17/06/2026;Contencioso trabalhista com provisão divergente do parecer atuarial em R$ 4.2M.
+AP-0062;Autoavaliação;Jurídico;Atraso em RDR (regulador);Médio;Aberto;20/09/2025;31/05/2026;Acordos com cláusulas de confidencialidade fora do template padrão.
+AP-0063;Autoavaliação;Jurídico;Reclamação Procon;Alto;Aberto;04/03/2026;16/05/2026;Notificações regulatórias com prazo de resposta apertado em 4 ocorrências.
+AP-0064;Gestão;Continuidade;Indisponibilidade de sistemas;Baixo;Fechado;04/03/2026;22/07/2026;Teste de DR semestral atrasado em 45 dias.
+AP-0065;Gestão;Continuidade;Continuidade - falha em DR;Alto;Fechado;06/03/2026;15/06/2026;Plano de continuidade de TI sem revisão pós-migração de cloud.
+AP-0066;BCB;Continuidade;Indisponibilidade de sistemas;Alto;Fechado;07/11/2025;01/08/2026;BIA de 2024 com 12 processos sem RTO/RPO atualizados.

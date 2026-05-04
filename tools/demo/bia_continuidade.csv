@@ -1,0 +1,21 @@
+﻿bia_id;processo_negocio;area;criticidade;rto;rpo;impacto_financeiro_dia_milhares;sistemas_dependentes;plano_contingencia;ultima_revisao
+BIA-001;PIX 24x7;PIX e Pagamentos;Crítico;0.5h;0min;8500;Core PIX, SPI, DICT, sistemas de fraude;Sim - DR ativo-ativo;22/12/2025
+BIA-002;Core Bancário;TI Corporativo;Crítico;1h;5min;12000;Mainframe, batches noturnos, integradores;Sim - DR site-to-site;19/12/2025
+BIA-003;TED/SELIC;BackOffice Custódia;Crítico;1h;5min;6800;Conexão SELIC, RSF;Sim - failover BCB;07/01/2026
+BIA-004;Internet Banking PJ;TI Corporativo;Alto;2h;15min;4200;Frontend PJ, API gateway, autenticação;Sim;04/12/2025
+BIA-005;Internet Banking PF;TI Corporativo;Alto;4h;30min;3500;Frontend PF, autenticação;Sim;08/01/2026
+BIA-006;Mobile App;TI Corporativo;Alto;4h;30min;3100;Apps iOS/Android, gateway;Sim;24/12/2025
+BIA-007;Tesouraria - Bloomberg/Murex;Tesouraria;Crítico;1h;5min;8900;Murex, Bloomberg API, SELIC, B3;Sim - active-active;23/10/2025
+BIA-008;Mesa de Câmbio;Mesa de Cambio;Alto;2h;15min;5400;Reuters, BM&F, conexão B3;Sim;27/10/2025
+BIA-009;Liquidação CETIP/B3;BackOffice Custódia;Crítico;1h;5min;4800;B3 API, CETIP;Sim;27/12/2025
+BIA-010;Compliance KYC;Compliance;Médio;8h;1h;1200;Sistema KYC, base CCS;Não - manual;16/02/2026
+BIA-011;Antifraude PIX;PIX e Pagamentos;Crítico;0.5h;0min;7200;Detecção em tempo real, ML pipeline;Sim;06/02/2026
+BIA-012;Atendimento PJ telefônico;Ouvidoria;Médio;8h;2h;800;PABX, sistema CRM;Parcial;13/11/2025
+BIA-013;Cobrança automatizada;Crédito PF;Médio;12h;2h;600;Régua de cobrança, integradores;Não;21/12/2025
+BIA-014;Originação de crédito PJ;Crédito PJ;Alto;8h;1h;2400;Sistema de propostas, motor de score;Parcial;18/02/2026
+BIA-015;Originação de crédito PF;Crédito PF;Médio;12h;2h;1800;Plataforma de crédito PF;Parcial;01/03/2026
+BIA-016;PLD - Monitoramento;PLD;Alto;4h;30min;1500;Sistema de monitoramento PLD, base de listas;Sim;06/12/2025
+BIA-017;Asset - Cálculo de cota;Asset Management;Crítico;2h;30min;3200;Sistema de fundos, RM;Sim;27/01/2026
+BIA-018;Distribuição - Plataforma;Distribuição;Alto;4h;1h;1800;Plataforma de produtos, CRM;Sim;24/12/2025
+BIA-019;E-mail corporativo;TI Corporativo;Médio;8h;1h;200;Microsoft 365;Sim;19/01/2026
+BIA-020;Folha de pagamento;Recursos Humanos;Médio;24h;4h;100;ERP RH;Não;08/11/2025

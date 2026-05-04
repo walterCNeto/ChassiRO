@@ -1,0 +1,21 @@
+﻿id;data;veiculo;titulo;categoria_tema;severidade_percebida;link
+MIDIA-001;05/04/2026;Estadao;Banco Modelo investiga vazamento de dados de 50mil clientes;Vazamento de dados;5;https://exemplo.com/noticia-1
+MIDIA-002;08/04/2026;NeoFeed;ANPD abre investigacao contra Banco Modelo apos incidente de seguranca;Vazamento de dados;5;https://exemplo.com/noticia-2
+MIDIA-003;01/03/2026;Valor Economico;Especialistas alertam para padrao de incidentes em bancos medios;Vazamento de dados;4;https://exemplo.com/noticia-3
+MIDIA-004;12/04/2026;InfoMoney;Banco Modelo enfrenta segunda falha em PIX em duas semanas;Falha em sistema critico;4;https://exemplo.com/noticia-4
+MIDIA-005;16/03/2026;NeoFeed;Cliente do Banco Modelo nao consegue acessar app por horas;Falha em sistema critico;3;https://exemplo.com/noticia-5
+MIDIA-006;23/03/2026;Brazil Journal;Vitimas de golpe em PIX acionam Banco Modelo na justica;Reclamacao em massa;4;https://exemplo.com/noticia-6
+MIDIA-007;18/04/2026;Estadao;Banco Modelo lidera reclamacoes em PIX no Banco Central;Reclamacao em massa;4;https://exemplo.com/noticia-7
+MIDIA-008;19/02/2026;Bloomberg Linea;BCB multa Banco Modelo em R$2.5mi por descumprimento de prazos PLD;Multa regulatoria;4;https://exemplo.com/noticia-8
+MIDIA-009;29/03/2026;Globo G1;MP-SP investiga Banco Modelo por possivel violacao de LGPD;Investigacao judicial;4;https://exemplo.com/noticia-9
+MIDIA-010;25/01/2026;Brazil Journal;Banco Modelo na mira por inconsistencia em relatorio ESG;Esg / Greenwashing;3;https://exemplo.com/noticia-10
+MIDIA-011;21/12/2025;Money Times;Carteira de credito do Banco Modelo concentrada em setor poluente;Esg / Greenwashing;3;https://exemplo.com/noticia-11
+MIDIA-012;12/10/2025;Globo G1;Diretor do Banco Modelo deixa cargo apos rumores;Conduta executiva;2;https://exemplo.com/noticia-12
+MIDIA-013;11/03/2026;Folha de S.Paulo;Reclamacoes contra Banco Modelo crescem em portais de defesa do consumidor;Reclamacao em massa;3;https://exemplo.com/noticia-13
+MIDIA-014;09/02/2026;Globo G1;Procon-SP notifica Banco Modelo por padrao de reclamacoes em consignado;Reclamacao em massa;3;https://exemplo.com/noticia-14
+MIDIA-015;23/08/2025;Brazil Journal;Banco Modelo entre instituicoes citadas em circular do BCB;Multa regulatoria;1;https://exemplo.com/noticia-15
+MIDIA-016;22/09/2025;Valor Economico;Pesquisa de cultura organizacional aponta desafios em Banco Modelo;Conduta executiva;1;https://exemplo.com/noticia-16
+MIDIA-017;01/12/2025;Estadao;Banco Modelo passou por instabilidade em fechamento de mes;Falha em sistema critico;2;https://exemplo.com/noticia-17
+MIDIA-018;01/11/2025;Brazil Journal;Estudo aponta Banco Modelo entre os menos preferidos por jovens;Reclamacao em massa;2;https://exemplo.com/noticia-18
+MIDIA-019;20/01/2026;Valor Economico;Banco Modelo divulga novo plano ESG apos pressao de investidores;Esg / Greenwashing;1;https://exemplo.com/noticia-19
+MIDIA-020;24/07/2025;Valor Economico;Acionista minoritario questiona governanca em Banco Modelo;Conduta executiva;2;https://exemplo.com/noticia-20

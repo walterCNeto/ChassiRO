@@ -1,0 +1,9 @@
+﻿id;numero_documento;data_publicacao;cnpj_instituicao;instituicao;tipo_documento;codigo_anbima;categoria_infracao;descricao_resumida
+ANB-0001;CR-2025-0234;01/12/2025;12.345.678/0001-90;Banco Modelo S.A.;Carta de Recomendação;Distribuicao;Suitability inadequado;Recomendacao de revisao no processo de API mensal apos identificacao de mismatches
+ANB-0002;CR-2025-0512;30/01/2026;12.345.678/0001-90;Banco Modelo S.A.;Carta de Recomendação;Distribuicao;Best execution;Recomendacao de revisao em politica de best execution apos divergencias em backtest
+ANB-0003;CR-2026-0089;16/03/2026;12.345.678/0001-90;Banco Modelo S.A.;Carta de Recomendação;Adm Recursos;Marcação a mercado divergente;Recomendacao em metodologia de pricing para debentures em fundos abertos
+ANB-0004;CR-2026-0145;31/03/2026;12.345.678/0001-90;Banco Modelo S.A.;Carta de Recomendação;Distribuicao;Conduta de mercado;Recomendacao em material publicitario de FIDC com disclaimer inadequado
+ANB-0005;CR-2025-0678;12/10/2025;12.345.678/0001-90;Banco Modelo S.A.;Carta de Recomendação;Ofertas;Conduta de mercado;Recomendacao em divulgacao em oferta com esforcos restritos sem alerta de risco
+ANB-0006;TC-2025-0034;22/09/2025;12.345.678/0001-90;Banco Modelo S.A.;Termo de Compromisso;Distribuicao;Suitability inadequado;Compromisso de implementar trilhas de treinamento e revisao de questionario API
+ANB-0007;TC-2026-0012;14/02/2026;12.345.678/0001-90;Banco Modelo S.A.;Termo de Compromisso;Adm Recursos;Falha em segregação patrimonial;Compromisso de revisao em controles de segregacao em fundo restrito
+ANB-0008;JUL-2024-0089;24/07/2025;12.345.678/0001-90;Banco Modelo S.A.;Julgamento;Distribuicao;Conduta de mercado;Julgamento por descumprimento reiterado de regras de divulgacao em produto estruturado

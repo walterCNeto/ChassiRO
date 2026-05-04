@@ -1004,6 +1004,7 @@
     <nav class="primary">
       <a href="#manifesto">Sobre</a>
       <a href="#modalidades">Como funciona</a>
+      <a href="#pipeline">Pipeline</a>
       <a href="#contribuir">Contribuir</a>
       <a href="docs.html" class="docs">Docs</a>
       <a href="docs.html" class="cta">API ↗</a>
@@ -1650,13 +1651,104 @@ console.<span class="fn">log</span>(fatia.contagens);
 </section>
 
 <!-- ============================================== -->
+<!-- PIPELINE — camada operacional                  -->
+<!-- ============================================== -->
+<section class="pricing" id="pipeline">
+  <div class="wrap">
+    <div class="section-header">
+      <div class="h-eyebrow">§ VII — Pipeline analítico</div>
+      <h2 class="marg" data-marg="07">
+        Do catálogo ao parecer, <em>em uma execução.</em>
+      </h2>
+    </div>
+
+    <p style="font-size: 16px; line-height: 1.6; color: var(--ink-soft); max-width: 720px; margin: 0 0 36px 0;">
+      Ferramenta em Python que lê CSVs internos da casa (apontamentos, KRIs,
+      autoavaliação, BIA), combina com seis fontes externas públicas (BACEN,
+      CVM SAS, ANBIMA, Procon, mídia, Reclame Aqui) e gera, em uma única
+      execução, um <strong>parecer estruturado</strong>, um <strong>nine-box
+      impacto × controles × cobertura</strong> e uma <strong>tabela
+      consolidada</strong>. Roda local, em modo offline, sem dependência
+      externa.
+    </p>
+
+    <div class="pricing-grid">
+
+      <div class="tier">
+        <div class="tier-name">Manual</div>
+        <h3>Passo a passo</h3>
+        <p class="tier-meta">Manual completo de uso em PDF: instalação, primeira execução, plugar dados reais, leitura do nine-box e do parecer.</p>
+        <div class="price-amount" style="font-size: 38px; line-height: 1.1; letter-spacing: -0.02em; margin-top: 10px;">PDF</div>
+        <div class="price-period">9 páginas · 200 KB</div>
+        <ul class="features">
+          <li class="feature">Pré-requisitos e instalação</li>
+          <li class="feature">Primeira execução com dados sintéticos</li>
+          <li class="feature">6 etapas para plugar seus dados reais</li>
+          <li class="feature">Leitura do nine-box e do parecer</li>
+        </ul>
+        <a href="manual.pdf" target="_blank" rel="noopener" class="btn btn-ghost">Baixar manual →</a>
+      </div>
+
+      <div class="tier featured">
+        <div class="tier-name">Demo</div>
+        <h3>Pacote completo</h3>
+        <p class="tier-meta">Pipeline + 13 CSVs sintéticos do Banco Modelo S.A. (banco múltiplo S2 fictício) + snapshot do catálogo. Pronto para rodar localmente.</p>
+        <div class="price-amount" style="font-size: 38px; line-height: 1.1; letter-spacing: -0.02em; margin-top: 10px;">ZIP</div>
+        <div class="price-period">81 KB · ~5s por execução</div>
+        <ul class="features">
+          <li class="feature">analisar.py — pipeline completo</li>
+          <li class="feature">13 CSVs sintéticos como template</li>
+          <li class="feature">Snapshot do catálogo para modo offline</li>
+          <li class="feature">Outputs gerados como exemplo</li>
+        </ul>
+        <a href="chassiro-tools-demo.zip" class="btn btn-primary">Baixar demo →</a>
+      </div>
+
+      <div class="tier">
+        <div class="tier-name">Código</div>
+        <h3>Repositório</h3>
+        <p class="tier-meta">Código-fonte aberto na pasta <code style="font-family: var(--mono); font-size: 13px;">tools/</code> do repositório. MIT no código, CC BY 4.0 nos dados sintéticos. Issues e PRs bem-vindos.</p>
+        <div class="price-amount" style="font-size: 38px; line-height: 1.1; letter-spacing: -0.02em; margin-top: 10px;">aberto</div>
+        <div class="price-period">github.com/walterCNeto/ChassiRO</div>
+        <ul class="features">
+          <li class="feature">Python 3.10+, sem framework</li>
+          <li class="feature">Apenas requests como dependência</li>
+          <li class="feature">~1.800 linhas, comentado em pt-BR</li>
+          <li class="feature">Pesos das fontes ajustáveis</li>
+        </ul>
+        <a href="https://github.com/walterCNeto/ChassiRO/tree/main/tools" target="_blank" rel="noopener" class="btn btn-ghost">Ver no GitHub →</a>
+      </div>
+
+    </div>
+
+    <!-- Quickstart -->
+    <div style="margin-top: 36px; border-left: 3px solid var(--stamp); background: var(--paper-deep); padding: 22px 26px;">
+      <div style="font-family: var(--mono); font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-mute); margin-bottom: 12px;">Quickstart</div>
+<pre style="margin: 0; font-family: var(--mono); font-size: 13px; line-height: 1.7; color: var(--ink); background: transparent; padding: 0; border: none; overflow-x: auto;"><span style="color: var(--ink-mute); font-style: italic;"># 1. clonar e entrar no diretório do pipeline</span>
+<span style="color: var(--stamp); font-weight: 600;">git clone https://github.com/walterCNeto/ChassiRO.git
+cd ChassiRO/tools</span>
+
+<span style="color: var(--ink-mute); font-style: italic;"># 2. rodar com os dados sintéticos do Banco Modelo S.A.</span>
+<span style="color: var(--stamp); font-weight: 600;">python analisar.py --offline</span>
+
+<span style="color: var(--ink-mute); font-style: italic;"># 3. abrir os outputs gerados em output/</span>
+<span style="color: var(--stamp); font-weight: 600;">output/nine_box.html</span>          <span style="color: var(--ink-mute); font-style: italic;"># visualização interativa</span>
+<span style="color: var(--stamp); font-weight: 600;">output/parecer.md</span>             <span style="color: var(--ink-mute); font-style: italic;"># parecer estruturado</span>
+<span style="color: var(--stamp); font-weight: 600;">output/resultado_consolidado.csv</span> <span style="color: var(--ink-mute); font-style: italic;"># tabela detalhada</span></pre>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ============================================== -->
 <!-- PRICING                                        -->
 <!-- ============================================== -->
 <section class="pricing" id="contribuir">
   <div class="wrap">
     <div class="section-header">
-      <div class="h-eyebrow">§ VII — Como contribuir</div>
-      <h2 class="marg" data-marg="07">
+      <div class="h-eyebrow">§ VIII — Como contribuir</div>
+      <h2 class="marg" data-marg="08">
         Catálogo é trabalho. <em>Coletivo, melhor.</em>
       </h2>
     </div>
@@ -1842,6 +1934,8 @@ console.<span class="fn">log</span>(fatia.contagens);
         <li><a href="docs.html">API Reference</a></li>
         <li><a href="#modalidades">Snapshot</a></li>
         <li><a href="docs.html">OpenAPI 3.1</a></li>
+        <li><a href="#pipeline">Pipeline analítico</a></li>
+        <li><a href="manual.pdf" target="_blank">Manual (PDF)</a></li>
         <li><a href="#contribuir">Como contribuir</a></li>
       </ul>
     </div>

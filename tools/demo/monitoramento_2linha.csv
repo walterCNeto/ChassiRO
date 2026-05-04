@@ -1,0 +1,34 @@
+﻿id;risco_id_chassi;area_2linha;tipo_atividade;frequencia;ultima_execucao;proxima_execucao_prevista;responsavel;status
+M2L-001;R0.U.1;Riscos & Controles;Monitoramento contínuo de carteira de crédito;mensal;12/04/2026;30/05/2026;Equipe Modelagem de Crédito;Ativa
+M2L-002;R0.U.1;Riscos & Controles;Validação independente de modelo PJ;anual;25/01/2026;30/04/2027;Equipe Validação de Modelos;Ativa
+M2L-003;R0.U.1;Compliance;Revisão de política de crédito;trimestral;26/03/2026;29/07/2026;Compliance;Ativa
+M2L-004;R0.U.2;Riscos & Controles;Monitoramento de VaR e limites de mercado;diária;29/04/2026;01/05/2026;Mesa de Risco de Mercado;Ativa
+M2L-005;R0.U.2;Riscos & Controles;Backtesting de modelo de VaR;trimestral;01/03/2026;29/07/2026;Mesa de Risco de Mercado;Ativa
+M2L-006;R0.U.3;Riscos & Controles;Monitoramento LCR/NSFR;diária;29/04/2026;01/05/2026;ALM/Tesouraria 2L;Ativa
+M2L-007;R0.U.3;Riscos & Controles;Stress test de liquidez;mensal;08/04/2026;30/05/2026;ALM/Tesouraria 2L;Ativa
+M2L-008;R0.U.4;Riscos & Controles;RCSA - Risco operacional anual;anual;31/12/2025;30/04/2027;Equipe RCSA;Ativa
+M2L-009;R0.U.4;Riscos & Controles;Monitoramento de eventos de risco operacional;mensal;05/04/2026;30/05/2026;Equipe RCSA;Ativa
+M2L-010;R0.U.5;Cibersegurança;Pentest de ambiente crítico;semestral;21/03/2026;27/10/2026;SOC;Ativa
+M2L-011;R0.U.5;Cibersegurança;Monitoramento SOC 24x7;diária;30/04/2026;01/05/2026;SOC;Ativa
+M2L-012;R0.U.5;Cibersegurança;Threat hunting;mensal;12/04/2026;30/05/2026;SOC;Ativa
+M2L-013;R0.U.6;Compliance;Mapeamento regulatório (RegTech);trimestral;06/03/2026;29/07/2026;Compliance;Ativa
+M2L-014;R0.U.6;Compliance;Teste de aderência a normas;anual;01/11/2025;30/04/2027;Compliance;Ativa
+M2L-015;R0.U.7;Compliance;Monitoramento de Código de Conduta;trimestral;16/03/2026;29/07/2026;Compliance;Ativa
+M2L-016;R0.U.7;Ouvidoria;Análise de reclamações procedentes;mensal;18/04/2026;30/05/2026;Ouvidoria;Ativa
+M2L-017;R0.U.8;PLD 2L;Monitoramento contínuo de operações suspeitas;diária;30/04/2026;01/05/2026;PLD 2L;Ativa
+M2L-018;R0.U.8;PLD 2L;Revisão de tipologias;trimestral;09/02/2026;29/07/2026;PLD 2L;Ativa
+M2L-019;R0.U.10;Comunicação Institucional;Monitoramento de mídia;diária;29/04/2026;01/05/2026;Comunicação;Ativa
+M2L-020;R0.U.10;Compliance;Revisão de incidentes reputacionais;trimestral;11/03/2026;29/07/2026;Compliance;Ativa
+M2L-021;R0.U.11;Riscos & Controles;PRSA - Política de Risco Socioambiental;anual;24/07/2025;30/04/2027;Equipe ESG;Ativa
+M2L-022;R0.U.12;Riscos & Controles;Validação independente de modelos críticos;anual;01/12/2025;30/04/2027;Equipe Validação de Modelos;Ativa
+M2L-023;R0.U.13;Privacidade e Dados;DPIA em produtos novos;contínua;22/04/2026;07/05/2026;DPO;Ativa
+M2L-024;R0.U.13;Privacidade e Dados;Auditoria de bases pessoais;trimestral;24/02/2026;29/07/2026;DPO;Ativa
+M2L-025;R0.U.13;Privacidade e Dados;Resposta a titulares LGPD;diária;29/04/2026;01/05/2026;DPO;Ativa
+M2L-026;R0.B.1;Riscos & Controles;Monitoramento de descasamento ALM;mensal;05/04/2026;30/05/2026;ALM/Tesouraria 2L;Ativa
+M2L-027;R0.B.3;Riscos & Controles;Monitoramento de funding wholesale;mensal;08/04/2026;30/05/2026;ALM/Tesouraria 2L;Ativa
+M2L-028;R0.MC.1;Compliance;Monitoramento de suitability;mensal;02/04/2026;30/05/2026;Compliance;Ativa
+M2L-029;R0.MC.2;Compliance;Monitoramento de best execution;mensal;10/04/2026;30/05/2026;Compliance;Ativa
+M2L-030;R0.MC.3;Riscos & Controles;Validação de marcação a mercado;diária;29/04/2026;01/05/2026;Mesa de Risco de Mercado;Ativa
+M2L-031;R0.MC.6;Compliance;Monitoramento de chinese walls;trimestral;19/02/2026;29/07/2026;Compliance;Ativa
+M2L-032;R0.CG.1;Riscos & Controles;Análise de exposição intragrupo;trimestral;30/01/2026;29/07/2026;Riscos Consolidados;Ativa
+M2L-033;R0.CG.2;Riscos & Controles;Monitoramento de concentração consolidada;trimestral;01/02/2026;29/07/2026;Riscos Consolidados;Ativa

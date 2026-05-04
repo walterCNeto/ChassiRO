@@ -1,0 +1,7 @@
+﻿id;numero_processo;data;cnpj_acusado;instituicao;tipo_processo;rito;categoria_infracao;status;penalidade;valor_multa;descricao
+CVM-0001;PAS-RJ-2024-12345;01/11/2025;12.345.678/0001-90;Banco Modelo S.A.;PAS;Sumario;Suitability inadequado;Julgado;Multa;R$ 850.000,00;Falha em verificacao de adequacao de produto a perfil de investidor em ofertas de FIDC
+CVM-0002;PAS-RJ-2024-08901;14/06/2025;12.345.678/0001-90;Banco Modelo S.A.;PAS;Ordinario;Marcação a mercado divergente;Julgado;Multa;R$ 1.200.000,00;Divergencias sistematicas em marcacao de NTN-B em fundos administrados
+CVM-0003;PAS-SP-2025-04567;30/01/2026;12.345.678/0001-90;Banco Modelo S.A.;PAS;Ordinario;Best execution;Em curso;Em apuracao;;Suspeita de divergencia em best execution em ordens de cliente PJ
+CVM-0004;PAS-RJ-2026-01234;16/03/2026;12.345.678/0001-90;Banco Modelo S.A.;Inquerito Administrativo;Sumario;Conduta - manipulacao;Em curso;Em apuracao;;Apuracao de movimentacoes atipicas em mesa de cambio
+CVM-0005;PAS-RJ-2026-02345;01/03/2026;12.345.678/0001-90;Banco Modelo S.A.;PAS;Sumario;Não cumprimento de norma;Em curso;Em apuracao;;Atraso em prestacao de informacoes obrigatorias previstas em RCVM 30
+CVM-0006;TC-2025-789;12/10/2025;12.345.678/0001-90;Banco Modelo S.A.;Termo de Compromisso;Sumario;Suitability inadequado;Encerrado;Termo de Compromisso;R$ 350.000,00;Compromisso de revisao de processo de API e treinamento de equipe de distribuicao

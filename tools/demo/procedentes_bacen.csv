@@ -1,0 +1,83 @@
+﻿id;cnpj;instituicao_nome;data_reclamacao;categoria_bacen;assunto;procedencia;trimestre_referencia
+BCB-0001;12.345.678/0001-90;Banco Modelo S.A.;19/01/2026;PIX - estorno nao realizado;Estorno nao realizado apos transferencia indevida via PIX;Procedente;2026.Q1
+BCB-0002;12.345.678/0001-90;Banco Modelo S.A.;07/04/2026;PIX - estorno nao realizado;Transacao PIX nao reconhecida pelo titular;Procedente;2026.Q2
+BCB-0003;12.345.678/0001-90;Banco Modelo S.A.;10/03/2026;PIX - estorno nao realizado;Chave PIX desviada para conta de terceiros;Procedente;2026.Q1
+BCB-0004;12.345.678/0001-90;Banco Modelo S.A.;24/03/2026;PIX - estorno nao realizado;Estorno nao realizado apos transferencia indevida via PIX;Procedente;2026.Q1
+BCB-0005;12.345.678/0001-90;Banco Modelo S.A.;14/01/2026;PIX - estorno nao realizado;Falha em validacao de chave PIX duplicada;Procedente;2026.Q1
+BCB-0006;12.345.678/0001-90;Banco Modelo S.A.;30/03/2026;PIX - estorno nao realizado;Falha em validacao de chave PIX duplicada;Procedente;2026.Q1
+BCB-0007;12.345.678/0001-90;Banco Modelo S.A.;15/02/2026;PIX - estorno nao realizado;Estorno nao realizado apos transferencia indevida via PIX;Procedente;2026.Q1
+BCB-0008;12.345.678/0001-90;Banco Modelo S.A.;07/04/2026;PIX - estorno nao realizado;Estorno nao realizado apos transferencia indevida via PIX;Procedente;2026.Q2
+BCB-0009;12.345.678/0001-90;Banco Modelo S.A.;14/03/2026;PIX - estorno nao realizado;Chave PIX desviada para conta de terceiros;Procedente;2026.Q1
+BCB-0010;12.345.678/0001-90;Banco Modelo S.A.;05/02/2026;PIX - estorno nao realizado;Falha em validacao de chave PIX duplicada;Procedente;2026.Q1
+BCB-0011;12.345.678/0001-90;Banco Modelo S.A.;07/04/2026;PIX - estorno nao realizado;Falha em validacao de chave PIX duplicada;Procedente;2026.Q2
+BCB-0012;12.345.678/0001-90;Banco Modelo S.A.;16/03/2026;PIX - estorno nao realizado;Falha em validacao de chave PIX duplicada;Procedente;2026.Q1
+BCB-0013;12.345.678/0001-90;Banco Modelo S.A.;16/02/2026;PIX - estorno nao realizado;Chave PIX desviada para conta de terceiros;Procedente;2026.Q1
+BCB-0014;12.345.678/0001-90;Banco Modelo S.A.;12/02/2026;PIX - estorno nao realizado;Falha em validacao de chave PIX duplicada;Procedente;2026.Q1
+BCB-0015;12.345.678/0001-90;Banco Modelo S.A.;06/03/2026;PIX - estorno nao realizado;Estorno nao realizado apos transferencia indevida via PIX;Procedente;2026.Q1
+BCB-0016;12.345.678/0001-90;Banco Modelo S.A.;21/03/2026;PIX - desvio de chave;Recusa em ressarcimento de PIX por golpe;Procedente;2026.Q1
+BCB-0017;12.345.678/0001-90;Banco Modelo S.A.;26/02/2026;PIX - desvio de chave;Transacao PIX nao reconhecida pelo titular;Procedente;2026.Q1
+BCB-0018;12.345.678/0001-90;Banco Modelo S.A.;22/03/2026;PIX - desvio de chave;Chave PIX desviada para conta de terceiros;Procedente;2026.Q1
+BCB-0019;12.345.678/0001-90;Banco Modelo S.A.;26/02/2026;PIX - desvio de chave;Estorno nao realizado apos transferencia indevida via PIX;Procedente;2026.Q1
+BCB-0020;12.345.678/0001-90;Banco Modelo S.A.;30/03/2026;PIX - desvio de chave;Recusa em ressarcimento de PIX por golpe;Procedente;2026.Q1
+BCB-0021;12.345.678/0001-90;Banco Modelo S.A.;29/03/2026;PIX - desvio de chave;Transacao PIX nao reconhecida pelo titular;Procedente;2026.Q1
+BCB-0022;12.345.678/0001-90;Banco Modelo S.A.;25/02/2026;PIX - desvio de chave;Falha em validacao de chave PIX duplicada;Procedente;2026.Q1
+BCB-0023;12.345.678/0001-90;Banco Modelo S.A.;08/03/2026;PIX - desvio de chave;Estorno nao realizado apos transferencia indevida via PIX;Procedente;2026.Q1
+BCB-0024;12.345.678/0001-90;Banco Modelo S.A.;11/02/2026;PIX - desvio de chave;Falha em validacao de chave PIX duplicada;Procedente;2026.Q1
+BCB-0025;12.345.678/0001-90;Banco Modelo S.A.;26/03/2026;PIX - desvio de chave;Recusa em ressarcimento de PIX por golpe;Procedente;2026.Q1
+BCB-0026;12.345.678/0001-90;Banco Modelo S.A.;26/03/2026;Cartao de credito - cobranca indevida;Compra nao reconhecida no exterior;Procedente;2026.Q1
+BCB-0027;12.345.678/0001-90;Banco Modelo S.A.;06/11/2025;Cartao de credito - cobranca indevida;Compra nao reconhecida no exterior;Procedente;2025.Q4
+BCB-0028;12.345.678/0001-90;Banco Modelo S.A.;19/11/2025;Cartao de credito - cobranca indevida;Aumento unilateral de limite;Procedente;2025.Q4
+BCB-0029;12.345.678/0001-90;Banco Modelo S.A.;17/10/2025;Cartao de credito - cobranca indevida;Cobranca de anuidade nao acordada;Procedente;2025.Q4
+BCB-0030;12.345.678/0001-90;Banco Modelo S.A.;04/04/2026;Cartao de credito - cobranca indevida;Aumento unilateral de limite;Procedente;2026.Q2
+BCB-0031;12.345.678/0001-90;Banco Modelo S.A.;31/01/2026;Cartao de credito - cobranca indevida;Cobranca de anuidade nao acordada;Procedente;2026.Q1
+BCB-0032;12.345.678/0001-90;Banco Modelo S.A.;15/02/2026;Cartao de credito - cobranca indevida;Cobranca de anuidade nao acordada;Procedente;2026.Q1
+BCB-0033;12.345.678/0001-90;Banco Modelo S.A.;08/01/2026;Cartao de credito - cobranca indevida;Compra nao reconhecida no exterior;Procedente;2026.Q1
+BCB-0034;12.345.678/0001-90;Banco Modelo S.A.;20/12/2025;Cartao de credito - clonagem/fraude;Compra nao reconhecida no exterior;Procedente;2025.Q4
+BCB-0035;12.345.678/0001-90;Banco Modelo S.A.;05/03/2026;Cartao de credito - clonagem/fraude;Compra nao reconhecida no exterior;Procedente;2026.Q1
+BCB-0036;12.345.678/0001-90;Banco Modelo S.A.;15/01/2026;Cartao de credito - clonagem/fraude;Aumento unilateral de limite;Procedente;2026.Q1
+BCB-0037;12.345.678/0001-90;Banco Modelo S.A.;26/10/2025;Cartao de credito - clonagem/fraude;Compra nao reconhecida no exterior;Procedente;2025.Q4
+BCB-0038;12.345.678/0001-90;Banco Modelo S.A.;18/10/2025;Cartao de credito - clonagem/fraude;Cobranca de anuidade nao acordada;Procedente;2025.Q4
+BCB-0039;12.345.678/0001-90;Banco Modelo S.A.;11/11/2025;Cartao de credito - clonagem/fraude;Aumento unilateral de limite;Procedente;2025.Q4
+BCB-0040;12.345.678/0001-90;Banco Modelo S.A.;28/09/2025;LGPD - tratamento de dados;Acesso indevido a base de cadastro;Procedente;2025.Q3
+BCB-0041;12.345.678/0001-90;Banco Modelo S.A.;22/10/2025;LGPD - tratamento de dados;Falha em informar incidente de seguranca em prazo razoavel;Procedente;2025.Q4
+BCB-0042;12.345.678/0001-90;Banco Modelo S.A.;13/12/2025;LGPD - tratamento de dados;Recusa em atender solicitacao de exclusao (LGPD art. 18);Procedente;2025.Q4
+BCB-0043;12.345.678/0001-90;Banco Modelo S.A.;10/11/2025;LGPD - tratamento de dados;Acesso indevido a base de cadastro;Procedente;2025.Q4
+BCB-0044;12.345.678/0001-90;Banco Modelo S.A.;04/11/2025;LGPD - tratamento de dados;Recusa em atender solicitacao de exclusao (LGPD art. 18);Procedente;2025.Q4
+BCB-0045;12.345.678/0001-90;Banco Modelo S.A.;23/01/2026;LGPD - tratamento de dados;Acesso indevido a base de cadastro;Procedente;2026.Q1
+BCB-0046;12.345.678/0001-90;Banco Modelo S.A.;26/01/2026;LGPD - tratamento de dados;Recusa em atender solicitacao de exclusao (LGPD art. 18);Procedente;2026.Q1
+BCB-0047;12.345.678/0001-90;Banco Modelo S.A.;23/02/2026;LGPD - tratamento de dados;Recusa em atender solicitacao de exclusao (LGPD art. 18);Procedente;2026.Q1
+BCB-0048;12.345.678/0001-90;Banco Modelo S.A.;07/04/2026;LGPD - tratamento de dados;Acesso indevido a base de cadastro;Procedente;2026.Q2
+BCB-0049;12.345.678/0001-90;Banco Modelo S.A.;02/02/2026;LGPD - tratamento de dados;Recusa em atender solicitacao de exclusao (LGPD art. 18);Procedente;2026.Q1
+BCB-0050;12.345.678/0001-90;Banco Modelo S.A.;19/03/2026;LGPD - tratamento de dados;Falha em informar incidente de seguranca em prazo razoavel;Procedente;2026.Q1
+BCB-0051;12.345.678/0001-90;Banco Modelo S.A.;24/02/2026;LGPD - tratamento de dados;Falha em informar incidente de seguranca em prazo razoavel;Procedente;2026.Q1
+BCB-0052;12.345.678/0001-90;Banco Modelo S.A.;28/03/2026;LGPD - tratamento de dados;Recusa em atender solicitacao de exclusao (LGPD art. 18);Procedente;2026.Q1
+BCB-0053;12.345.678/0001-90;Banco Modelo S.A.;29/03/2026;LGPD - tratamento de dados;Acesso indevido a base de cadastro;Procedente;2026.Q1
+BCB-0054;12.345.678/0001-90;Banco Modelo S.A.;23/08/2025;Sigilo bancario;Quebra de sigilo apos requisicao judicial sem fundamentacao adequada;Procedente;2025.Q3
+BCB-0055;12.345.678/0001-90;Banco Modelo S.A.;09/10/2025;Sigilo bancario;Quebra de sigilo apos requisicao judicial sem fundamentacao adequada;Procedente;2025.Q4
+BCB-0056;12.345.678/0001-90;Banco Modelo S.A.;15/10/2025;Sigilo bancario;Quebra de sigilo apos requisicao judicial sem fundamentacao adequada;Procedente;2025.Q4
+BCB-0057;12.345.678/0001-90;Banco Modelo S.A.;23/01/2026;Conta corrente - debitos nao autorizados;Debito automatico nao autorizado pelo titular;Procedente;2026.Q1
+BCB-0058;12.345.678/0001-90;Banco Modelo S.A.;21/09/2025;Conta corrente - debitos nao autorizados;Debito automatico nao autorizado pelo titular;Procedente;2025.Q3
+BCB-0059;12.345.678/0001-90;Banco Modelo S.A.;02/11/2025;Conta corrente - debitos nao autorizados;Debito automatico nao autorizado pelo titular;Procedente;2025.Q4
+BCB-0060;12.345.678/0001-90;Banco Modelo S.A.;12/12/2025;Conta corrente - debitos nao autorizados;Debito automatico nao autorizado pelo titular;Procedente;2025.Q4
+BCB-0061;12.345.678/0001-90;Banco Modelo S.A.;14/08/2025;Conta corrente - debitos nao autorizados;Debito automatico nao autorizado pelo titular;Procedente;2025.Q3
+BCB-0062;12.345.678/0001-90;Banco Modelo S.A.;02/11/2025;Conta corrente - debitos nao autorizados;Debito automatico nao autorizado pelo titular;Procedente;2025.Q4
+BCB-0063;12.345.678/0001-90;Banco Modelo S.A.;19/12/2025;Conta corrente - debitos nao autorizados;Debito automatico nao autorizado pelo titular;Procedente;2025.Q4
+BCB-0064;12.345.678/0001-90;Banco Modelo S.A.;29/12/2025;Credito - juros e tarifas;Concessao de credito com juros divergentes do contratado;Procedente;2025.Q4
+BCB-0065;12.345.678/0001-90;Banco Modelo S.A.;24/02/2026;Credito - juros e tarifas;Refinanciamento com condicoes mais desfavoraveis sem aviso;Procedente;2026.Q1
+BCB-0066;12.345.678/0001-90;Banco Modelo S.A.;25/11/2025;Credito - juros e tarifas;Concessao de credito com juros divergentes do contratado;Procedente;2025.Q4
+BCB-0067;12.345.678/0001-90;Banco Modelo S.A.;19/09/2025;Credito - juros e tarifas;Concessao de credito com juros divergentes do contratado;Procedente;2025.Q3
+BCB-0068;12.345.678/0001-90;Banco Modelo S.A.;23/08/2025;Credito - juros e tarifas;Concessao de credito com juros divergentes do contratado;Procedente;2025.Q3
+BCB-0069;12.345.678/0001-90;Banco Modelo S.A.;20/02/2026;Credito - juros e tarifas;Refinanciamento com condicoes mais desfavoraveis sem aviso;Procedente;2026.Q1
+BCB-0070;12.345.678/0001-90;Banco Modelo S.A.;19/02/2026;Credito - oferta inadequada;Oferta de produto nao alinhado ao perfil declarado;Procedente;2026.Q1
+BCB-0071;12.345.678/0001-90;Banco Modelo S.A.;13/12/2025;Credito - oferta inadequada;Oferta de produto nao alinhado ao perfil declarado;Procedente;2025.Q4
+BCB-0072;12.345.678/0001-90;Banco Modelo S.A.;30/10/2025;Credito - oferta inadequada;Oferta de produto nao alinhado ao perfil declarado;Procedente;2025.Q4
+BCB-0073;12.345.678/0001-90;Banco Modelo S.A.;15/03/2026;Atendimento - prazo de resposta;Resposta fora do prazo regulamentar de 15 dias;Procedente;2026.Q1
+BCB-0074;12.345.678/0001-90;Banco Modelo S.A.;23/12/2025;Atendimento - prazo de resposta;Resposta fora do prazo regulamentar de 15 dias;Procedente;2025.Q4
+BCB-0075;12.345.678/0001-90;Banco Modelo S.A.;24/12/2025;Atendimento - prazo de resposta;Resposta fora do prazo regulamentar de 15 dias;Procedente;2025.Q4
+BCB-0076;12.345.678/0001-90;Banco Modelo S.A.;30/10/2025;Atendimento - prazo de resposta;Resposta fora do prazo regulamentar de 15 dias;Procedente;2025.Q4
+BCB-0077;12.345.678/0001-90;Banco Modelo S.A.;02/12/2025;Atendimento - prazo de resposta;Resposta fora do prazo regulamentar de 15 dias;Procedente;2025.Q4
+BCB-0078;12.345.678/0001-90;Banco Modelo S.A.;17/10/2025;Atendimento - acessibilidade;Atendimento sem acessibilidade adequada;Procedente;2025.Q4
+BCB-0079;12.345.678/0001-90;Banco Modelo S.A.;27/12/2025;Atendimento - acessibilidade;Atendimento sem acessibilidade adequada;Procedente;2025.Q4
+BCB-0080;12.345.678/0001-90;Banco Modelo S.A.;11/10/2025;Cambio - operacao;Demora em liberacao de operacao de cambio com documentacao completa;Procedente;2025.Q4
+BCB-0081;12.345.678/0001-90;Banco Modelo S.A.;24/07/2025;Cambio - operacao;Demora em liberacao de operacao de cambio com documentacao completa;Procedente;2025.Q3
+BCB-0082;12.345.678/0001-90;Banco Modelo S.A.;27/02/2026;Cambio - operacao;Demora em liberacao de operacao de cambio com documentacao completa;Procedente;2026.Q1

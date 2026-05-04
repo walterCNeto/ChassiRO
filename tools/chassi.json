@@ -1,0 +1,7364 @@
+{
+  "_metadata": {
+    "version": "0.1.0",
+    "released_at": "2026-04-30T15:47:02.226414-03:00",
+    "exported_at": "2026-04-30T16:50:15.620831",
+    "notas": "Versao inicial do Chassi de Controles Internos.\n\nCobertura:\n- 12 reguladores\n- 25 tipos de entidade\n- 9 segmentos prudenciais (S1-S5 BCB + 4 SUSEP)\n- 38 atividades canonicas\n- ~30 normas estruturantes (Leis, CMN, BCB, CVM, SUSEP, ANBIMA)\n- ~140 processos (P0+P1 universal/bancario completos; P2 seletivos; P0+P1 demais nucleos)\n- ~70 riscos (R0+R1 universal completo; R0 demais nucleos)\n- Vinculos qualificados norma-processo, norma-risco e processo-risco\n\nAtencao: numeros, datas e status de normas devem ser revalidados contra\na base oficial dos reguladores antes de uso operacional.\n\nPendentes para v0.2:\n- P3/P4 detalhados com controles-modelo\n- Biblioteca de KRIs por risco\n- Top-150 normas BACEN incluindo cartas-circulares\n- Integracao com BacenProcedentes para indicadores de denuncia"
+  },
+  "reguladores": [
+    {
+      "id": "REG_CMN",
+      "nome": "Conselho MonetÃ¡rio Nacional",
+      "natureza": "normativo_superior",
+      "instrumento": "ResoluÃ§Ã£o CMN",
+      "descricao": "Ã“rgÃ£o superior do SFN. Edita normas estruturantes do SFN.",
+      "site": "https://www.bcb.gov.br/estabilidadefinanceira/buscanormas",
+      "ativo": true,
+      "created_at": "2026-04-30T15:46:34.042341-03:00"
+    },
+    {
+      "id": "REG_BCB",
+      "nome": "Banco Central do Brasil",
+      "natureza": "normativo_supervisao",
+      "instrumento": "ResoluÃ§Ã£o BCB / Circular / Carta-Circular",
+      "descricao": "Autarquia normativa e supervisora do SFN.",
+      "site": "https://www.bcb.gov.br",
+      "ativo": true,
+      "created_at": "2026-04-30T15:46:34.042341-03:00"
+    },
+    {
+      "id": "REG_CVM",
+      "nome": "ComissÃ£o de Valores MobiliÃ¡rios",
+      "natureza": "normativo_supervisao",
+      "instrumento": "ResoluÃ§Ã£o CVM",
+      "descricao": "Autarquia normativa e supervisora do mercado de valores mobiliÃ¡rios.",
+      "site": "https://www.gov.br/cvm",
+      "ativo": true,
+      "created_at": "2026-04-30T15:46:34.042341-03:00"
+    },
+    {
+      "id": "REG_CNSP",
+      "nome": "Conselho Nacional de Seguros Privados",
+      "natureza": "normativo_superior",
+      "instrumento": "ResoluÃ§Ã£o CNSP",
+      "descricao": "Ã“rgÃ£o superior do SNSP.",
+      "site": "https://www.gov.br/cnsp",
+      "ativo": true,
+      "created_at": "2026-04-30T15:46:34.042341-03:00"
+    },
+    {
+      "id": "REG_SUSEP",
+      "nome": "SuperintendÃªncia de Seguros Privados",
+      "natureza": "normativo_supervisao",
+      "instrumento": "Circular SUSEP",
+      "descricao": "Autarquia normativa e supervisora do SNSP.",
+      "site": "https://www.gov.br/susep",
+      "ativo": true,
+      "created_at": "2026-04-30T15:46:34.042341-03:00"
+    },
+    {
+      "id": "REG_PREVIC",
+      "nome": "SuperintendÃªncia Nacional de PrevidÃªncia Complementar",
+      "natureza": "normativo_supervisao",
+      "instrumento": "InstruÃ§Ã£o PREVIC",
+      "descricao": "Autarquia supervisora das EFPCs.",
+      "site": "https://www.gov.br/previc",
+      "ativo": true,
+      "created_at": "2026-04-30T15:46:34.042341-03:00"
+    },
+    {
+      "id": "REG_CNPC",
+      "nome": "Conselho Nacional de PrevidÃªncia Complementar",
+      "natureza": "normativo_superior",
+      "instrumento": "ResoluÃ§Ã£o CNPC",
+      "descricao": "Ã“rgÃ£o superior do regime de previdÃªncia complementar fechada.",
+      "site": null,
+      "ativo": true,
+      "created_at": "2026-04-30T15:46:34.042341-03:00"
+    },
+    {
+      "id": "REG_COAF",
+      "nome": "Conselho de Controle de Atividades Financeiras",
+      "natureza": "uif",
+      "instrumento": "ResoluÃ§Ã£o COAF",
+      "descricao": "Unidade de InteligÃªncia Financeira do Brasil. Recebe RIFs.",
+      "site": "https://www.gov.br/coaf",
+      "ativo": true,
+      "created_at": "2026-04-30T15:46:34.042341-03:00"
+    },
+    {
+      "id": "REG_ANPD",
+      "nome": "Autoridade Nacional de ProteÃ§Ã£o de Dados",
+      "natureza": "autoridade_dados",
+      "instrumento": "ResoluÃ§Ã£o ANPD",
+      "descricao": "Autoridade fiscalizadora da LGPD.",
+      "site": "https://www.gov.br/anpd",
+      "ativo": true,
+      "created_at": "2026-04-30T15:46:34.042341-03:00"
+    },
+    {
+      "id": "REG_B3",
+      "nome": "B3 S.A. - Brasil, Bolsa, BalcÃ£o",
+      "natureza": "auto_regulador",
+      "instrumento": "OfÃ­cio Circular B3",
+      "descricao": "Bolsa de valores e auto-reguladora de mercado.",
+      "site": "https://www.b3.com.br",
+      "ativo": true,
+      "created_at": "2026-04-30T15:46:34.042341-03:00"
+    },
+    {
+      "id": "REG_BSM",
+      "nome": "BSM SupervisÃ£o de Mercados",
+      "natureza": "auto_regulador",
+      "instrumento": "OfÃ­cio BSM",
+      "descricao": "Auto-reguladora dos participantes do mercado B3.",
+      "site": "https://www.bsmsupervisao.com.br",
+      "ativo": true,
+      "created_at": "2026-04-30T15:46:34.042341-03:00"
+    },
+    {
+      "id": "REG_ANBIMA",
+      "nome": "AssociaÃ§Ã£o Brasileira das Entidades dos Mercados Financeiro e de Capitais",
+      "natureza": "associativo",
+      "instrumento": "CÃ³digos ANBIMA",
+      "descricao": "Auto-regulaÃ§Ã£o voluntÃ¡ria via CÃ³digos.",
+      "site": "https://www.anbima.com.br",
+      "ativo": true,
+      "created_at": "2026-04-30T15:46:34.042341-03:00"
+    }
+  ],
+  "tipos_entidade": [
+    {
+      "id": "ENT_BANCO_MULTIPLO",
+      "nome": "Banco MÃºltiplo",
+      "grupo": "bancario",
+      "descricao": "InstituiÃ§Ã£o financeira com pelo menos duas carteiras (comercial obrigatÃ³ria se houver depÃ³sito Ã  vista).",
+      "ativo": true
+    },
+    {
+      "id": "ENT_BANCO_COMERCIAL",
+      "nome": "Banco Comercial",
+      "grupo": "bancario",
+      "descricao": "CaptaÃ§Ã£o de depÃ³sitos Ã  vista e operaÃ§Ãµes de crÃ©dito de curto/mÃ©dio prazo.",
+      "ativo": true
+    },
+    {
+      "id": "ENT_BANCO_INVESTIMENTO",
+      "nome": "Banco de Investimento",
+      "grupo": "bancario",
+      "descricao": "OperaÃ§Ãµes de financiamento de longo prazo, underwriting, M&A.",
+      "ativo": true
+    },
+    {
+      "id": "ENT_BANCO_DESENV",
+      "nome": "Banco de Desenvolvimento",
+      "grupo": "bancario",
+      "descricao": "Banco estadual ou federal voltado a financiamento de desenvolvimento.",
+      "ativo": true
+    },
+    {
+      "id": "ENT_BANCO_COOP",
+      "nome": "Banco Cooperativo",
+      "grupo": "bancario",
+      "descricao": "Banco controlado por cooperativas de crÃ©dito.",
+      "ativo": true
+    },
+    {
+      "id": "ENT_CAIXA_ECON",
+      "nome": "Caixa EconÃ´mica",
+      "grupo": "bancario",
+      "descricao": "InstituiÃ§Ã£o com atribuiÃ§Ãµes especiais (CEF Ã© Ãºnica).",
+      "ativo": true
+    },
+    {
+      "id": "ENT_BANCO_CAMBIO",
+      "nome": "Banco de CÃ¢mbio",
+      "grupo": "bancario",
+      "descricao": "InstituiÃ§Ã£o especializada em cÃ¢mbio.",
+      "ativo": true
+    },
+    {
+      "id": "ENT_SCFI",
+      "nome": "Sociedade de CrÃ©dito, Financiamento e Investimento",
+      "grupo": "bancario",
+      "descricao": "Conhecida como financeira. CrÃ©dito ao consumidor.",
+      "ativo": true
+    },
+    {
+      "id": "ENT_SCD",
+      "nome": "Sociedade de CrÃ©dito Direto",
+      "grupo": "bancario",
+      "descricao": "Fintech de crÃ©dito (Res CMN 4.656/2018).",
+      "ativo": true
+    },
+    {
+      "id": "ENT_SEP",
+      "nome": "Sociedade de EmprÃ©stimo Entre Pessoas",
+      "grupo": "bancario",
+      "descricao": "Plataforma de peer-to-peer lending regulada (Res CMN 4.656/2018).",
+      "ativo": true
+    },
+    {
+      "id": "ENT_COOP_CRED",
+      "nome": "Cooperativa de CrÃ©dito",
+      "grupo": "bancario",
+      "descricao": "Sociedade cooperativa que opera crÃ©dito a associados.",
+      "ativo": true
+    },
+    {
+      "id": "ENT_IP",
+      "nome": "InstituiÃ§Ã£o de Pagamento",
+      "grupo": "bancario",
+      "descricao": "Habilitada a emitir, credenciar ou prover serviÃ§os de pagamento.",
+      "ativo": true
+    },
+    {
+      "id": "ENT_AGENCIA_FOMENTO",
+      "nome": "AgÃªncia de Fomento",
+      "grupo": "bancario",
+      "descricao": "InstituiÃ§Ã£o estadual de fomento ao desenvolvimento.",
+      "ativo": true
+    },
+    {
+      "id": "ENT_ARRENDAMENTO",
+      "nome": "Sociedade de Arrendamento Mercantil",
+      "grupo": "bancario",
+      "descricao": "OperaÃ§Ãµes de leasing.",
+      "ativo": true
+    },
+    {
+      "id": "ENT_DTVM",
+      "nome": "Distribuidora de TÃ­tulos e Valores MobiliÃ¡rios",
+      "grupo": "mercado_capitais",
+      "descricao": "DistribuiÃ§Ã£o e intermediaÃ§Ã£o. Reguladora primÃ¡ria BCB; CVM secundÃ¡ria.",
+      "ativo": true
+    },
+    {
+      "id": "ENT_CTVM",
+      "nome": "Corretora de TÃ­tulos e Valores MobiliÃ¡rios",
+      "grupo": "mercado_capitais",
+      "descricao": "Corretagem em bolsa e balcÃ£o organizado.",
+      "ativo": true
+    },
+    {
+      "id": "ENT_ADM_CARTEIRAS",
+      "nome": "Administrador / Gestor de Recursos",
+      "grupo": "mercado_capitais",
+      "descricao": "Categoria 1 (gestor) ou Categoria 2 (administrador fiduciÃ¡rio).",
+      "ativo": true
+    },
+    {
+      "id": "ENT_CUSTODIANTE",
+      "nome": "Custodiante Qualificado",
+      "grupo": "mercado_capitais",
+      "descricao": "CustÃ³dia de valores mobiliÃ¡rios sob registro CVM.",
+      "ativo": true
+    },
+    {
+      "id": "ENT_ESCRITURADOR",
+      "nome": "Escriturador",
+      "grupo": "mercado_capitais",
+      "descricao": "EscrituraÃ§Ã£o de ativos (aÃ§Ãµes, debÃªntures, cotas).",
+      "ativo": true
+    },
+    {
+      "id": "ENT_SEGURADORA",
+      "nome": "Sociedade Seguradora",
+      "grupo": "seguros",
+      "descricao": "Sociedade autorizada a operar seguros.",
+      "ativo": true
+    },
+    {
+      "id": "ENT_RESSEG_LOCAL",
+      "nome": "Resseguradora Local",
+      "grupo": "seguros",
+      "descricao": "Resseguradora constituÃ­da no Brasil.",
+      "ativo": true
+    },
+    {
+      "id": "ENT_CAPITALIZACAO",
+      "nome": "Sociedade de CapitalizaÃ§Ã£o",
+      "grupo": "capitalizacao",
+      "descricao": "TÃ­tulos de capitalizaÃ§Ã£o (Lei 11.795/08 e correlatas).",
+      "ativo": true
+    },
+    {
+      "id": "ENT_EAPC",
+      "nome": "Entidade Aberta de PrevidÃªncia Complementar",
+      "grupo": "previdencia",
+      "descricao": "PrevidÃªncia complementar aberta (PGBL/VGBL).",
+      "ativo": true
+    },
+    {
+      "id": "ENT_EFPC",
+      "nome": "Entidade Fechada de PrevidÃªncia Complementar",
+      "grupo": "previdencia",
+      "descricao": "Fundos de pensÃ£o patrocinados.",
+      "ativo": true
+    },
+    {
+      "id": "ENT_CONGLOMERADO",
+      "nome": "Conglomerado Prudencial",
+      "grupo": "conglomerado",
+      "descricao": "Entidade lÃ³gica que consolida o grupo (Res CMN 4.553/2017).",
+      "ativo": true
+    }
+  ],
+  "tipo_entidade_regulador": [
+    {
+      "tipo_entidade_id": "ENT_BANCO_MULTIPLO",
+      "regulador_id": "REG_BCB",
+      "papel": "primario"
+    },
+    {
+      "tipo_entidade_id": "ENT_BANCO_MULTIPLO",
+      "regulador_id": "REG_CMN",
+      "papel": "primario"
+    },
+    {
+      "tipo_entidade_id": "ENT_BANCO_MULTIPLO",
+      "regulador_id": "REG_COAF",
+      "papel": "secundario"
+    },
+    {
+      "tipo_entidade_id": "ENT_BANCO_MULTIPLO",
+      "regulador_id": "REG_ANPD",
+      "papel": "secundario"
+    },
+    {
+      "tipo_entidade_id": "ENT_BANCO_COMERCIAL",
+      "regulador_id": "REG_BCB",
+      "papel": "primario"
+    },
+    {
+      "tipo_entidade_id": "ENT_BANCO_COMERCIAL",
+      "regulador_id": "REG_CMN",
+      "papel": "primario"
+    },
+    {
+      "tipo_entidade_id": "ENT_BANCO_COMERCIAL",
+      "regulador_id": "REG_COAF",
+      "papel": "secundario"
+    },
+    {
+      "tipo_entidade_id": "ENT_BANCO_COMERCIAL",
+      "regulador_id": "REG_ANPD",
+      "papel": "secundario"
+    },
+    {
+      "tipo_entidade_id": "ENT_BANCO_INVESTIMENTO",
+      "regulador_id": "REG_BCB",
+      "papel": "primario"
+    },
+    {
+      "tipo_entidade_id": "ENT_BANCO_INVESTIMENTO",
+      "regulador_id": "REG_CMN",
+      "papel": "primario"
+    },
+    {
+      "tipo_entidade_id": "ENT_BANCO_INVESTIMENTO",
+      "regulador_id": "REG_CVM",
+      "papel": "secundario"
+    },
+    {
+      "tipo_entidade_id": "ENT_BANCO_INVESTIMENTO",
+      "regulador_id": "REG_COAF",
+      "papel": "secundario"
+    },
+    {
+      "tipo_entidade_id": "ENT_BANCO_INVESTIMENTO",
+      "regulador_id": "REG_ANPD",
+      "papel": "secundario"
+    },
+    {
+      "tipo_entidade_id": "ENT_BANCO_DESENV",
+      "regulador_id": "REG_BCB",
+      "papel": "primario"
+    },
+    {
+      "tipo_entidade_id": "ENT_BANCO_DESENV",
+      "regulador_id": "REG_CMN",
+      "papel": "primario"
+    },
+    {
+      "tipo_entidade_id": "ENT_BANCO_COOP",
+      "regulador_id": "REG_BCB",
+      "papel": "primario"
+    },
+    {
+      "tipo_entidade_id": "ENT_BANCO_COOP",
+      "regulador_id": "REG_CMN",
+      "papel": "primario"
+    },
+    {
+      "tipo_entidade_id": "ENT_CAIXA_ECON",
+      "regulador_id": "REG_BCB",
+      "papel": "primario"
+    },
+    {
+      "tipo_entidade_id": "ENT_CAIXA_ECON",
+      "regulador_id": "REG_CMN",
+      "papel": "primario"
+    },
+    {
+      "tipo_entidade_id": "ENT_BANCO_CAMBIO",
+      "regulador_id": "REG_BCB",
+      "papel": "primario"
+    },
+    {
+      "tipo_entidade_id": "ENT_BANCO_CAMBIO",
+      "regulador_id": "REG_CMN",
+      "papel": "primario"
+    },
+    {
+      "tipo_entidade_id": "ENT_SCFI",
+      "regulador_id": "REG_BCB",
+      "papel": "primario"
+    },
+    {
+      "tipo_entidade_id": "ENT_SCFI",
+      "regulador_id": "REG_CMN",
+      "papel": "primario"
+    },
+    {
+      "tipo_entidade_id": "ENT_SCD",
+      "regulador_id": "REG_BCB",
+      "papel": "primario"
+    },
+    {
+      "tipo_entidade_id": "ENT_SCD",
+      "regulador_id": "REG_CMN",
+      "papel": "primario"
+    },
+    {
+      "tipo_entidade_id": "ENT_SEP",
+      "regulador_id": "REG_BCB",
+      "papel": "primario"
+    },
+    {
+      "tipo_entidade_id": "ENT_SEP",
+      "regulador_id": "REG_CMN",
+      "papel": "primario"
+    },
+    {
+      "tipo_entidade_id": "ENT_COOP_CRED",
+      "regulador_id": "REG_BCB",
+      "papel": "primario"
+    },
+    {
+      "tipo_entidade_id": "ENT_COOP_CRED",
+      "regulador_id": "REG_CMN",
+      "papel": "primario"
+    },
+    {
+      "tipo_entidade_id": "ENT_IP",
+      "regulador_id": "REG_BCB",
+      "papel": "primario"
+    },
+    {
+      "tipo_entidade_id": "ENT_IP",
+      "regulador_id": "REG_CMN",
+      "papel": "primario"
+    },
+    {
+      "tipo_entidade_id": "ENT_AGENCIA_FOMENTO",
+      "regulador_id": "REG_BCB",
+      "papel": "primario"
+    },
+    {
+      "tipo_entidade_id": "ENT_ARRENDAMENTO",
+      "regulador_id": "REG_BCB",
+      "papel": "primario"
+    },
+    {
+      "tipo_entidade_id": "ENT_DTVM",
+      "regulador_id": "REG_BCB",
+      "papel": "primario"
+    },
+    {
+      "tipo_entidade_id": "ENT_DTVM",
+      "regulador_id": "REG_CVM",
+      "papel": "secundario"
+    },
+    {
+      "tipo_entidade_id": "ENT_DTVM",
+      "regulador_id": "REG_B3",
+      "papel": "secundario"
+    },
+    {
+      "tipo_entidade_id": "ENT_DTVM",
+      "regulador_id": "REG_BSM",
+      "papel": "secundario"
+    },
+    {
+      "tipo_entidade_id": "ENT_DTVM",
+      "regulador_id": "REG_ANBIMA",
+      "papel": "secundario"
+    },
+    {
+      "tipo_entidade_id": "ENT_CTVM",
+      "regulador_id": "REG_BCB",
+      "papel": "primario"
+    },
+    {
+      "tipo_entidade_id": "ENT_CTVM",
+      "regulador_id": "REG_CVM",
+      "papel": "secundario"
+    },
+    {
+      "tipo_entidade_id": "ENT_CTVM",
+      "regulador_id": "REG_B3",
+      "papel": "secundario"
+    },
+    {
+      "tipo_entidade_id": "ENT_CTVM",
+      "regulador_id": "REG_BSM",
+      "papel": "secundario"
+    },
+    {
+      "tipo_entidade_id": "ENT_CTVM",
+      "regulador_id": "REG_ANBIMA",
+      "papel": "secundario"
+    },
+    {
+      "tipo_entidade_id": "ENT_ADM_CARTEIRAS",
+      "regulador_id": "REG_CVM",
+      "papel": "primario"
+    },
+    {
+      "tipo_entidade_id": "ENT_ADM_CARTEIRAS",
+      "regulador_id": "REG_ANBIMA",
+      "papel": "secundario"
+    },
+    {
+      "tipo_entidade_id": "ENT_ADM_CARTEIRAS",
+      "regulador_id": "REG_COAF",
+      "papel": "secundario"
+    },
+    {
+      "tipo_entidade_id": "ENT_CUSTODIANTE",
+      "regulador_id": "REG_CVM",
+      "papel": "primario"
+    },
+    {
+      "tipo_entidade_id": "ENT_CUSTODIANTE",
+      "regulador_id": "REG_BCB",
+      "papel": "secundario"
+    },
+    {
+      "tipo_entidade_id": "ENT_ESCRITURADOR",
+      "regulador_id": "REG_CVM",
+      "papel": "primario"
+    },
+    {
+      "tipo_entidade_id": "ENT_ESCRITURADOR",
+      "regulador_id": "REG_B3",
+      "papel": "secundario"
+    },
+    {
+      "tipo_entidade_id": "ENT_SEGURADORA",
+      "regulador_id": "REG_SUSEP",
+      "papel": "primario"
+    },
+    {
+      "tipo_entidade_id": "ENT_SEGURADORA",
+      "regulador_id": "REG_CNSP",
+      "papel": "primario"
+    },
+    {
+      "tipo_entidade_id": "ENT_SEGURADORA",
+      "regulador_id": "REG_COAF",
+      "papel": "secundario"
+    },
+    {
+      "tipo_entidade_id": "ENT_SEGURADORA",
+      "regulador_id": "REG_ANPD",
+      "papel": "secundario"
+    },
+    {
+      "tipo_entidade_id": "ENT_RESSEG_LOCAL",
+      "regulador_id": "REG_SUSEP",
+      "papel": "primario"
+    },
+    {
+      "tipo_entidade_id": "ENT_RESSEG_LOCAL",
+      "regulador_id": "REG_CNSP",
+      "papel": "primario"
+    },
+    {
+      "tipo_entidade_id": "ENT_CAPITALIZACAO",
+      "regulador_id": "REG_SUSEP",
+      "papel": "primario"
+    },
+    {
+      "tipo_entidade_id": "ENT_CAPITALIZACAO",
+      "regulador_id": "REG_CNSP",
+      "papel": "primario"
+    },
+    {
+      "tipo_entidade_id": "ENT_EAPC",
+      "regulador_id": "REG_SUSEP",
+      "papel": "primario"
+    },
+    {
+      "tipo_entidade_id": "ENT_EAPC",
+      "regulador_id": "REG_CNSP",
+      "papel": "primario"
+    },
+    {
+      "tipo_entidade_id": "ENT_EFPC",
+      "regulador_id": "REG_PREVIC",
+      "papel": "primario"
+    },
+    {
+      "tipo_entidade_id": "ENT_EFPC",
+      "regulador_id": "REG_CNPC",
+      "papel": "primario"
+    }
+  ],
+  "segmentos": [
+    {
+      "id": "S1",
+      "regulador_id": "REG_BCB",
+      "nome": "S1 - BACEN",
+      "descricao": "ET >= 10% PIB ou atividade internacional relevante (Res CMN 4.553)",
+      "ordem": 1
+    },
+    {
+      "id": "S2",
+      "regulador_id": "REG_BCB",
+      "nome": "S2 - BACEN",
+      "descricao": "ET < 10% e >= 1% PIB sem atividade internacional relevante",
+      "ordem": 2
+    },
+    {
+      "id": "S3",
+      "regulador_id": "REG_BCB",
+      "nome": "S3 - BACEN",
+      "descricao": "ET < 1% e >= 0,1% PIB",
+      "ordem": 3
+    },
+    {
+      "id": "S4",
+      "regulador_id": "REG_BCB",
+      "nome": "S4 - BACEN",
+      "descricao": "ET < 0,1% PIB",
+      "ordem": 4
+    },
+    {
+      "id": "S5",
+      "regulador_id": "REG_BCB",
+      "nome": "S5 - BACEN",
+      "descricao": "Demais, sob estrutura simplificada de gestao de riscos",
+      "ordem": 5
+    },
+    {
+      "id": "SUS_GRANDE",
+      "regulador_id": "REG_SUSEP",
+      "nome": "Grande porte",
+      "descricao": "Seguradoras de grande porte (referencial)",
+      "ordem": 1
+    },
+    {
+      "id": "SUS_MEDIO",
+      "regulador_id": "REG_SUSEP",
+      "nome": "MÃ©dio porte",
+      "descricao": "Seguradoras de mÃ©dio porte (referencial)",
+      "ordem": 2
+    },
+    {
+      "id": "SUS_PEQUENO",
+      "regulador_id": "REG_SUSEP",
+      "nome": "Pequeno porte",
+      "descricao": "Seguradoras de pequeno porte (referencial)",
+      "ordem": 3
+    },
+    {
+      "id": "SUS_MICRO",
+      "regulador_id": "REG_SUSEP",
+      "nome": "Microporte",
+      "descricao": "Seguradoras de micro porte (referencial)",
+      "ordem": 4
+    }
+  ],
+  "atividades_canonicas": [
+    {
+      "id": "ATV_DEPOSITO_VISTA",
+      "nome": "DepÃ³sito Ã  vista",
+      "grupo": "captacao",
+      "descricao": null
+    },
+    {
+      "id": "ATV_DEPOSITO_PRAZO",
+      "nome": "DepÃ³sito a prazo (CDB, RDB)",
+      "grupo": "captacao",
+      "descricao": null
+    },
+    {
+      "id": "ATV_POUPANCA",
+      "nome": "Caderneta de poupanÃ§a",
+      "grupo": "captacao",
+      "descricao": null
+    },
+    {
+      "id": "ATV_LCI_LCA",
+      "nome": "LCI / LCA",
+      "grupo": "captacao",
+      "descricao": null
+    },
+    {
+      "id": "ATV_LF",
+      "nome": "Letra Financeira",
+      "grupo": "captacao",
+      "descricao": null
+    },
+    {
+      "id": "ATV_LIG",
+      "nome": "Letra ImobiliÃ¡ria Garantida",
+      "grupo": "captacao",
+      "descricao": null
+    },
+    {
+      "id": "ATV_CAPTACAO_EXTERIOR",
+      "nome": "CaptaÃ§Ã£o no exterior",
+      "grupo": "captacao",
+      "descricao": null
+    },
+    {
+      "id": "ATV_CREDITO_PF",
+      "nome": "CrÃ©dito pessoa fÃ­sica",
+      "grupo": "credito",
+      "descricao": null
+    },
+    {
+      "id": "ATV_CREDITO_PJ",
+      "nome": "CrÃ©dito pessoa jurÃ­dica",
+      "grupo": "credito",
+      "descricao": null
+    },
+    {
+      "id": "ATV_CREDITO_CONSIGNADO",
+      "nome": "CrÃ©dito consignado",
+      "grupo": "credito",
+      "descricao": null
+    },
+    {
+      "id": "ATV_CREDITO_VEICULAR",
+      "nome": "CrÃ©dito veicular",
+      "grupo": "credito",
+      "descricao": null
+    },
+    {
+      "id": "ATV_CREDITO_IMOBILIARIO",
+      "nome": "CrÃ©dito imobiliÃ¡rio (SFH/SFI)",
+      "grupo": "credito",
+      "descricao": null
+    },
+    {
+      "id": "ATV_CREDITO_RURAL",
+      "nome": "CrÃ©dito rural e agroindustrial",
+      "grupo": "credito",
+      "descricao": null
+    },
+    {
+      "id": "ATV_CARTAO_CREDITO",
+      "nome": "CartÃ£o de crÃ©dito (emissor)",
+      "grupo": "credito",
+      "descricao": null
+    },
+    {
+      "id": "ATV_LEASING",
+      "nome": "Arrendamento mercantil",
+      "grupo": "credito",
+      "descricao": null
+    },
+    {
+      "id": "ATV_CAMBIO_COMERCIAL",
+      "nome": "CÃ¢mbio comercial",
+      "grupo": "cambio",
+      "descricao": null
+    },
+    {
+      "id": "ATV_CAMBIO_FINANCEIRO",
+      "nome": "CÃ¢mbio financeiro",
+      "grupo": "cambio",
+      "descricao": null
+    },
+    {
+      "id": "ATV_CAMBIO_TURISMO",
+      "nome": "CÃ¢mbio turismo",
+      "grupo": "cambio",
+      "descricao": null
+    },
+    {
+      "id": "ATV_TRADE_FINANCE",
+      "nome": "Trade finance / cartas de crÃ©dito",
+      "grupo": "cambio",
+      "descricao": null
+    },
+    {
+      "id": "ATV_PIX",
+      "nome": "PIX",
+      "grupo": "pagamentos",
+      "descricao": null
+    },
+    {
+      "id": "ATV_TED_DOC",
+      "nome": "TED / DOC",
+      "grupo": "pagamentos",
+      "descricao": null
+    },
+    {
+      "id": "ATV_BOLETO",
+      "nome": "Boleto bancÃ¡rio",
+      "grupo": "pagamentos",
+      "descricao": null
+    },
+    {
+      "id": "ATV_CARTAO_CREDENCIADOR",
+      "nome": "CartÃµes (credenciador / sub-credenciador)",
+      "grupo": "pagamentos",
+      "descricao": null
+    },
+    {
+      "id": "ATV_OPEN_FINANCE",
+      "nome": "Open Finance",
+      "grupo": "pagamentos",
+      "descricao": null
+    },
+    {
+      "id": "ATV_TRADING_PROPRIO",
+      "nome": "Trading proprietÃ¡rio",
+      "grupo": "tesouraria",
+      "descricao": null
+    },
+    {
+      "id": "ATV_ALM",
+      "nome": "GestÃ£o de ativos e passivos",
+      "grupo": "tesouraria",
+      "descricao": null
+    },
+    {
+      "id": "ATV_DISTRIBUICAO_VM",
+      "nome": "DistribuiÃ§Ã£o de valores mobiliÃ¡rios",
+      "grupo": "mercado_capitais",
+      "descricao": null
+    },
+    {
+      "id": "ATV_GESTAO_RECURSOS",
+      "nome": "GestÃ£o de recursos (asset management)",
+      "grupo": "mercado_capitais",
+      "descricao": null
+    },
+    {
+      "id": "ATV_ADM_FIDUCIARIA",
+      "nome": "AdministraÃ§Ã£o fiduciÃ¡ria de fundos",
+      "grupo": "mercado_capitais",
+      "descricao": null
+    },
+    {
+      "id": "ATV_CUSTODIA_QUALIFICADA",
+      "nome": "CustÃ³dia qualificada",
+      "grupo": "mercado_capitais",
+      "descricao": null
+    },
+    {
+      "id": "ATV_ESCRITURACAO",
+      "nome": "EscrituraÃ§Ã£o de ativos",
+      "grupo": "mercado_capitais",
+      "descricao": null
+    },
+    {
+      "id": "ATV_RESEARCH",
+      "nome": "Research / anÃ¡lise de valores mobiliÃ¡rios",
+      "grupo": "mercado_capitais",
+      "descricao": null
+    },
+    {
+      "id": "ATV_FORMADOR_MERCADO",
+      "nome": "Formador de mercado",
+      "grupo": "mercado_capitais",
+      "descricao": null
+    },
+    {
+      "id": "ATV_SUBSCRICAO_VIDA",
+      "nome": "SubscriÃ§Ã£o de seguro de vida",
+      "grupo": "seguros",
+      "descricao": null
+    },
+    {
+      "id": "ATV_SUBSCRICAO_NAO_VIDA",
+      "nome": "SubscriÃ§Ã£o de seguro nÃ£o-vida (P&C)",
+      "grupo": "seguros",
+      "descricao": null
+    },
+    {
+      "id": "ATV_RESSEGURO",
+      "nome": "Resseguro",
+      "grupo": "seguros",
+      "descricao": null
+    },
+    {
+      "id": "ATV_CAPITALIZACAO",
+      "nome": "CapitalizaÃ§Ã£o",
+      "grupo": "seguros",
+      "descricao": null
+    },
+    {
+      "id": "ATV_PREVIDENCIA_ABERTA",
+      "nome": "PrevidÃªncia aberta (PGBL/VGBL)",
+      "grupo": "previdencia",
+      "descricao": null
+    },
+    {
+      "id": "ATV_PREVIDENCIA_FECHADA",
+      "nome": "PrevidÃªncia fechada (EFPC)",
+      "grupo": "previdencia",
+      "descricao": null
+    }
+  ],
+  "processos": [
+    {
+      "id": "P0.U.1",
+      "codigo": "P0.U.1",
+      "nome": "Governanca Corporativa e Estrategia",
+      "nivel": 0,
+      "nucleo": "U",
+      "parent_id": null,
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P0.U.2",
+      "codigo": "P0.U.2",
+      "nome": "Gestao Integrada de Riscos (GIR)",
+      "nivel": 0,
+      "nucleo": "U",
+      "parent_id": null,
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P0.U.3",
+      "codigo": "P0.U.3",
+      "nome": "Conformidade e Etica",
+      "nivel": 0,
+      "nucleo": "U",
+      "parent_id": null,
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P0.U.4",
+      "codigo": "P0.U.4",
+      "nome": "PLD-FT e Sancoes",
+      "nivel": 0,
+      "nucleo": "U",
+      "parent_id": null,
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P0.U.5",
+      "codigo": "P0.U.5",
+      "nome": "Auditoria Interna",
+      "nivel": 0,
+      "nucleo": "U",
+      "parent_id": null,
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P0.U.6",
+      "codigo": "P0.U.6",
+      "nome": "Recursos Humanos",
+      "nivel": 0,
+      "nucleo": "U",
+      "parent_id": null,
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P0.U.7",
+      "codigo": "P0.U.7",
+      "nome": "Tecnologia da Informacao",
+      "nivel": 0,
+      "nucleo": "U",
+      "parent_id": null,
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P0.U.8",
+      "codigo": "P0.U.8",
+      "nome": "Seguranca Cibernetica",
+      "nivel": 0,
+      "nucleo": "U",
+      "parent_id": null,
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P0.U.9",
+      "codigo": "P0.U.9",
+      "nome": "Continuidade de Negocio (BCM)",
+      "nivel": 0,
+      "nucleo": "U",
+      "parent_id": null,
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P0.U.10",
+      "codigo": "P0.U.10",
+      "nome": "Terceiros e Suprimentos",
+      "nivel": 0,
+      "nucleo": "U",
+      "parent_id": null,
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P0.U.11",
+      "codigo": "P0.U.11",
+      "nome": "Juridico e Contencioso",
+      "nivel": 0,
+      "nucleo": "U",
+      "parent_id": null,
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P0.U.12",
+      "codigo": "P0.U.12",
+      "nome": "Financeiro Proprio e Contabilidade",
+      "nivel": 0,
+      "nucleo": "U",
+      "parent_id": null,
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P0.U.13",
+      "codigo": "P0.U.13",
+      "nome": "Ouvidoria e Atendimento ao Cliente",
+      "nivel": 0,
+      "nucleo": "U",
+      "parent_id": null,
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P0.U.14",
+      "codigo": "P0.U.14",
+      "nome": "Comunicacao Institucional e Marketing",
+      "nivel": 0,
+      "nucleo": "U",
+      "parent_id": null,
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P0.U.15",
+      "codigo": "P0.U.15",
+      "nome": "Privacidade e Protecao de Dados (LGPD)",
+      "nivel": 0,
+      "nucleo": "U",
+      "parent_id": null,
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.U.1.1",
+      "codigo": "P1.U.1.1",
+      "nome": "Estrutura de governanca (conselhos, comites, alcadas)",
+      "nivel": 1,
+      "nucleo": "U",
+      "parent_id": "P0.U.1",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.U.1.2",
+      "codigo": "P1.U.1.2",
+      "nome": "Planejamento estrategico",
+      "nivel": 1,
+      "nucleo": "U",
+      "parent_id": "P0.U.1",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.U.1.3",
+      "codigo": "P1.U.1.3",
+      "nome": "Apetite ao risco (RAS)",
+      "nivel": 1,
+      "nucleo": "U",
+      "parent_id": "P0.U.1",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.U.1.4",
+      "codigo": "P1.U.1.4",
+      "nome": "Remuneracao e incentivos",
+      "nivel": 1,
+      "nucleo": "U",
+      "parent_id": "P0.U.1",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.U.1.5",
+      "codigo": "P1.U.1.5",
+      "nome": "Sucessao e desenvolvimento de lideranca",
+      "nivel": 1,
+      "nucleo": "U",
+      "parent_id": "P0.U.1",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.U.2.1",
+      "codigo": "P1.U.2.1",
+      "nome": "Identificacao de riscos",
+      "nivel": 1,
+      "nucleo": "U",
+      "parent_id": "P0.U.2",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.U.2.2",
+      "codigo": "P1.U.2.2",
+      "nome": "Avaliacao e mensuracao",
+      "nivel": 1,
+      "nucleo": "U",
+      "parent_id": "P0.U.2",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.U.2.3",
+      "codigo": "P1.U.2.3",
+      "nome": "Mitigacao e tratamento",
+      "nivel": 1,
+      "nucleo": "U",
+      "parent_id": "P0.U.2",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.U.2.4",
+      "codigo": "P1.U.2.4",
+      "nome": "Monitoramento (KRIs)",
+      "nivel": 1,
+      "nucleo": "U",
+      "parent_id": "P0.U.2",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.U.2.5",
+      "codigo": "P1.U.2.5",
+      "nome": "Reporte de riscos",
+      "nivel": 1,
+      "nucleo": "U",
+      "parent_id": "P0.U.2",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.U.2.6",
+      "codigo": "P1.U.2.6",
+      "nome": "Plano de Recuperacao e resolucao",
+      "nivel": 1,
+      "nucleo": "U",
+      "parent_id": "P0.U.2",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.U.2.7",
+      "codigo": "P1.U.2.7",
+      "nome": "ICAAP/ILAAP/ORSA",
+      "nivel": 1,
+      "nucleo": "U",
+      "parent_id": "P0.U.2",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.U.3.1",
+      "codigo": "P1.U.3.1",
+      "nome": "Mapeamento e monitoramento normativo",
+      "nivel": 1,
+      "nucleo": "U",
+      "parent_id": "P0.U.3",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.U.3.2",
+      "codigo": "P1.U.3.2",
+      "nome": "Avaliacao de aderencia (compliance reviews)",
+      "nivel": 1,
+      "nucleo": "U",
+      "parent_id": "P0.U.3",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.U.3.3",
+      "codigo": "P1.U.3.3",
+      "nome": "Programa de integridade e etica",
+      "nivel": 1,
+      "nucleo": "U",
+      "parent_id": "P0.U.3",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.U.3.4",
+      "codigo": "P1.U.3.4",
+      "nome": "Canal de denuncias (whistleblowing)",
+      "nivel": 1,
+      "nucleo": "U",
+      "parent_id": "P0.U.3",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.U.3.5",
+      "codigo": "P1.U.3.5",
+      "nome": "Conflito de interesses e partes relacionadas",
+      "nivel": 1,
+      "nucleo": "U",
+      "parent_id": "P0.U.3",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.U.3.6",
+      "codigo": "P1.U.3.6",
+      "nome": "Conduta de mercado e prevencao a abusos",
+      "nivel": 1,
+      "nucleo": "U",
+      "parent_id": "P0.U.3",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.U.4.1",
+      "codigo": "P1.U.4.1",
+      "nome": "KYC (conheca seu cliente)",
+      "nivel": 1,
+      "nucleo": "U",
+      "parent_id": "P0.U.4",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.U.4.2",
+      "codigo": "P1.U.4.2",
+      "nome": "Monitoramento transacional",
+      "nivel": 1,
+      "nucleo": "U",
+      "parent_id": "P0.U.4",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.U.4.3",
+      "codigo": "P1.U.4.3",
+      "nome": "Comunicacao ao COAF (RIF)",
+      "nivel": 1,
+      "nucleo": "U",
+      "parent_id": "P0.U.4",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.U.4.4",
+      "codigo": "P1.U.4.4",
+      "nome": "Listas restritivas e sancoes",
+      "nivel": 1,
+      "nucleo": "U",
+      "parent_id": "P0.U.4",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.U.4.5",
+      "codigo": "P1.U.4.5",
+      "nome": "Avaliacao interna de riscos PLD-FT",
+      "nivel": 1,
+      "nucleo": "U",
+      "parent_id": "P0.U.4",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.U.4.6",
+      "codigo": "P1.U.4.6",
+      "nome": "Treinamento PLD-FT",
+      "nivel": 1,
+      "nucleo": "U",
+      "parent_id": "P0.U.4",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.U.5.1",
+      "codigo": "P1.U.5.1",
+      "nome": "Plano anual baseado em riscos",
+      "nivel": 1,
+      "nucleo": "U",
+      "parent_id": "P0.U.5",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.U.5.2",
+      "codigo": "P1.U.5.2",
+      "nome": "Execucao de trabalhos",
+      "nivel": 1,
+      "nucleo": "U",
+      "parent_id": "P0.U.5",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.U.5.3",
+      "codigo": "P1.U.5.3",
+      "nome": "Reporte e follow-up",
+      "nivel": 1,
+      "nucleo": "U",
+      "parent_id": "P0.U.5",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.U.5.4",
+      "codigo": "P1.U.5.4",
+      "nome": "Avaliacao de qualidade (interna e externa)",
+      "nivel": 1,
+      "nucleo": "U",
+      "parent_id": "P0.U.5",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.U.6.1",
+      "codigo": "P1.U.6.1",
+      "nome": "Recrutamento e selecao",
+      "nivel": 1,
+      "nucleo": "U",
+      "parent_id": "P0.U.6",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.U.6.2",
+      "codigo": "P1.U.6.2",
+      "nome": "Onboarding e background check",
+      "nivel": 1,
+      "nucleo": "U",
+      "parent_id": "P0.U.6",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.U.6.3",
+      "codigo": "P1.U.6.3",
+      "nome": "Capacitacao e desenvolvimento",
+      "nivel": 1,
+      "nucleo": "U",
+      "parent_id": "P0.U.6",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.U.6.4",
+      "codigo": "P1.U.6.4",
+      "nome": "Gestao de desempenho",
+      "nivel": 1,
+      "nucleo": "U",
+      "parent_id": "P0.U.6",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.U.6.5",
+      "codigo": "P1.U.6.5",
+      "nome": "Cultura, clima e ESG humano",
+      "nivel": 1,
+      "nucleo": "U",
+      "parent_id": "P0.U.6",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.U.6.6",
+      "codigo": "P1.U.6.6",
+      "nome": "Folha de pagamento e beneficios",
+      "nivel": 1,
+      "nucleo": "U",
+      "parent_id": "P0.U.6",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.U.6.7",
+      "codigo": "P1.U.6.7",
+      "nome": "Saude e seguranca ocupacional",
+      "nivel": 1,
+      "nucleo": "U",
+      "parent_id": "P0.U.6",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.U.6.8",
+      "codigo": "P1.U.6.8",
+      "nome": "Desligamento",
+      "nivel": 1,
+      "nucleo": "U",
+      "parent_id": "P0.U.6",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.U.7.1",
+      "codigo": "P1.U.7.1",
+      "nome": "Arquitetura e desenvolvimento",
+      "nivel": 1,
+      "nucleo": "U",
+      "parent_id": "P0.U.7",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.U.7.2",
+      "codigo": "P1.U.7.2",
+      "nome": "Infraestrutura e operacoes",
+      "nivel": 1,
+      "nucleo": "U",
+      "parent_id": "P0.U.7",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.U.7.3",
+      "codigo": "P1.U.7.3",
+      "nome": "Computacao em nuvem",
+      "nivel": 1,
+      "nucleo": "U",
+      "parent_id": "P0.U.7",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.U.7.4",
+      "codigo": "P1.U.7.4",
+      "nome": "Gestao de mudancas",
+      "nivel": 1,
+      "nucleo": "U",
+      "parent_id": "P0.U.7",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.U.7.5",
+      "codigo": "P1.U.7.5",
+      "nome": "Gestao de incidentes e problemas",
+      "nivel": 1,
+      "nucleo": "U",
+      "parent_id": "P0.U.7",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.U.7.6",
+      "codigo": "P1.U.7.6",
+      "nome": "Gestao de identidades e acessos (IAM)",
+      "nivel": 1,
+      "nucleo": "U",
+      "parent_id": "P0.U.7",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.U.7.7",
+      "codigo": "P1.U.7.7",
+      "nome": "Gestao de dados e qualidade",
+      "nivel": 1,
+      "nucleo": "U",
+      "parent_id": "P0.U.7",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.U.7.8",
+      "codigo": "P1.U.7.8",
+      "nome": "Inteligencia artificial e modelos",
+      "nivel": 1,
+      "nucleo": "U",
+      "parent_id": "P0.U.7",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.U.8.1",
+      "codigo": "P1.U.8.1",
+      "nome": "Politica e governanca de ciberseguranca",
+      "nivel": 1,
+      "nucleo": "U",
+      "parent_id": "P0.U.8",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.U.8.2",
+      "codigo": "P1.U.8.2",
+      "nome": "Prevencao (pentests, hardening, SOC)",
+      "nivel": 1,
+      "nucleo": "U",
+      "parent_id": "P0.U.8",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.U.8.3",
+      "codigo": "P1.U.8.3",
+      "nome": "Deteccao (SIEM, threat intel)",
+      "nivel": 1,
+      "nucleo": "U",
+      "parent_id": "P0.U.8",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.U.8.4",
+      "codigo": "P1.U.8.4",
+      "nome": "Resposta a incidentes",
+      "nivel": 1,
+      "nucleo": "U",
+      "parent_id": "P0.U.8",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.U.8.5",
+      "codigo": "P1.U.8.5",
+      "nome": "Recuperacao de incidentes",
+      "nivel": 1,
+      "nucleo": "U",
+      "parent_id": "P0.U.8",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.U.8.6",
+      "codigo": "P1.U.8.6",
+      "nome": "Gestao de vulnerabilidades",
+      "nivel": 1,
+      "nucleo": "U",
+      "parent_id": "P0.U.8",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.U.9.1",
+      "codigo": "P1.U.9.1",
+      "nome": "BIA (analise de impacto nos negocios)",
+      "nivel": 1,
+      "nucleo": "U",
+      "parent_id": "P0.U.9",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.U.9.2",
+      "codigo": "P1.U.9.2",
+      "nome": "Estrategia de continuidade",
+      "nivel": 1,
+      "nucleo": "U",
+      "parent_id": "P0.U.9",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.U.9.3",
+      "codigo": "P1.U.9.3",
+      "nome": "Planos (BCP, DRP, plano de crise)",
+      "nivel": 1,
+      "nucleo": "U",
+      "parent_id": "P0.U.9",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.U.9.4",
+      "codigo": "P1.U.9.4",
+      "nome": "Testes de continuidade",
+      "nivel": 1,
+      "nucleo": "U",
+      "parent_id": "P0.U.9",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.U.9.5",
+      "codigo": "P1.U.9.5",
+      "nome": "Site alternativo",
+      "nivel": 1,
+      "nucleo": "U",
+      "parent_id": "P0.U.9",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.U.10.1",
+      "codigo": "P1.U.10.1",
+      "nome": "Estrategia de sourcing",
+      "nivel": 1,
+      "nucleo": "U",
+      "parent_id": "P0.U.10",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.U.10.2",
+      "codigo": "P1.U.10.2",
+      "nome": "Due diligence de terceiros",
+      "nivel": 1,
+      "nucleo": "U",
+      "parent_id": "P0.U.10",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.U.10.3",
+      "codigo": "P1.U.10.3",
+      "nome": "Contratacao e SLAs",
+      "nivel": 1,
+      "nucleo": "U",
+      "parent_id": "P0.U.10",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.U.10.4",
+      "codigo": "P1.U.10.4",
+      "nome": "Monitoramento e gestao de desempenho",
+      "nivel": 1,
+      "nucleo": "U",
+      "parent_id": "P0.U.10",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.U.10.5",
+      "codigo": "P1.U.10.5",
+      "nome": "Riscos de quarteirizacao",
+      "nivel": 1,
+      "nucleo": "U",
+      "parent_id": "P0.U.10",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.U.10.6",
+      "codigo": "P1.U.10.6",
+      "nome": "Encerramento e transicao",
+      "nivel": 1,
+      "nucleo": "U",
+      "parent_id": "P0.U.10",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.U.11.1",
+      "codigo": "P1.U.11.1",
+      "nome": "Contratos e pareceres",
+      "nivel": 1,
+      "nucleo": "U",
+      "parent_id": "P0.U.11",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.U.11.2",
+      "codigo": "P1.U.11.2",
+      "nome": "Contencioso civel",
+      "nivel": 1,
+      "nucleo": "U",
+      "parent_id": "P0.U.11",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.U.11.3",
+      "codigo": "P1.U.11.3",
+      "nome": "Contencioso trabalhista",
+      "nivel": 1,
+      "nucleo": "U",
+      "parent_id": "P0.U.11",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.U.11.4",
+      "codigo": "P1.U.11.4",
+      "nome": "Contencioso fiscal e regulatorio",
+      "nivel": 1,
+      "nucleo": "U",
+      "parent_id": "P0.U.11",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.U.11.5",
+      "codigo": "P1.U.11.5",
+      "nome": "Provisionamento de contingencias",
+      "nivel": 1,
+      "nucleo": "U",
+      "parent_id": "P0.U.11",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.U.12.1",
+      "codigo": "P1.U.12.1",
+      "nome": "Contabilidade societaria e regulatoria (COSIF/IFRS)",
+      "nivel": 1,
+      "nucleo": "U",
+      "parent_id": "P0.U.12",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.U.12.2",
+      "codigo": "P1.U.12.2",
+      "nome": "Controladoria e fechamento",
+      "nivel": 1,
+      "nucleo": "U",
+      "parent_id": "P0.U.12",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.U.12.3",
+      "codigo": "P1.U.12.3",
+      "nome": "Tributario",
+      "nivel": 1,
+      "nucleo": "U",
+      "parent_id": "P0.U.12",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.U.12.4",
+      "codigo": "P1.U.12.4",
+      "nome": "Reporte regulatorio (DLO, IFR etc.)",
+      "nivel": 1,
+      "nucleo": "U",
+      "parent_id": "P0.U.12",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.U.12.5",
+      "codigo": "P1.U.12.5",
+      "nome": "Demonstracoes financeiras e auditoria externa",
+      "nivel": 1,
+      "nucleo": "U",
+      "parent_id": "P0.U.12",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.U.13.1",
+      "codigo": "P1.U.13.1",
+      "nome": "Canais de atendimento (SAC)",
+      "nivel": 1,
+      "nucleo": "U",
+      "parent_id": "P0.U.13",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.U.13.2",
+      "codigo": "P1.U.13.2",
+      "nome": "Ouvidoria (instancia recursal)",
+      "nivel": 1,
+      "nucleo": "U",
+      "parent_id": "P0.U.13",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.U.13.3",
+      "codigo": "P1.U.13.3",
+      "nome": "Tratamento de reclamacoes de reguladores",
+      "nivel": 1,
+      "nucleo": "U",
+      "parent_id": "P0.U.13",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.U.13.4",
+      "codigo": "P1.U.13.4",
+      "nome": "Indicadores de atendimento e satisfacao",
+      "nivel": 1,
+      "nucleo": "U",
+      "parent_id": "P0.U.13",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.U.14.1",
+      "codigo": "P1.U.14.1",
+      "nome": "Comunicacao interna",
+      "nivel": 1,
+      "nucleo": "U",
+      "parent_id": "P0.U.14",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.U.14.2",
+      "codigo": "P1.U.14.2",
+      "nome": "Comunicacao externa e relacoes com a imprensa",
+      "nivel": 1,
+      "nucleo": "U",
+      "parent_id": "P0.U.14",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.U.14.3",
+      "codigo": "P1.U.14.3",
+      "nome": "Material publicitario e conformidade",
+      "nivel": 1,
+      "nucleo": "U",
+      "parent_id": "P0.U.14",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.U.14.4",
+      "codigo": "P1.U.14.4",
+      "nome": "Gestao de crise reputacional",
+      "nivel": 1,
+      "nucleo": "U",
+      "parent_id": "P0.U.14",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.U.15.1",
+      "codigo": "P1.U.15.1",
+      "nome": "Mapeamento de tratamento de dados (RoPA)",
+      "nivel": 1,
+      "nucleo": "U",
+      "parent_id": "P0.U.15",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.U.15.2",
+      "codigo": "P1.U.15.2",
+      "nome": "Bases legais e consentimento",
+      "nivel": 1,
+      "nucleo": "U",
+      "parent_id": "P0.U.15",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.U.15.3",
+      "codigo": "P1.U.15.3",
+      "nome": "Direitos dos titulares",
+      "nivel": 1,
+      "nucleo": "U",
+      "parent_id": "P0.U.15",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.U.15.4",
+      "codigo": "P1.U.15.4",
+      "nome": "Gestao de incidentes de privacidade",
+      "nivel": 1,
+      "nucleo": "U",
+      "parent_id": "P0.U.15",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.U.15.5",
+      "codigo": "P1.U.15.5",
+      "nome": "Encarregado (DPO) e relacionamento com ANPD",
+      "nivel": 1,
+      "nucleo": "U",
+      "parent_id": "P0.U.15",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.U.15.6",
+      "codigo": "P1.U.15.6",
+      "nome": "Privacy by design",
+      "nivel": 1,
+      "nucleo": "U",
+      "parent_id": "P0.U.15",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P2.U.1.1.1",
+      "codigo": "P2.U.1.1.1",
+      "nome": "Composicao e funcionamento do Conselho de Administracao",
+      "nivel": 2,
+      "nucleo": "U",
+      "parent_id": "P1.U.1.1",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P2.U.1.1.2",
+      "codigo": "P2.U.1.1.2",
+      "nome": "Comites estatutarios (auditoria, riscos, remuneracao)",
+      "nivel": 2,
+      "nucleo": "U",
+      "parent_id": "P1.U.1.1",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P2.U.1.1.3",
+      "codigo": "P2.U.1.1.3",
+      "nome": "Alcadas e delegacoes",
+      "nivel": 2,
+      "nucleo": "U",
+      "parent_id": "P1.U.1.1",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P2.U.2.2.1",
+      "codigo": "P2.U.2.2.1",
+      "nome": "RCSA (autoavaliacao)",
+      "nivel": 2,
+      "nucleo": "U",
+      "parent_id": "P1.U.2.2",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P2.U.2.2.2",
+      "codigo": "P2.U.2.2.2",
+      "nome": "Cenarios e estresse",
+      "nivel": 2,
+      "nucleo": "U",
+      "parent_id": "P1.U.2.2",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P2.U.2.2.3",
+      "codigo": "P2.U.2.2.3",
+      "nome": "Quantificacao para capital",
+      "nivel": 2,
+      "nucleo": "U",
+      "parent_id": "P1.U.2.2",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P2.U.2.5.1",
+      "codigo": "P2.U.2.5.1",
+      "nome": "Reporte interno (alta administracao)",
+      "nivel": 2,
+      "nucleo": "U",
+      "parent_id": "P1.U.2.5",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P2.U.2.5.2",
+      "codigo": "P2.U.2.5.2",
+      "nome": "Reporte regulatorio",
+      "nivel": 2,
+      "nucleo": "U",
+      "parent_id": "P1.U.2.5",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P2.U.2.5.3",
+      "codigo": "P2.U.2.5.3",
+      "nome": "Reporte publico (Pilar 3 / equivalente)",
+      "nivel": 2,
+      "nucleo": "U",
+      "parent_id": "P1.U.2.5",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P2.U.4.1.1",
+      "codigo": "P2.U.4.1.1",
+      "nome": "Onboarding e due diligence inicial",
+      "nivel": 2,
+      "nucleo": "U",
+      "parent_id": "P1.U.4.1",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P2.U.4.1.2",
+      "codigo": "P2.U.4.1.2",
+      "nome": "PEP (pessoa exposta politicamente)",
+      "nivel": 2,
+      "nucleo": "U",
+      "parent_id": "P1.U.4.1",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P2.U.4.1.3",
+      "codigo": "P2.U.4.1.3",
+      "nome": "Revisao periodica e atualizacao cadastral",
+      "nivel": 2,
+      "nucleo": "U",
+      "parent_id": "P1.U.4.1",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P0.B.1",
+      "codigo": "P0.B.1",
+      "nome": "Intermediacao Financeira (Captacao)",
+      "nivel": 0,
+      "nucleo": "B",
+      "parent_id": null,
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P0.B.2",
+      "codigo": "P0.B.2",
+      "nome": "Intermediacao Financeira (Credito)",
+      "nivel": 0,
+      "nucleo": "B",
+      "parent_id": null,
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P0.B.3",
+      "codigo": "P0.B.3",
+      "nome": "Tesouraria e Mercados",
+      "nivel": 0,
+      "nucleo": "B",
+      "parent_id": null,
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P0.B.4",
+      "codigo": "P0.B.4",
+      "nome": "Cambio e Comercio Exterior",
+      "nivel": 0,
+      "nucleo": "B",
+      "parent_id": null,
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P0.B.5",
+      "codigo": "P0.B.5",
+      "nome": "Meios de Pagamento e Liquidacao",
+      "nivel": 0,
+      "nucleo": "B",
+      "parent_id": null,
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P0.B.6",
+      "codigo": "P0.B.6",
+      "nome": "Custodia e Liquidacao Bancaria",
+      "nivel": 0,
+      "nucleo": "B",
+      "parent_id": null,
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P0.B.7",
+      "codigo": "P0.B.7",
+      "nome": "Operacoes Estruturadas e Banking de Investimento",
+      "nivel": 0,
+      "nucleo": "B",
+      "parent_id": null,
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.B.1.1",
+      "codigo": "P1.B.1.1",
+      "nome": "Captacao de depositos a vista, poupanca e a prazo",
+      "nivel": 1,
+      "nucleo": "B",
+      "parent_id": "P0.B.1",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.B.1.2",
+      "codigo": "P1.B.1.2",
+      "nome": "Emissao de instrumentos (CDB, LCI, LCA, LF, LIG)",
+      "nivel": 1,
+      "nucleo": "B",
+      "parent_id": "P0.B.1",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.B.1.3",
+      "codigo": "P1.B.1.3",
+      "nome": "Operacoes compromissadas (passivas)",
+      "nivel": 1,
+      "nucleo": "B",
+      "parent_id": "P0.B.1",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.B.1.4",
+      "codigo": "P1.B.1.4",
+      "nome": "Captacao no exterior",
+      "nivel": 1,
+      "nucleo": "B",
+      "parent_id": "P0.B.1",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.B.2.1",
+      "codigo": "P1.B.2.1",
+      "nome": "Originacao",
+      "nivel": 1,
+      "nucleo": "B",
+      "parent_id": "P0.B.2",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.B.2.2",
+      "codigo": "P1.B.2.2",
+      "nome": "Analise e decisao",
+      "nivel": 1,
+      "nucleo": "B",
+      "parent_id": "P0.B.2",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.B.2.3",
+      "codigo": "P1.B.2.3",
+      "nome": "Acompanhamento e cobranca",
+      "nivel": 1,
+      "nucleo": "B",
+      "parent_id": "P0.B.2",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.B.2.4",
+      "codigo": "P1.B.2.4",
+      "nome": "Cessao e securitizacao",
+      "nivel": 1,
+      "nucleo": "B",
+      "parent_id": "P0.B.2",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.B.2.5",
+      "codigo": "P1.B.2.5",
+      "nome": "Garantias",
+      "nivel": 1,
+      "nucleo": "B",
+      "parent_id": "P0.B.2",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.B.2.6",
+      "codigo": "P1.B.2.6",
+      "nome": "Provisionamento (IFRS 9 / 4.966)",
+      "nivel": 1,
+      "nucleo": "B",
+      "parent_id": "P0.B.2",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.B.3.1",
+      "codigo": "P1.B.3.1",
+      "nome": "Gestao de caixa e liquidez intradia",
+      "nivel": 1,
+      "nucleo": "B",
+      "parent_id": "P0.B.3",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.B.3.2",
+      "codigo": "P1.B.3.2",
+      "nome": "Gestao de ativos e passivos (ALM)",
+      "nivel": 1,
+      "nucleo": "B",
+      "parent_id": "P0.B.3",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.B.3.3",
+      "codigo": "P1.B.3.3",
+      "nome": "Funding plan e estrutura de capital",
+      "nivel": 1,
+      "nucleo": "B",
+      "parent_id": "P0.B.3",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.B.3.4",
+      "codigo": "P1.B.3.4",
+      "nome": "Trading proprietario (banking x trading book)",
+      "nivel": 1,
+      "nucleo": "B",
+      "parent_id": "P0.B.3",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.B.3.5",
+      "codigo": "P1.B.3.5",
+      "nome": "Hedge accounting",
+      "nivel": 1,
+      "nucleo": "B",
+      "parent_id": "P0.B.3",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.B.3.6",
+      "codigo": "P1.B.3.6",
+      "nome": "Recolhimento compulsorio",
+      "nivel": 1,
+      "nucleo": "B",
+      "parent_id": "P0.B.3",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.B.4.1",
+      "codigo": "P1.B.4.1",
+      "nome": "Cambio comercial",
+      "nivel": 1,
+      "nucleo": "B",
+      "parent_id": "P0.B.4",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.B.4.2",
+      "codigo": "P1.B.4.2",
+      "nome": "Cambio financeiro",
+      "nivel": 1,
+      "nucleo": "B",
+      "parent_id": "P0.B.4",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.B.4.3",
+      "codigo": "P1.B.4.3",
+      "nome": "Cambio turismo",
+      "nivel": 1,
+      "nucleo": "B",
+      "parent_id": "P0.B.4",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.B.4.4",
+      "codigo": "P1.B.4.4",
+      "nome": "ACC/ACE",
+      "nivel": 1,
+      "nucleo": "B",
+      "parent_id": "P0.B.4",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.B.4.5",
+      "codigo": "P1.B.4.5",
+      "nome": "Trade finance e cartas de credito",
+      "nivel": 1,
+      "nucleo": "B",
+      "parent_id": "P0.B.4",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.B.4.6",
+      "codigo": "P1.B.4.6",
+      "nome": "Reporte ao SISBACEN/CCS",
+      "nivel": 1,
+      "nucleo": "B",
+      "parent_id": "P0.B.4",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.B.5.1",
+      "codigo": "P1.B.5.1",
+      "nome": "TED, DOC e transferencias",
+      "nivel": 1,
+      "nucleo": "B",
+      "parent_id": "P0.B.5",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.B.5.2",
+      "codigo": "P1.B.5.2",
+      "nome": "PIX (DICT, ICOM, MED)",
+      "nivel": 1,
+      "nucleo": "B",
+      "parent_id": "P0.B.5",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.B.5.3",
+      "codigo": "P1.B.5.3",
+      "nome": "Boleto bancario",
+      "nivel": 1,
+      "nucleo": "B",
+      "parent_id": "P0.B.5",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.B.5.4",
+      "codigo": "P1.B.5.4",
+      "nome": "Cartoes (emissor, credenciador, bandeira)",
+      "nivel": 1,
+      "nucleo": "B",
+      "parent_id": "P0.B.5",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.B.5.5",
+      "codigo": "P1.B.5.5",
+      "nome": "Liquidacao STR e SLB",
+      "nivel": 1,
+      "nucleo": "B",
+      "parent_id": "P0.B.5",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.B.5.6",
+      "codigo": "P1.B.5.6",
+      "nome": "Open Finance",
+      "nivel": 1,
+      "nucleo": "B",
+      "parent_id": "P0.B.5",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P2.B.2.1.1",
+      "codigo": "P2.B.2.1.1",
+      "nome": "Credito PF (consignado, pessoal, cartao, veicular, imobiliario)",
+      "nivel": 2,
+      "nucleo": "B",
+      "parent_id": "P1.B.2.1",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P2.B.2.1.2",
+      "codigo": "P2.B.2.1.2",
+      "nome": "Credito PJ (capital de giro, investimento)",
+      "nivel": 2,
+      "nucleo": "B",
+      "parent_id": "P1.B.2.1",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P2.B.2.1.3",
+      "codigo": "P2.B.2.1.3",
+      "nome": "Credito rural e agroindustrial",
+      "nivel": 2,
+      "nucleo": "B",
+      "parent_id": "P1.B.2.1",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P2.B.2.1.4",
+      "codigo": "P2.B.2.1.4",
+      "nome": "Credito imobiliario (SFH, SFI)",
+      "nivel": 2,
+      "nucleo": "B",
+      "parent_id": "P1.B.2.1",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P2.B.2.1.5",
+      "codigo": "P2.B.2.1.5",
+      "nome": "Credito de fomento e direcionado",
+      "nivel": 2,
+      "nucleo": "B",
+      "parent_id": "P1.B.2.1",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P2.B.2.2.1",
+      "codigo": "P2.B.2.2.1",
+      "nome": "Underwriting e modelagem de risco",
+      "nivel": 2,
+      "nucleo": "B",
+      "parent_id": "P1.B.2.2",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P2.B.2.2.2",
+      "codigo": "P2.B.2.2.2",
+      "nome": "Comites e alcadas",
+      "nivel": 2,
+      "nucleo": "B",
+      "parent_id": "P1.B.2.2",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P2.B.2.2.3",
+      "codigo": "P2.B.2.2.3",
+      "nome": "Documentacao e formalizacao",
+      "nivel": 2,
+      "nucleo": "B",
+      "parent_id": "P1.B.2.2",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P2.B.2.3.1",
+      "codigo": "P2.B.2.3.1",
+      "nome": "Monitoramento de carteira",
+      "nivel": 2,
+      "nucleo": "B",
+      "parent_id": "P1.B.2.3",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P2.B.2.3.2",
+      "codigo": "P2.B.2.3.2",
+      "nome": "Cobranca amigavel",
+      "nivel": 2,
+      "nucleo": "B",
+      "parent_id": "P1.B.2.3",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P2.B.2.3.3",
+      "codigo": "P2.B.2.3.3",
+      "nome": "Recuperacao judicial e write-off",
+      "nivel": 2,
+      "nucleo": "B",
+      "parent_id": "P1.B.2.3",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P2.B.2.3.4",
+      "codigo": "P2.B.2.3.4",
+      "nome": "Renegociacao e reestruturacao",
+      "nivel": 2,
+      "nucleo": "B",
+      "parent_id": "P1.B.2.3",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P0.MC.1",
+      "codigo": "P0.MC.1",
+      "nome": "Distribuicao de Valores Mobiliarios",
+      "nivel": 0,
+      "nucleo": "MC",
+      "parent_id": null,
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P0.MC.2",
+      "codigo": "P0.MC.2",
+      "nome": "Gestao de Recursos (Asset Management)",
+      "nivel": 0,
+      "nucleo": "MC",
+      "parent_id": null,
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P0.MC.3",
+      "codigo": "P0.MC.3",
+      "nome": "Administracao Fiduciaria",
+      "nivel": 0,
+      "nucleo": "MC",
+      "parent_id": null,
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P0.MC.4",
+      "codigo": "P0.MC.4",
+      "nome": "Custodia Qualificada",
+      "nivel": 0,
+      "nucleo": "MC",
+      "parent_id": null,
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P0.MC.5",
+      "codigo": "P0.MC.5",
+      "nome": "Escrituracao",
+      "nivel": 0,
+      "nucleo": "MC",
+      "parent_id": null,
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P0.MC.6",
+      "codigo": "P0.MC.6",
+      "nome": "Negociacao por Conta Propria (Trading)",
+      "nivel": 0,
+      "nucleo": "MC",
+      "parent_id": null,
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P0.MC.7",
+      "codigo": "P0.MC.7",
+      "nome": "Pesquisa e Analise",
+      "nivel": 0,
+      "nucleo": "MC",
+      "parent_id": null,
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.MC.1.1",
+      "codigo": "P1.MC.1.1",
+      "nome": "Cadastro e suitability",
+      "nivel": 1,
+      "nucleo": "MC",
+      "parent_id": "P0.MC.1",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.MC.1.2",
+      "codigo": "P1.MC.1.2",
+      "nome": "Recebimento e processamento de ordens",
+      "nivel": 1,
+      "nucleo": "MC",
+      "parent_id": "P0.MC.1",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.MC.1.3",
+      "codigo": "P1.MC.1.3",
+      "nome": "Best execution",
+      "nivel": 1,
+      "nucleo": "MC",
+      "parent_id": "P0.MC.1",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.MC.1.4",
+      "codigo": "P1.MC.1.4",
+      "nome": "Confirmacao e contranota",
+      "nivel": 1,
+      "nucleo": "MC",
+      "parent_id": "P0.MC.1",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.MC.1.5",
+      "codigo": "P1.MC.1.5",
+      "nome": "Distribuicao de ofertas publicas (CVM 160 / 175)",
+      "nivel": 1,
+      "nucleo": "MC",
+      "parent_id": "P0.MC.1",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.MC.2.1",
+      "codigo": "P1.MC.2.1",
+      "nome": "Constituicao de fundos e veiculos",
+      "nivel": 1,
+      "nucleo": "MC",
+      "parent_id": "P0.MC.2",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.MC.2.2",
+      "codigo": "P1.MC.2.2",
+      "nome": "Politica de investimento e enquadramento",
+      "nivel": 1,
+      "nucleo": "MC",
+      "parent_id": "P0.MC.2",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.MC.2.3",
+      "codigo": "P1.MC.2.3",
+      "nome": "Decisao de investimento",
+      "nivel": 1,
+      "nucleo": "MC",
+      "parent_id": "P0.MC.2",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.MC.2.4",
+      "codigo": "P1.MC.2.4",
+      "nome": "Risk management de portfolios",
+      "nivel": 1,
+      "nucleo": "MC",
+      "parent_id": "P0.MC.2",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.MC.2.5",
+      "codigo": "P1.MC.2.5",
+      "nome": "Marcacao a mercado",
+      "nivel": 1,
+      "nucleo": "MC",
+      "parent_id": "P0.MC.2",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.MC.2.6",
+      "codigo": "P1.MC.2.6",
+      "nome": "Distribuicao entre cotistas",
+      "nivel": 1,
+      "nucleo": "MC",
+      "parent_id": "P0.MC.2",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.MC.3.1",
+      "codigo": "P1.MC.3.1",
+      "nome": "Constituicao e estruturacao",
+      "nivel": 1,
+      "nucleo": "MC",
+      "parent_id": "P0.MC.3",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.MC.3.2",
+      "codigo": "P1.MC.3.2",
+      "nome": "Controladoria de cotas",
+      "nivel": 1,
+      "nucleo": "MC",
+      "parent_id": "P0.MC.3",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.MC.3.3",
+      "codigo": "P1.MC.3.3",
+      "nome": "Reporte ao cotista",
+      "nivel": 1,
+      "nucleo": "MC",
+      "parent_id": "P0.MC.3",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.MC.3.4",
+      "codigo": "P1.MC.3.4",
+      "nome": "Tesouraria e custodia",
+      "nivel": 1,
+      "nucleo": "MC",
+      "parent_id": "P0.MC.3",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.MC.3.5",
+      "codigo": "P1.MC.3.5",
+      "nome": "Compliance fiduciario",
+      "nivel": 1,
+      "nucleo": "MC",
+      "parent_id": "P0.MC.3",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.MC.4.1",
+      "codigo": "P1.MC.4.1",
+      "nome": "Liquidacao e settlement",
+      "nivel": 1,
+      "nucleo": "MC",
+      "parent_id": "P0.MC.4",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.MC.4.2",
+      "codigo": "P1.MC.4.2",
+      "nome": "Eventos corporativos",
+      "nivel": 1,
+      "nucleo": "MC",
+      "parent_id": "P0.MC.4",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.MC.4.3",
+      "codigo": "P1.MC.4.3",
+      "nome": "Conciliacao",
+      "nivel": 1,
+      "nucleo": "MC",
+      "parent_id": "P0.MC.4",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.MC.4.4",
+      "codigo": "P1.MC.4.4",
+      "nome": "Segregacao patrimonial",
+      "nivel": 1,
+      "nucleo": "MC",
+      "parent_id": "P0.MC.4",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P0.S.1",
+      "codigo": "P0.S.1",
+      "nome": "Subscricao",
+      "nivel": 0,
+      "nucleo": "S",
+      "parent_id": null,
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P0.S.2",
+      "codigo": "P0.S.2",
+      "nome": "Sinistros",
+      "nivel": 0,
+      "nucleo": "S",
+      "parent_id": null,
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P0.S.3",
+      "codigo": "P0.S.3",
+      "nome": "Reservas Tecnicas",
+      "nivel": 0,
+      "nucleo": "S",
+      "parent_id": null,
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P0.S.4",
+      "codigo": "P0.S.4",
+      "nome": "Resseguro",
+      "nivel": 0,
+      "nucleo": "S",
+      "parent_id": null,
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P0.S.5",
+      "codigo": "P0.S.5",
+      "nome": "Investimento de Reservas",
+      "nivel": 0,
+      "nucleo": "S",
+      "parent_id": null,
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P0.S.6",
+      "codigo": "P0.S.6",
+      "nome": "Comercializacao e Corretagem",
+      "nivel": 0,
+      "nucleo": "S",
+      "parent_id": null,
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.S.1.1",
+      "codigo": "P1.S.1.1",
+      "nome": "Avaliacao de risco a segurar",
+      "nivel": 1,
+      "nucleo": "S",
+      "parent_id": "P0.S.1",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.S.1.2",
+      "codigo": "P1.S.1.2",
+      "nome": "Pricing e tarifa",
+      "nivel": 1,
+      "nucleo": "S",
+      "parent_id": "P0.S.1",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.S.1.3",
+      "codigo": "P1.S.1.3",
+      "nome": "Aceitacao e emissao da apolice",
+      "nivel": 1,
+      "nucleo": "S",
+      "parent_id": "P0.S.1",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.S.1.4",
+      "codigo": "P1.S.1.4",
+      "nome": "Endossos e renovacoes",
+      "nivel": 1,
+      "nucleo": "S",
+      "parent_id": "P0.S.1",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.S.2.1",
+      "codigo": "P1.S.2.1",
+      "nome": "Aviso e abertura",
+      "nivel": 1,
+      "nucleo": "S",
+      "parent_id": "P0.S.2",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.S.2.2",
+      "codigo": "P1.S.2.2",
+      "nome": "Regulacao e pericia",
+      "nivel": 1,
+      "nucleo": "S",
+      "parent_id": "P0.S.2",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.S.2.3",
+      "codigo": "P1.S.2.3",
+      "nome": "Indenizacao e pagamento",
+      "nivel": 1,
+      "nucleo": "S",
+      "parent_id": "P0.S.2",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.S.2.4",
+      "codigo": "P1.S.2.4",
+      "nome": "Sub-rogacao e salvados",
+      "nivel": 1,
+      "nucleo": "S",
+      "parent_id": "P0.S.2",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.S.2.5",
+      "codigo": "P1.S.2.5",
+      "nome": "Combate a fraude em sinistros",
+      "nivel": 1,
+      "nucleo": "S",
+      "parent_id": "P0.S.2",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.S.3.1",
+      "codigo": "P1.S.3.1",
+      "nome": "PPNG",
+      "nivel": 1,
+      "nucleo": "S",
+      "parent_id": "P0.S.3",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.S.3.2",
+      "codigo": "P1.S.3.2",
+      "nome": "IBNR / IBNeR",
+      "nivel": 1,
+      "nucleo": "S",
+      "parent_id": "P0.S.3",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.S.3.3",
+      "codigo": "P1.S.3.3",
+      "nome": "PSL",
+      "nivel": 1,
+      "nucleo": "S",
+      "parent_id": "P0.S.3",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.S.3.4",
+      "codigo": "P1.S.3.4",
+      "nome": "Outras provisoes tecnicas",
+      "nivel": 1,
+      "nucleo": "S",
+      "parent_id": "P0.S.3",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.S.3.5",
+      "codigo": "P1.S.3.5",
+      "nome": "Teste de adequacao de passivos (TAP)",
+      "nivel": 1,
+      "nucleo": "S",
+      "parent_id": "P0.S.3",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.S.4.1",
+      "codigo": "P1.S.4.1",
+      "nome": "Estrategia de resseguro",
+      "nivel": 1,
+      "nucleo": "S",
+      "parent_id": "P0.S.4",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.S.4.2",
+      "codigo": "P1.S.4.2",
+      "nome": "Contratos de resseguro",
+      "nivel": 1,
+      "nucleo": "S",
+      "parent_id": "P0.S.4",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.S.4.3",
+      "codigo": "P1.S.4.3",
+      "nome": "Recuperacao de resseguro",
+      "nivel": 1,
+      "nucleo": "S",
+      "parent_id": "P0.S.4",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.S.4.4",
+      "codigo": "P1.S.4.4",
+      "nome": "Risco de contraparte de resseguro",
+      "nivel": 1,
+      "nucleo": "S",
+      "parent_id": "P0.S.4",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P0.P.1",
+      "codigo": "P0.P.1",
+      "nome": "Acumulacao",
+      "nivel": 0,
+      "nucleo": "P",
+      "parent_id": null,
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P0.P.2",
+      "codigo": "P0.P.2",
+      "nome": "Concessao de Beneficios",
+      "nivel": 0,
+      "nucleo": "P",
+      "parent_id": null,
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P0.P.3",
+      "codigo": "P0.P.3",
+      "nome": "Atuaria",
+      "nivel": 0,
+      "nucleo": "P",
+      "parent_id": null,
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.P.1.1",
+      "codigo": "P1.P.1.1",
+      "nome": "Adesao de participantes",
+      "nivel": 1,
+      "nucleo": "P",
+      "parent_id": "P0.P.1",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.P.1.2",
+      "codigo": "P1.P.1.2",
+      "nome": "Recebimento de contribuicoes",
+      "nivel": 1,
+      "nucleo": "P",
+      "parent_id": "P0.P.1",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.P.1.3",
+      "codigo": "P1.P.1.3",
+      "nome": "Aplicacao financeira",
+      "nivel": 1,
+      "nucleo": "P",
+      "parent_id": "P0.P.1",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.P.2.1",
+      "codigo": "P1.P.2.1",
+      "nome": "Calculo e elegibilidade",
+      "nivel": 1,
+      "nucleo": "P",
+      "parent_id": "P0.P.2",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.P.2.2",
+      "codigo": "P1.P.2.2",
+      "nome": "Pagamento de aposentadorias",
+      "nivel": 1,
+      "nucleo": "P",
+      "parent_id": "P0.P.2",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.P.2.3",
+      "codigo": "P1.P.2.3",
+      "nome": "Resgates e portabilidade",
+      "nivel": 1,
+      "nucleo": "P",
+      "parent_id": "P0.P.2",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.P.3.1",
+      "codigo": "P1.P.3.1",
+      "nome": "Avaliacao atuarial anual",
+      "nivel": 1,
+      "nucleo": "P",
+      "parent_id": "P0.P.3",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.P.3.2",
+      "codigo": "P1.P.3.2",
+      "nome": "Hipoteses biometricas e financeiras",
+      "nivel": 1,
+      "nucleo": "P",
+      "parent_id": "P0.P.3",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.P.3.3",
+      "codigo": "P1.P.3.3",
+      "nome": "Equilibrio tecnico",
+      "nivel": 1,
+      "nucleo": "P",
+      "parent_id": "P0.P.3",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P0.C.1",
+      "codigo": "P0.C.1",
+      "nome": "Subscricao de titulos",
+      "nivel": 0,
+      "nucleo": "C",
+      "parent_id": null,
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P0.C.2",
+      "codigo": "P0.C.2",
+      "nome": "Sorteios",
+      "nivel": 0,
+      "nucleo": "C",
+      "parent_id": null,
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P0.C.3",
+      "codigo": "P0.C.3",
+      "nome": "Resgates e devolucoes",
+      "nivel": 0,
+      "nucleo": "C",
+      "parent_id": null,
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P0.CG.1",
+      "codigo": "P0.CG.1",
+      "nome": "GIR Consolidada",
+      "nivel": 0,
+      "nucleo": "CG",
+      "parent_id": null,
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P0.CG.2",
+      "codigo": "P0.CG.2",
+      "nome": "ICAAP/ILAAP",
+      "nivel": 0,
+      "nucleo": "CG",
+      "parent_id": null,
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P0.CG.3",
+      "codigo": "P0.CG.3",
+      "nome": "Plano de Recuperacao (Res 4.502)",
+      "nivel": 0,
+      "nucleo": "CG",
+      "parent_id": null,
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P0.CG.4",
+      "codigo": "P0.CG.4",
+      "nome": "Gestao de Operacoes Intragrupo",
+      "nivel": 0,
+      "nucleo": "CG",
+      "parent_id": null,
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P0.CG.5",
+      "codigo": "P0.CG.5",
+      "nome": "Reporte Regulatorio Consolidado",
+      "nivel": 0,
+      "nucleo": "CG",
+      "parent_id": null,
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.CG.1.1",
+      "codigo": "P1.CG.1.1",
+      "nome": "Consolidacao de exposicoes",
+      "nivel": 1,
+      "nucleo": "CG",
+      "parent_id": "P0.CG.1",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.CG.1.2",
+      "codigo": "P1.CG.1.2",
+      "nome": "Risco de concentracao consolidada",
+      "nivel": 1,
+      "nucleo": "CG",
+      "parent_id": "P0.CG.1",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.CG.1.3",
+      "codigo": "P1.CG.1.3",
+      "nome": "Reporte de riscos consolidado",
+      "nivel": 1,
+      "nucleo": "CG",
+      "parent_id": "P0.CG.1",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.CG.2.1",
+      "codigo": "P1.CG.2.1",
+      "nome": "Avaliacao de adequacao de capital",
+      "nivel": 1,
+      "nucleo": "CG",
+      "parent_id": "P0.CG.2",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.CG.2.2",
+      "codigo": "P1.CG.2.2",
+      "nome": "Avaliacao de adequacao de liquidez",
+      "nivel": 1,
+      "nucleo": "CG",
+      "parent_id": "P0.CG.2",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.CG.2.3",
+      "codigo": "P1.CG.2.3",
+      "nome": "Cenarios e estresse consolidados",
+      "nivel": 1,
+      "nucleo": "CG",
+      "parent_id": "P0.CG.2",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.CG.3.1",
+      "codigo": "P1.CG.3.1",
+      "nome": "Indicadores de gatilho",
+      "nivel": 1,
+      "nucleo": "CG",
+      "parent_id": "P0.CG.3",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.CG.3.2",
+      "codigo": "P1.CG.3.2",
+      "nome": "Opcoes de recuperacao",
+      "nivel": 1,
+      "nucleo": "CG",
+      "parent_id": "P0.CG.3",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.CG.3.3",
+      "codigo": "P1.CG.3.3",
+      "nome": "Governanca da execucao",
+      "nivel": 1,
+      "nucleo": "CG",
+      "parent_id": "P0.CG.3",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.CG.4.1",
+      "codigo": "P1.CG.4.1",
+      "nome": "Politica de partes relacionadas",
+      "nivel": 1,
+      "nucleo": "CG",
+      "parent_id": "P0.CG.4",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.CG.4.2",
+      "codigo": "P1.CG.4.2",
+      "nome": "Pricing de transferencia",
+      "nivel": 1,
+      "nucleo": "CG",
+      "parent_id": "P0.CG.4",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.CG.4.3",
+      "codigo": "P1.CG.4.3",
+      "nome": "Aprovacao e monitoramento",
+      "nivel": 1,
+      "nucleo": "CG",
+      "parent_id": "P0.CG.4",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.CG.5.1",
+      "codigo": "P1.CG.5.1",
+      "nome": "Pilar 3 consolidado",
+      "nivel": 1,
+      "nucleo": "CG",
+      "parent_id": "P0.CG.5",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.CG.5.2",
+      "codigo": "P1.CG.5.2",
+      "nome": "DLO consolidado",
+      "nivel": 1,
+      "nucleo": "CG",
+      "parent_id": "P0.CG.5",
+      "descricao": null,
+      "owner_tipico": null
+    },
+    {
+      "id": "P1.CG.5.3",
+      "codigo": "P1.CG.5.3",
+      "nome": "DRSAC consolidado",
+      "nivel": 1,
+      "nucleo": "CG",
+      "parent_id": "P0.CG.5",
+      "descricao": null,
+      "owner_tipico": null
+    }
+  ],
+  "riscos": [
+    {
+      "id": "R0.U.1",
+      "codigo": "R0.U.1",
+      "nome": "Risco de Credito",
+      "nivel": 0,
+      "nucleo": "U",
+      "parent_id": null,
+      "descricao": null,
+      "categoria_basileia": "credito"
+    },
+    {
+      "id": "R0.U.2",
+      "codigo": "R0.U.2",
+      "nome": "Risco de Mercado",
+      "nivel": 0,
+      "nucleo": "U",
+      "parent_id": null,
+      "descricao": null,
+      "categoria_basileia": "mercado"
+    },
+    {
+      "id": "R0.U.3",
+      "codigo": "R0.U.3",
+      "nome": "Risco de Liquidez",
+      "nivel": 0,
+      "nucleo": "U",
+      "parent_id": null,
+      "descricao": null,
+      "categoria_basileia": "liquidez"
+    },
+    {
+      "id": "R0.U.4",
+      "codigo": "R0.U.4",
+      "nome": "Risco Operacional",
+      "nivel": 0,
+      "nucleo": "U",
+      "parent_id": null,
+      "descricao": null,
+      "categoria_basileia": "operacional"
+    },
+    {
+      "id": "R0.U.5",
+      "codigo": "R0.U.5",
+      "nome": "Risco Cibernetico",
+      "nivel": 0,
+      "nucleo": "U",
+      "parent_id": null,
+      "descricao": null,
+      "categoria_basileia": "operacional"
+    },
+    {
+      "id": "R0.U.6",
+      "codigo": "R0.U.6",
+      "nome": "Risco de Conformidade",
+      "nivel": 0,
+      "nucleo": "U",
+      "parent_id": null,
+      "descricao": null,
+      "categoria_basileia": "operacional"
+    },
+    {
+      "id": "R0.U.7",
+      "codigo": "R0.U.7",
+      "nome": "Risco de Conduta",
+      "nivel": 0,
+      "nucleo": "U",
+      "parent_id": null,
+      "descricao": null,
+      "categoria_basileia": "operacional"
+    },
+    {
+      "id": "R0.U.8",
+      "codigo": "R0.U.8",
+      "nome": "Risco de PLD-FT",
+      "nivel": 0,
+      "nucleo": "U",
+      "parent_id": null,
+      "descricao": null,
+      "categoria_basileia": "operacional"
+    },
+    {
+      "id": "R0.U.9",
+      "codigo": "R0.U.9",
+      "nome": "Risco Estrategico",
+      "nivel": 0,
+      "nucleo": "U",
+      "parent_id": null,
+      "descricao": null,
+      "categoria_basileia": "estrategico"
+    },
+    {
+      "id": "R0.U.10",
+      "codigo": "R0.U.10",
+      "nome": "Risco Reputacional",
+      "nivel": 0,
+      "nucleo": "U",
+      "parent_id": null,
+      "descricao": null,
+      "categoria_basileia": "reputacional"
+    },
+    {
+      "id": "R0.U.11",
+      "codigo": "R0.U.11",
+      "nome": "Risco Socioambiental e Climatico",
+      "nivel": 0,
+      "nucleo": "U",
+      "parent_id": null,
+      "descricao": null,
+      "categoria_basileia": "rsac"
+    },
+    {
+      "id": "R0.U.12",
+      "codigo": "R0.U.12",
+      "nome": "Risco de Modelo",
+      "nivel": 0,
+      "nucleo": "U",
+      "parent_id": null,
+      "descricao": null,
+      "categoria_basileia": "operacional"
+    },
+    {
+      "id": "R0.U.13",
+      "codigo": "R0.U.13",
+      "nome": "Risco de Privacidade (LGPD)",
+      "nivel": 0,
+      "nucleo": "U",
+      "parent_id": null,
+      "descricao": null,
+      "categoria_basileia": "operacional"
+    },
+    {
+      "id": "R1.U.1.1",
+      "codigo": "R1.U.1.1",
+      "nome": "Inadimplencia (counterparty default)",
+      "nivel": 1,
+      "nucleo": "U",
+      "parent_id": "R0.U.1",
+      "descricao": null,
+      "categoria_basileia": null
+    },
+    {
+      "id": "R1.U.1.2",
+      "codigo": "R1.U.1.2",
+      "nome": "Migracao de rating",
+      "nivel": 1,
+      "nucleo": "U",
+      "parent_id": "R0.U.1",
+      "descricao": null,
+      "categoria_basileia": null
+    },
+    {
+      "id": "R1.U.1.3",
+      "codigo": "R1.U.1.3",
+      "nome": "Concentracao",
+      "nivel": 1,
+      "nucleo": "U",
+      "parent_id": "R0.U.1",
+      "descricao": null,
+      "categoria_basileia": null
+    },
+    {
+      "id": "R1.U.1.4",
+      "codigo": "R1.U.1.4",
+      "nome": "Recuperacao (LGD)",
+      "nivel": 1,
+      "nucleo": "U",
+      "parent_id": "R0.U.1",
+      "descricao": null,
+      "categoria_basileia": null
+    },
+    {
+      "id": "R1.U.1.5",
+      "codigo": "R1.U.1.5",
+      "nome": "Garantias",
+      "nivel": 1,
+      "nucleo": "U",
+      "parent_id": "R0.U.1",
+      "descricao": null,
+      "categoria_basileia": null
+    },
+    {
+      "id": "R1.U.2.1",
+      "codigo": "R1.U.2.1",
+      "nome": "Taxa de juros (banking + trading book)",
+      "nivel": 1,
+      "nucleo": "U",
+      "parent_id": "R0.U.2",
+      "descricao": null,
+      "categoria_basileia": null
+    },
+    {
+      "id": "R1.U.2.2",
+      "codigo": "R1.U.2.2",
+      "nome": "Cambial",
+      "nivel": 1,
+      "nucleo": "U",
+      "parent_id": "R0.U.2",
+      "descricao": null,
+      "categoria_basileia": null
+    },
+    {
+      "id": "R1.U.2.3",
+      "codigo": "R1.U.2.3",
+      "nome": "Acoes",
+      "nivel": 1,
+      "nucleo": "U",
+      "parent_id": "R0.U.2",
+      "descricao": null,
+      "categoria_basileia": null
+    },
+    {
+      "id": "R1.U.2.4",
+      "codigo": "R1.U.2.4",
+      "nome": "Commodities",
+      "nivel": 1,
+      "nucleo": "U",
+      "parent_id": "R0.U.2",
+      "descricao": null,
+      "categoria_basileia": null
+    },
+    {
+      "id": "R1.U.2.5",
+      "codigo": "R1.U.2.5",
+      "nome": "Spread / base",
+      "nivel": 1,
+      "nucleo": "U",
+      "parent_id": "R0.U.2",
+      "descricao": null,
+      "categoria_basileia": null
+    },
+    {
+      "id": "R1.U.3.1",
+      "codigo": "R1.U.3.1",
+      "nome": "Funding",
+      "nivel": 1,
+      "nucleo": "U",
+      "parent_id": "R0.U.3",
+      "descricao": null,
+      "categoria_basileia": null
+    },
+    {
+      "id": "R1.U.3.2",
+      "codigo": "R1.U.3.2",
+      "nome": "Liquidez de mercado",
+      "nivel": 1,
+      "nucleo": "U",
+      "parent_id": "R0.U.3",
+      "descricao": null,
+      "categoria_basileia": null
+    },
+    {
+      "id": "R1.U.3.3",
+      "codigo": "R1.U.3.3",
+      "nome": "Intradia",
+      "nivel": 1,
+      "nucleo": "U",
+      "parent_id": "R0.U.3",
+      "descricao": null,
+      "categoria_basileia": null
+    },
+    {
+      "id": "R1.U.4.1",
+      "codigo": "R1.U.4.1",
+      "nome": "Pessoas (erro humano, fraude interna)",
+      "nivel": 1,
+      "nucleo": "U",
+      "parent_id": "R0.U.4",
+      "descricao": null,
+      "categoria_basileia": null
+    },
+    {
+      "id": "R1.U.4.2",
+      "codigo": "R1.U.4.2",
+      "nome": "Processos (falha de processo, modelagem)",
+      "nivel": 1,
+      "nucleo": "U",
+      "parent_id": "R0.U.4",
+      "descricao": null,
+      "categoria_basileia": null
+    },
+    {
+      "id": "R1.U.4.3",
+      "codigo": "R1.U.4.3",
+      "nome": "Sistemas e tecnologia",
+      "nivel": 1,
+      "nucleo": "U",
+      "parent_id": "R0.U.4",
+      "descricao": null,
+      "categoria_basileia": null
+    },
+    {
+      "id": "R1.U.4.4",
+      "codigo": "R1.U.4.4",
+      "nome": "Eventos externos (fraude externa, desastres)",
+      "nivel": 1,
+      "nucleo": "U",
+      "parent_id": "R0.U.4",
+      "descricao": null,
+      "categoria_basileia": null
+    },
+    {
+      "id": "R1.U.4.5",
+      "codigo": "R1.U.4.5",
+      "nome": "Risco legal",
+      "nivel": 1,
+      "nucleo": "U",
+      "parent_id": "R0.U.4",
+      "descricao": null,
+      "categoria_basileia": null
+    },
+    {
+      "id": "R1.U.4.6",
+      "codigo": "R1.U.4.6",
+      "nome": "Terceiros e quarteirizacao",
+      "nivel": 1,
+      "nucleo": "U",
+      "parent_id": "R0.U.4",
+      "descricao": null,
+      "categoria_basileia": null
+    },
+    {
+      "id": "R1.U.5.1",
+      "codigo": "R1.U.5.1",
+      "nome": "Indisponibilidade",
+      "nivel": 1,
+      "nucleo": "U",
+      "parent_id": "R0.U.5",
+      "descricao": null,
+      "categoria_basileia": null
+    },
+    {
+      "id": "R1.U.5.2",
+      "codigo": "R1.U.5.2",
+      "nome": "Vazamento e confidencialidade",
+      "nivel": 1,
+      "nucleo": "U",
+      "parent_id": "R0.U.5",
+      "descricao": null,
+      "categoria_basileia": null
+    },
+    {
+      "id": "R1.U.5.3",
+      "codigo": "R1.U.5.3",
+      "nome": "Integridade e fraude por intrusao",
+      "nivel": 1,
+      "nucleo": "U",
+      "parent_id": "R0.U.5",
+      "descricao": null,
+      "categoria_basileia": null
+    },
+    {
+      "id": "R1.U.5.4",
+      "codigo": "R1.U.5.4",
+      "nome": "Ransomware e extorsao",
+      "nivel": 1,
+      "nucleo": "U",
+      "parent_id": "R0.U.5",
+      "descricao": null,
+      "categoria_basileia": null
+    },
+    {
+      "id": "R1.U.6.1",
+      "codigo": "R1.U.6.1",
+      "nome": "Nao cumprimento de norma vigente",
+      "nivel": 1,
+      "nucleo": "U",
+      "parent_id": "R0.U.6",
+      "descricao": null,
+      "categoria_basileia": null
+    },
+    {
+      "id": "R1.U.6.2",
+      "codigo": "R1.U.6.2",
+      "nome": "Falha em tempestividade de adequacao",
+      "nivel": 1,
+      "nucleo": "U",
+      "parent_id": "R0.U.6",
+      "descricao": null,
+      "categoria_basileia": null
+    },
+    {
+      "id": "R1.U.6.3",
+      "codigo": "R1.U.6.3",
+      "nome": "Sancao regulatoria",
+      "nivel": 1,
+      "nucleo": "U",
+      "parent_id": "R0.U.6",
+      "descricao": null,
+      "categoria_basileia": null
+    },
+    {
+      "id": "R1.U.7.1",
+      "codigo": "R1.U.7.1",
+      "nome": "Misselling",
+      "nivel": 1,
+      "nucleo": "U",
+      "parent_id": "R0.U.7",
+      "descricao": null,
+      "categoria_basileia": null
+    },
+    {
+      "id": "R1.U.7.2",
+      "codigo": "R1.U.7.2",
+      "nome": "Praticas comerciais abusivas",
+      "nivel": 1,
+      "nucleo": "U",
+      "parent_id": "R0.U.7",
+      "descricao": null,
+      "categoria_basileia": null
+    },
+    {
+      "id": "R1.U.7.3",
+      "codigo": "R1.U.7.3",
+      "nome": "Conflito de interesses",
+      "nivel": 1,
+      "nucleo": "U",
+      "parent_id": "R0.U.7",
+      "descricao": null,
+      "categoria_basileia": null
+    },
+    {
+      "id": "R1.U.7.4",
+      "codigo": "R1.U.7.4",
+      "nome": "Manipulacao de mercado / insider",
+      "nivel": 1,
+      "nucleo": "U",
+      "parent_id": "R0.U.7",
+      "descricao": null,
+      "categoria_basileia": null
+    },
+    {
+      "id": "R1.U.8.1",
+      "codigo": "R1.U.8.1",
+      "nome": "Lavagem de dinheiro",
+      "nivel": 1,
+      "nucleo": "U",
+      "parent_id": "R0.U.8",
+      "descricao": null,
+      "categoria_basileia": null
+    },
+    {
+      "id": "R1.U.8.2",
+      "codigo": "R1.U.8.2",
+      "nome": "Financiamento ao terrorismo",
+      "nivel": 1,
+      "nucleo": "U",
+      "parent_id": "R0.U.8",
+      "descricao": null,
+      "categoria_basileia": null
+    },
+    {
+      "id": "R1.U.8.3",
+      "codigo": "R1.U.8.3",
+      "nome": "Sancoes (listas restritivas)",
+      "nivel": 1,
+      "nucleo": "U",
+      "parent_id": "R0.U.8",
+      "descricao": null,
+      "categoria_basileia": null
+    },
+    {
+      "id": "R1.U.8.4",
+      "codigo": "R1.U.8.4",
+      "nome": "Corrupcao e suborno",
+      "nivel": 1,
+      "nucleo": "U",
+      "parent_id": "R0.U.8",
+      "descricao": null,
+      "categoria_basileia": null
+    },
+    {
+      "id": "R1.U.9.1",
+      "codigo": "R1.U.9.1",
+      "nome": "Erro de tese ou posicionamento",
+      "nivel": 1,
+      "nucleo": "U",
+      "parent_id": "R0.U.9",
+      "descricao": null,
+      "categoria_basileia": null
+    },
+    {
+      "id": "R1.U.9.2",
+      "codigo": "R1.U.9.2",
+      "nome": "Disrupcao competitiva",
+      "nivel": 1,
+      "nucleo": "U",
+      "parent_id": "R0.U.9",
+      "descricao": null,
+      "categoria_basileia": null
+    },
+    {
+      "id": "R1.U.9.3",
+      "codigo": "R1.U.9.3",
+      "nome": "Falha de execucao de plano",
+      "nivel": 1,
+      "nucleo": "U",
+      "parent_id": "R0.U.9",
+      "descricao": null,
+      "categoria_basileia": null
+    },
+    {
+      "id": "R1.U.10.1",
+      "codigo": "R1.U.10.1",
+      "nome": "Incidentes publicos",
+      "nivel": 1,
+      "nucleo": "U",
+      "parent_id": "R0.U.10",
+      "descricao": null,
+      "categoria_basileia": null
+    },
+    {
+      "id": "R1.U.10.2",
+      "codigo": "R1.U.10.2",
+      "nome": "Cobertura midiatica negativa",
+      "nivel": 1,
+      "nucleo": "U",
+      "parent_id": "R0.U.10",
+      "descricao": null,
+      "categoria_basileia": null
+    },
+    {
+      "id": "R1.U.10.3",
+      "codigo": "R1.U.10.3",
+      "nome": "Crise nas redes sociais",
+      "nivel": 1,
+      "nucleo": "U",
+      "parent_id": "R0.U.10",
+      "descricao": null,
+      "categoria_basileia": null
+    },
+    {
+      "id": "R1.U.10.4",
+      "codigo": "R1.U.10.4",
+      "nome": "ESG-washing",
+      "nivel": 1,
+      "nucleo": "U",
+      "parent_id": "R0.U.10",
+      "descricao": null,
+      "categoria_basileia": null
+    },
+    {
+      "id": "R1.U.11.1",
+      "codigo": "R1.U.11.1",
+      "nome": "Risco fisico (agudo e cronico)",
+      "nivel": 1,
+      "nucleo": "U",
+      "parent_id": "R0.U.11",
+      "descricao": null,
+      "categoria_basileia": null
+    },
+    {
+      "id": "R1.U.11.2",
+      "codigo": "R1.U.11.2",
+      "nome": "Risco de transicao",
+      "nivel": 1,
+      "nucleo": "U",
+      "parent_id": "R0.U.11",
+      "descricao": null,
+      "categoria_basileia": null
+    },
+    {
+      "id": "R1.U.11.3",
+      "codigo": "R1.U.11.3",
+      "nome": "Risco social (DH, trabalho, comunidades)",
+      "nivel": 1,
+      "nucleo": "U",
+      "parent_id": "R0.U.11",
+      "descricao": null,
+      "categoria_basileia": null
+    },
+    {
+      "id": "R1.U.12.1",
+      "codigo": "R1.U.12.1",
+      "nome": "Especificacao inadequada",
+      "nivel": 1,
+      "nucleo": "U",
+      "parent_id": "R0.U.12",
+      "descricao": null,
+      "categoria_basileia": null
+    },
+    {
+      "id": "R1.U.12.2",
+      "codigo": "R1.U.12.2",
+      "nome": "Implementacao incorreta",
+      "nivel": 1,
+      "nucleo": "U",
+      "parent_id": "R0.U.12",
+      "descricao": null,
+      "categoria_basileia": null
+    },
+    {
+      "id": "R1.U.12.3",
+      "codigo": "R1.U.12.3",
+      "nome": "Uso indevido (model misuse)",
+      "nivel": 1,
+      "nucleo": "U",
+      "parent_id": "R0.U.12",
+      "descricao": null,
+      "categoria_basileia": null
+    },
+    {
+      "id": "R1.U.12.4",
+      "codigo": "R1.U.12.4",
+      "nome": "Drift e degradacao",
+      "nivel": 1,
+      "nucleo": "U",
+      "parent_id": "R0.U.12",
+      "descricao": null,
+      "categoria_basileia": null
+    },
+    {
+      "id": "R1.U.13.1",
+      "codigo": "R1.U.13.1",
+      "nome": "Vazamento de dados pessoais",
+      "nivel": 1,
+      "nucleo": "U",
+      "parent_id": "R0.U.13",
+      "descricao": null,
+      "categoria_basileia": null
+    },
+    {
+      "id": "R1.U.13.2",
+      "codigo": "R1.U.13.2",
+      "nome": "Tratamento sem base legal",
+      "nivel": 1,
+      "nucleo": "U",
+      "parent_id": "R0.U.13",
+      "descricao": null,
+      "categoria_basileia": null
+    },
+    {
+      "id": "R1.U.13.3",
+      "codigo": "R1.U.13.3",
+      "nome": "Nao atendimento a direitos de titular",
+      "nivel": 1,
+      "nucleo": "U",
+      "parent_id": "R0.U.13",
+      "descricao": null,
+      "categoria_basileia": null
+    },
+    {
+      "id": "R0.B.1",
+      "codigo": "R0.B.1",
+      "nome": "Risco de descasamento de prazos (gap)",
+      "nivel": 0,
+      "nucleo": "B",
+      "parent_id": null,
+      "descricao": null,
+      "categoria_basileia": null
+    },
+    {
+      "id": "R0.B.2",
+      "codigo": "R0.B.2",
+      "nome": "Risco de pre-pagamento e recompra",
+      "nivel": 0,
+      "nucleo": "B",
+      "parent_id": null,
+      "descricao": null,
+      "categoria_basileia": null
+    },
+    {
+      "id": "R0.B.3",
+      "codigo": "R0.B.3",
+      "nome": "Risco de funding wholesale",
+      "nivel": 0,
+      "nucleo": "B",
+      "parent_id": null,
+      "descricao": null,
+      "categoria_basileia": null
+    },
+    {
+      "id": "R0.B.4",
+      "codigo": "R0.B.4",
+      "nome": "Risco de imagem em corrida bancaria",
+      "nivel": 0,
+      "nucleo": "B",
+      "parent_id": null,
+      "descricao": null,
+      "categoria_basileia": null
+    },
+    {
+      "id": "R0.MC.1",
+      "codigo": "R0.MC.1",
+      "nome": "Risco de adequacao (suitability)",
+      "nivel": 0,
+      "nucleo": "MC",
+      "parent_id": null,
+      "descricao": null,
+      "categoria_basileia": null
+    },
+    {
+      "id": "R0.MC.2",
+      "codigo": "R0.MC.2",
+      "nome": "Risco de execucao (best execution)",
+      "nivel": 0,
+      "nucleo": "MC",
+      "parent_id": null,
+      "descricao": null,
+      "categoria_basileia": null
+    },
+    {
+      "id": "R0.MC.3",
+      "codigo": "R0.MC.3",
+      "nome": "Risco de marcacao a mercado",
+      "nivel": 0,
+      "nucleo": "MC",
+      "parent_id": null,
+      "descricao": null,
+      "categoria_basileia": null
+    },
+    {
+      "id": "R0.MC.4",
+      "codigo": "R0.MC.4",
+      "nome": "Risco de segregacao patrimonial",
+      "nivel": 0,
+      "nucleo": "MC",
+      "parent_id": null,
+      "descricao": null,
+      "categoria_basileia": null
+    },
+    {
+      "id": "R0.MC.5",
+      "codigo": "R0.MC.5",
+      "nome": "Risco de liquidacao (settlement)",
+      "nivel": 0,
+      "nucleo": "MC",
+      "parent_id": null,
+      "descricao": null,
+      "categoria_basileia": null
+    },
+    {
+      "id": "R0.MC.6",
+      "codigo": "R0.MC.6",
+      "nome": "Risco de chinese wall",
+      "nivel": 0,
+      "nucleo": "MC",
+      "parent_id": null,
+      "descricao": null,
+      "categoria_basileia": null
+    },
+    {
+      "id": "R0.MC.7",
+      "codigo": "R0.MC.7",
+      "nome": "Risco de conflito (gestor x distribuidor)",
+      "nivel": 0,
+      "nucleo": "MC",
+      "parent_id": null,
+      "descricao": null,
+      "categoria_basileia": null
+    },
+    {
+      "id": "R0.S.1",
+      "codigo": "R0.S.1",
+      "nome": "Risco de subscricao",
+      "nivel": 0,
+      "nucleo": "S",
+      "parent_id": null,
+      "descricao": null,
+      "categoria_basileia": null
+    },
+    {
+      "id": "R0.S.2",
+      "codigo": "R0.S.2",
+      "nome": "Risco de provisionamento",
+      "nivel": 0,
+      "nucleo": "S",
+      "parent_id": null,
+      "descricao": null,
+      "categoria_basileia": null
+    },
+    {
+      "id": "R0.S.3",
+      "codigo": "R0.S.3",
+      "nome": "Risco de sinistralidade",
+      "nivel": 0,
+      "nucleo": "S",
+      "parent_id": null,
+      "descricao": null,
+      "categoria_basileia": null
+    },
+    {
+      "id": "R0.S.4",
+      "codigo": "R0.S.4",
+      "nome": "Risco de catastrofe",
+      "nivel": 0,
+      "nucleo": "S",
+      "parent_id": null,
+      "descricao": null,
+      "categoria_basileia": null
+    },
+    {
+      "id": "R0.S.5",
+      "codigo": "R0.S.5",
+      "nome": "Risco de longevidade",
+      "nivel": 0,
+      "nucleo": "S",
+      "parent_id": null,
+      "descricao": null,
+      "categoria_basileia": null
+    },
+    {
+      "id": "R0.S.6",
+      "codigo": "R0.S.6",
+      "nome": "Risco de mortalidade",
+      "nivel": 0,
+      "nucleo": "S",
+      "parent_id": null,
+      "descricao": null,
+      "categoria_basileia": null
+    },
+    {
+      "id": "R0.S.7",
+      "codigo": "R0.S.7",
+      "nome": "Risco de invalidez/morbidade",
+      "nivel": 0,
+      "nucleo": "S",
+      "parent_id": null,
+      "descricao": null,
+      "categoria_basileia": null
+    },
+    {
+      "id": "R0.S.8",
+      "codigo": "R0.S.8",
+      "nome": "Risco de contraparte de resseguro",
+      "nivel": 0,
+      "nucleo": "S",
+      "parent_id": null,
+      "descricao": null,
+      "categoria_basileia": null
+    },
+    {
+      "id": "R0.S.9",
+      "codigo": "R0.S.9",
+      "nome": "Risco de cancelamento (lapse)",
+      "nivel": 0,
+      "nucleo": "S",
+      "parent_id": null,
+      "descricao": null,
+      "categoria_basileia": null
+    },
+    {
+      "id": "R0.CG.1",
+      "codigo": "R0.CG.1",
+      "nome": "Risco de contagio intragrupo",
+      "nivel": 0,
+      "nucleo": "CG",
+      "parent_id": null,
+      "descricao": null,
+      "categoria_basileia": null
+    },
+    {
+      "id": "R0.CG.2",
+      "codigo": "R0.CG.2",
+      "nome": "Risco de concentracao consolidada",
+      "nivel": 0,
+      "nucleo": "CG",
+      "parent_id": null,
+      "descricao": null,
+      "categoria_basileia": null
+    },
+    {
+      "id": "R0.CG.3",
+      "codigo": "R0.CG.3",
+      "nome": "Risco de conflito estrutural",
+      "nivel": 0,
+      "nucleo": "CG",
+      "parent_id": null,
+      "descricao": null,
+      "categoria_basileia": null
+    },
+    {
+      "id": "R0.CG.4",
+      "codigo": "R0.CG.4",
+      "nome": "Risco de arbitragem regulatoria interna",
+      "nivel": 0,
+      "nucleo": "CG",
+      "parent_id": null,
+      "descricao": null,
+      "categoria_basileia": null
+    },
+    {
+      "id": "R0.CG.5",
+      "codigo": "R0.CG.5",
+      "nome": "Risco de modelo agregado",
+      "nivel": 0,
+      "nucleo": "CG",
+      "parent_id": null,
+      "descricao": null,
+      "categoria_basileia": null
+    },
+    {
+      "id": "R0.CG.6",
+      "codigo": "R0.CG.6",
+      "nome": "Risco reputacional cruzado",
+      "nivel": 0,
+      "nucleo": "CG",
+      "parent_id": null,
+      "descricao": null,
+      "categoria_basileia": null
+    }
+  ],
+  "normas": [
+    {
+      "id": "LEX_4595_64",
+      "tipo": "lei",
+      "numero": "4.595",
+      "ano": 1964,
+      "regulador_id": "REG_CMN",
+      "titulo": null,
+      "ementa": "Lei da Reforma Bancaria. Cria CMN e BCB; estrutura o SFN.",
+      "status": "vigente",
+      "vigencia_inicio": "1964-12-31",
+      "vigencia_fim": null,
+      "norma_mae_id": null,
+      "url_oficial": null,
+      "fonte_consulta": null,
+      "notas": "Lei estruturante. Aplica-se de forma informativa a todo SFN.",
+      "created_at": "2026-04-30T15:46:41.043325-03:00",
+      "updated_at": "2026-04-30T15:46:41.043325-03:00"
+    },
+    {
+      "id": "LEX_6385_76",
+      "tipo": "lei",
+      "numero": "6.385",
+      "ano": 1976,
+      "regulador_id": "REG_CVM",
+      "titulo": null,
+      "ementa": "Cria a CVM e dispoe sobre o mercado de valores mobiliarios.",
+      "status": "vigente",
+      "vigencia_inicio": "1976-12-07",
+      "vigencia_fim": null,
+      "norma_mae_id": null,
+      "url_oficial": null,
+      "fonte_consulta": null,
+      "notas": null,
+      "created_at": "2026-04-30T15:46:41.043325-03:00",
+      "updated_at": "2026-04-30T15:46:41.043325-03:00"
+    },
+    {
+      "id": "LEX_DL_73_66",
+      "tipo": "decreto_lei",
+      "numero": "73",
+      "ano": 1966,
+      "regulador_id": "REG_CNSP",
+      "titulo": null,
+      "ementa": "Sistema Nacional de Seguros Privados. Estrutura SUSEP, CNSP, IRB.",
+      "status": "vigente",
+      "vigencia_inicio": "1966-11-21",
+      "vigencia_fim": null,
+      "norma_mae_id": null,
+      "url_oficial": null,
+      "fonte_consulta": null,
+      "notas": null,
+      "created_at": "2026-04-30T15:46:41.043325-03:00",
+      "updated_at": "2026-04-30T15:46:41.043325-03:00"
+    },
+    {
+      "id": "LEX_LC_109_01",
+      "tipo": "lei_complementar",
+      "numero": "LC 109",
+      "ano": 2001,
+      "regulador_id": "REG_CNPC",
+      "titulo": null,
+      "ementa": "Regime de previdencia complementar (aberta e fechada).",
+      "status": "vigente",
+      "vigencia_inicio": "2001-05-29",
+      "vigencia_fim": null,
+      "norma_mae_id": null,
+      "url_oficial": null,
+      "fonte_consulta": null,
+      "notas": null,
+      "created_at": "2026-04-30T15:46:41.043325-03:00",
+      "updated_at": "2026-04-30T15:46:41.043325-03:00"
+    },
+    {
+      "id": "LEX_LC_105_01",
+      "tipo": "lei_complementar",
+      "numero": "LC 105",
+      "ano": 2001,
+      "regulador_id": "REG_BCB",
+      "titulo": null,
+      "ementa": "Sigilo das operacoes financeiras.",
+      "status": "vigente",
+      "vigencia_inicio": "2001-01-10",
+      "vigencia_fim": null,
+      "norma_mae_id": null,
+      "url_oficial": null,
+      "fonte_consulta": null,
+      "notas": null,
+      "created_at": "2026-04-30T15:46:41.043325-03:00",
+      "updated_at": "2026-04-30T15:46:41.043325-03:00"
+    },
+    {
+      "id": "LEX_9613_98",
+      "tipo": "lei",
+      "numero": "9.613",
+      "ano": 1998,
+      "regulador_id": "REG_COAF",
+      "titulo": null,
+      "ementa": "Crimes de lavagem de dinheiro e PLD-FT. Cria o COAF.",
+      "status": "vigente",
+      "vigencia_inicio": "1998-03-03",
+      "vigencia_fim": null,
+      "norma_mae_id": null,
+      "url_oficial": null,
+      "fonte_consulta": null,
+      "notas": "Alterada substancialmente pela Lei 12.683/2012.",
+      "created_at": "2026-04-30T15:46:41.043325-03:00",
+      "updated_at": "2026-04-30T15:46:41.043325-03:00"
+    },
+    {
+      "id": "LEX_12846_13",
+      "tipo": "lei",
+      "numero": "12.846",
+      "ano": 2013,
+      "regulador_id": "REG_BCB",
+      "titulo": null,
+      "ementa": "Lei Anticorrupcao. Responsabilizacao administrativa e civil de PJ.",
+      "status": "vigente",
+      "vigencia_inicio": "2013-08-01",
+      "vigencia_fim": null,
+      "norma_mae_id": null,
+      "url_oficial": null,
+      "fonte_consulta": null,
+      "notas": null,
+      "created_at": "2026-04-30T15:46:41.043325-03:00",
+      "updated_at": "2026-04-30T15:46:41.043325-03:00"
+    },
+    {
+      "id": "LEX_13709_18",
+      "tipo": "lei",
+      "numero": "13.709",
+      "ano": 2018,
+      "regulador_id": "REG_ANPD",
+      "titulo": null,
+      "ementa": "LGPD - Lei Geral de Protecao de Dados Pessoais.",
+      "status": "vigente",
+      "vigencia_inicio": "2018-08-14",
+      "vigencia_fim": null,
+      "norma_mae_id": null,
+      "url_oficial": null,
+      "fonte_consulta": null,
+      "notas": "Em vigor desde 2020. Sancao a partir de 2021.",
+      "created_at": "2026-04-30T15:46:41.043325-03:00",
+      "updated_at": "2026-04-30T15:46:41.043325-03:00"
+    },
+    {
+      "id": "LEX_8078_90",
+      "tipo": "lei",
+      "numero": "8.078",
+      "ano": 1990,
+      "regulador_id": "REG_BCB",
+      "titulo": null,
+      "ementa": "Codigo de Defesa do Consumidor.",
+      "status": "vigente",
+      "vigencia_inicio": "1990-09-11",
+      "vigencia_fim": null,
+      "norma_mae_id": null,
+      "url_oficial": null,
+      "fonte_consulta": null,
+      "notas": "Aplica-se quando ha relacao de consumo bancaria.",
+      "created_at": "2026-04-30T15:46:41.043325-03:00",
+      "updated_at": "2026-04-30T15:46:41.043325-03:00"
+    },
+    {
+      "id": "RES_CMN_4557_17",
+      "tipo": "res_cmn",
+      "numero": "4.557",
+      "ano": 2017,
+      "regulador_id": "REG_CMN",
+      "titulo": "Estrutura de gerenciamento de riscos e capital",
+      "ementa": "Dispoe sobre a estrutura de gerenciamento continuo e integrado de riscos (GIR) e capital.",
+      "status": "vigente",
+      "vigencia_inicio": "2017-02-23",
+      "vigencia_fim": null,
+      "norma_mae_id": null,
+      "url_oficial": null,
+      "fonte_consulta": null,
+      "notas": "Norma central do GIR brasileiro. Aplicacao diferenciada por segmento.",
+      "created_at": "2026-04-30T15:46:41.043325-03:00",
+      "updated_at": "2026-04-30T15:46:41.043325-03:00"
+    },
+    {
+      "id": "RES_CMN_4553_17",
+      "tipo": "res_cmn",
+      "numero": "4.553",
+      "ano": 2017,
+      "regulador_id": "REG_CMN",
+      "titulo": "Segmentacao prudencial S1-S5",
+      "ementa": "Estabelece segmentacao das instituicoes financeiras para fins de aplicacao proporcional da regulacao prudencial.",
+      "status": "vigente",
+      "vigencia_inicio": "2017-01-30",
+      "vigencia_fim": null,
+      "norma_mae_id": null,
+      "url_oficial": null,
+      "fonte_consulta": null,
+      "notas": null,
+      "created_at": "2026-04-30T15:46:41.043325-03:00",
+      "updated_at": "2026-04-30T15:46:41.043325-03:00"
+    },
+    {
+      "id": "RES_CMN_4193_13",
+      "tipo": "res_cmn",
+      "numero": "4.193",
+      "ano": 2013,
+      "regulador_id": "REG_CMN",
+      "titulo": "Apuracao de capital regulamentar",
+      "ementa": "Apuracao dos requerimentos minimos de Patrimonio de Referencia (PR), Capital Nivel I e Capital Principal (Basileia III).",
+      "status": "vigente",
+      "vigencia_inicio": "2013-03-01",
+      "vigencia_fim": null,
+      "norma_mae_id": null,
+      "url_oficial": null,
+      "fonte_consulta": null,
+      "notas": null,
+      "created_at": "2026-04-30T15:46:41.043325-03:00",
+      "updated_at": "2026-04-30T15:46:41.043325-03:00"
+    },
+    {
+      "id": "RES_BCB_200_22",
+      "tipo": "res_bcb",
+      "numero": "200",
+      "ano": 2022,
+      "regulador_id": "REG_BCB",
+      "titulo": "Estrutura simplificada de gerenciamento de riscos",
+      "ementa": "Estrutura simplificada e continua de gerenciamento de riscos para instituicoes do segmento S3, S4 e S5.",
+      "status": "vigente",
+      "vigencia_inicio": "2022-03-11",
+      "vigencia_fim": null,
+      "norma_mae_id": null,
+      "url_oficial": null,
+      "fonte_consulta": null,
+      "notas": null,
+      "created_at": "2026-04-30T15:46:41.043325-03:00",
+      "updated_at": "2026-04-30T15:46:41.043325-03:00"
+    },
+    {
+      "id": "RES_CMN_4893_21",
+      "tipo": "res_cmn",
+      "numero": "4.893",
+      "ano": 2021,
+      "regulador_id": "REG_CMN",
+      "titulo": "Politica de seguranca cibernetica e contratacao de servicos de processamento e armazenamento em nuvem",
+      "ementa": "Dispoe sobre politica de seguranca cibernetica e os requisitos para contratacao de servicos de processamento e armazenamento de dados em nuvem.",
+      "status": "vigente",
+      "vigencia_inicio": "2021-02-26",
+      "vigencia_fim": null,
+      "norma_mae_id": null,
+      "url_oficial": null,
+      "fonte_consulta": null,
+      "notas": null,
+      "created_at": "2026-04-30T15:46:41.043325-03:00",
+      "updated_at": "2026-04-30T15:46:41.043325-03:00"
+    },
+    {
+      "id": "RES_CMN_4943_21",
+      "tipo": "res_cmn",
+      "numero": "4.943",
+      "ano": 2021,
+      "regulador_id": "REG_CMN",
+      "titulo": "Sistema de controles internos",
+      "ementa": "Estabelece principios para o sistema de controles internos das instituicoes financeiras.",
+      "status": "vigente",
+      "vigencia_inicio": "2021-09-15",
+      "vigencia_fim": null,
+      "norma_mae_id": null,
+      "url_oficial": null,
+      "fonte_consulta": null,
+      "notas": "Atualizou disciplina anterior da 2.554/98.",
+      "created_at": "2026-04-30T15:46:41.043325-03:00",
+      "updated_at": "2026-04-30T15:46:41.043325-03:00"
+    },
+    {
+      "id": "RES_CMN_4945_21",
+      "tipo": "res_cmn",
+      "numero": "4.945",
+      "ano": 2021,
+      "regulador_id": "REG_CMN",
+      "titulo": "PRSAC - Politica de Responsabilidade Social, Ambiental e Climatica",
+      "ementa": "Estabelece a Politica de Responsabilidade Social, Ambiental e Climatica das instituicoes financeiras.",
+      "status": "vigente",
+      "vigencia_inicio": "2021-09-15",
+      "vigencia_fim": null,
+      "norma_mae_id": null,
+      "url_oficial": null,
+      "fonte_consulta": null,
+      "notas": null,
+      "created_at": "2026-04-30T15:46:41.043325-03:00",
+      "updated_at": "2026-04-30T15:46:41.043325-03:00"
+    },
+    {
+      "id": "RES_CMN_4860_20",
+      "tipo": "res_cmn",
+      "numero": "4.860",
+      "ano": 2020,
+      "regulador_id": "REG_CMN",
+      "titulo": "Componente organizacional de Ouvidoria",
+      "ementa": "Dispoe sobre a constituicao e o funcionamento de componente organizacional de ouvidoria pelas instituicoes financeiras.",
+      "status": "vigente",
+      "vigencia_inicio": "2020-10-23",
+      "vigencia_fim": null,
+      "norma_mae_id": null,
+      "url_oficial": null,
+      "fonte_consulta": null,
+      "notas": null,
+      "created_at": "2026-04-30T15:46:41.043325-03:00",
+      "updated_at": "2026-04-30T15:46:41.043325-03:00"
+    },
+    {
+      "id": "CIR_BCB_3978_20",
+      "tipo": "circ_bcb",
+      "numero": "3.978",
+      "ano": 2020,
+      "regulador_id": "REG_BCB",
+      "titulo": "PLD-FT no SFN",
+      "ementa": "Dispoe sobre politicas, procedimentos e controles de PLD-FT no ambito do SFN.",
+      "status": "vigente",
+      "vigencia_inicio": "2020-01-23",
+      "vigencia_fim": null,
+      "norma_mae_id": null,
+      "url_oficial": null,
+      "fonte_consulta": null,
+      "notas": "Substituiu Circular 3.461.",
+      "created_at": "2026-04-30T15:46:41.043325-03:00",
+      "updated_at": "2026-04-30T15:46:41.043325-03:00"
+    },
+    {
+      "id": "RES_CMN_4502_16",
+      "tipo": "res_cmn",
+      "numero": "4.502",
+      "ano": 2016,
+      "regulador_id": "REG_CMN",
+      "titulo": "Plano de Recuperacao",
+      "ementa": "Plano de Recuperacao a ser elaborado pelas instituicoes do segmento S1.",
+      "status": "vigente",
+      "vigencia_inicio": "2016-06-30",
+      "vigencia_fim": null,
+      "norma_mae_id": null,
+      "url_oficial": null,
+      "fonte_consulta": null,
+      "notas": "Aplica-se apenas a S1.",
+      "created_at": "2026-04-30T15:46:41.043325-03:00",
+      "updated_at": "2026-04-30T15:46:41.043325-03:00"
+    },
+    {
+      "id": "RES_CMN_4966_21",
+      "tipo": "res_cmn",
+      "numero": "4.966",
+      "ano": 2021,
+      "regulador_id": "REG_CMN",
+      "titulo": "Provisoes para perdas associadas a risco de credito",
+      "ementa": "Conceitos e criterios contabeis aplicaveis a instrumentos financeiros e provisoes (alinhamento a IFRS 9 / CPC 48).",
+      "status": "vigente",
+      "vigencia_inicio": "2021-11-25",
+      "vigencia_fim": null,
+      "norma_mae_id": null,
+      "url_oficial": null,
+      "fonte_consulta": null,
+      "notas": "Producao de efeitos a partir de 2025.",
+      "created_at": "2026-04-30T15:46:41.043325-03:00",
+      "updated_at": "2026-04-30T15:46:41.043325-03:00"
+    },
+    {
+      "id": "RES_CVM_35_21",
+      "tipo": "res_cvm",
+      "numero": "35",
+      "ano": 2021,
+      "regulador_id": "REG_CVM",
+      "titulo": "Conduta de distribuicao e suitability",
+      "ementa": "Normas de conduta a serem observadas pelos integrantes do sistema de distribuicao de valores mobiliarios e suitability.",
+      "status": "vigente",
+      "vigencia_inicio": "2021-05-26",
+      "vigencia_fim": null,
+      "norma_mae_id": null,
+      "url_oficial": null,
+      "fonte_consulta": null,
+      "notas": null,
+      "created_at": "2026-04-30T15:46:41.043325-03:00",
+      "updated_at": "2026-04-30T15:46:41.043325-03:00"
+    },
+    {
+      "id": "RES_CVM_50_21",
+      "tipo": "res_cvm",
+      "numero": "50",
+      "ano": 2021,
+      "regulador_id": "REG_CVM",
+      "titulo": "PLD-FT no mercado de valores mobiliarios",
+      "ementa": "PLD-FT aplicaveis aos integrantes do sistema de distribuicao e participantes do mercado de valores mobiliarios.",
+      "status": "vigente",
+      "vigencia_inicio": "2021-08-31",
+      "vigencia_fim": null,
+      "norma_mae_id": null,
+      "url_oficial": null,
+      "fonte_consulta": null,
+      "notas": null,
+      "created_at": "2026-04-30T15:46:41.043325-03:00",
+      "updated_at": "2026-04-30T15:46:41.043325-03:00"
+    },
+    {
+      "id": "RES_CVM_21_21",
+      "tipo": "res_cvm",
+      "numero": "21",
+      "ano": 2021,
+      "regulador_id": "REG_CVM",
+      "titulo": "Administracao de carteiras de valores mobiliarios",
+      "ementa": "Atividade de administracao de carteiras (categorias 1 - gestor e 2 - administrador fiduciario).",
+      "status": "vigente",
+      "vigencia_inicio": "2021-02-26",
+      "vigencia_fim": null,
+      "norma_mae_id": null,
+      "url_oficial": null,
+      "fonte_consulta": null,
+      "notas": null,
+      "created_at": "2026-04-30T15:46:41.043325-03:00",
+      "updated_at": "2026-04-30T15:46:41.043325-03:00"
+    },
+    {
+      "id": "RES_CVM_175_22",
+      "tipo": "res_cvm",
+      "numero": "175",
+      "ano": 2022,
+      "regulador_id": "REG_CVM",
+      "titulo": "Fundos de Investimento (regime unico)",
+      "ementa": "Estabelece o regime unico para fundos de investimento (consolidacao das antigas instrucoes 555, 356, 472 etc.).",
+      "status": "vigente",
+      "vigencia_inicio": "2022-12-23",
+      "vigencia_fim": null,
+      "norma_mae_id": null,
+      "url_oficial": null,
+      "fonte_consulta": null,
+      "notas": "Marco regulatorio dos fundos. Substitui multiplas instrucoes anteriores.",
+      "created_at": "2026-04-30T15:46:41.043325-03:00",
+      "updated_at": "2026-04-30T15:46:41.043325-03:00"
+    },
+    {
+      "id": "RES_CNSP_416_21",
+      "tipo": "res_cnsp",
+      "numero": "416",
+      "ano": 2021,
+      "regulador_id": "REG_CNSP",
+      "titulo": "Estrutura de gestao de riscos e controles internos",
+      "ementa": "Dispoe sobre a estrutura de gestao de riscos, controles internos e auditoria interna a ser implantada pelas sociedades supervisionadas.",
+      "status": "vigente",
+      "vigencia_inicio": "2021-07-29",
+      "vigencia_fim": null,
+      "norma_mae_id": null,
+      "url_oficial": null,
+      "fonte_consulta": null,
+      "notas": "Equivalente da 4.557 para o universo SUSEP.",
+      "created_at": "2026-04-30T15:46:41.043325-03:00",
+      "updated_at": "2026-04-30T15:46:41.043325-03:00"
+    },
+    {
+      "id": "CIR_SUSEP_648_21",
+      "tipo": "circ_susep",
+      "numero": "648",
+      "ano": 2021,
+      "regulador_id": "REG_SUSEP",
+      "titulo": "ORSA - autoavaliacao de riscos e solvencia",
+      "ementa": "Procedimentos para autoavaliacao de riscos e solvencia (ORSA).",
+      "status": "vigente",
+      "vigencia_inicio": "2021-12-15",
+      "vigencia_fim": null,
+      "norma_mae_id": null,
+      "url_oficial": null,
+      "fonte_consulta": null,
+      "notas": null,
+      "created_at": "2026-04-30T15:46:41.043325-03:00",
+      "updated_at": "2026-04-30T15:46:41.043325-03:00"
+    },
+    {
+      "id": "COD_ANBIMA_DISTR",
+      "tipo": "codigo_anbima",
+      "numero": "Distribuicao",
+      "ano": null,
+      "regulador_id": "REG_ANBIMA",
+      "titulo": "Codigo ANBIMA de Distribuicao de Produtos de Investimento",
+      "ementa": "Auto-regulacao voluntaria para distribuicao de produtos de investimento.",
+      "status": "vigente",
+      "vigencia_inicio": null,
+      "vigencia_fim": null,
+      "norma_mae_id": null,
+      "url_oficial": null,
+      "fonte_consulta": null,
+      "notas": "Aplica-se apenas a aderentes ANBIMA.",
+      "created_at": "2026-04-30T15:46:41.043325-03:00",
+      "updated_at": "2026-04-30T15:46:41.043325-03:00"
+    },
+    {
+      "id": "COD_ANBIMA_GEST",
+      "tipo": "codigo_anbima",
+      "numero": "Adm e Gestao",
+      "ano": null,
+      "regulador_id": "REG_ANBIMA",
+      "titulo": "Codigo ANBIMA de Administracao e Gestao de Recursos de Terceiros",
+      "ementa": "Auto-regulacao voluntaria para adm fiduciaria e gestao.",
+      "status": "vigente",
+      "vigencia_inicio": null,
+      "vigencia_fim": null,
+      "norma_mae_id": null,
+      "url_oficial": null,
+      "fonte_consulta": null,
+      "notas": "Aplica-se apenas a aderentes ANBIMA.",
+      "created_at": "2026-04-30T15:46:41.043325-03:00",
+      "updated_at": "2026-04-30T15:46:41.043325-03:00"
+    }
+  ],
+  "norma_artigos": [
+    {
+      "id": 1,
+      "norma_id": "RES_CMN_4557_17",
+      "numero": "38",
+      "secao": null,
+      "tema": "RCSA - autoavaliacao de riscos e controles",
+      "descricao": null
+    },
+    {
+      "id": 2,
+      "norma_id": "RES_CMN_4557_17",
+      "numero": "50",
+      "secao": null,
+      "tema": "Continuidade de negocios",
+      "descricao": null
+    },
+    {
+      "id": 3,
+      "norma_id": "RES_CMN_4557_17",
+      "numero": "56",
+      "secao": null,
+      "tema": "Apetite ao risco (RAS)",
+      "descricao": null
+    },
+    {
+      "id": 4,
+      "norma_id": "RES_CMN_4557_17",
+      "numero": "21",
+      "secao": null,
+      "tema": "Risco de credito",
+      "descricao": null
+    },
+    {
+      "id": 5,
+      "norma_id": "RES_CMN_4557_17",
+      "numero": "32",
+      "secao": null,
+      "tema": "Risco operacional",
+      "descricao": null
+    },
+    {
+      "id": 6,
+      "norma_id": "RES_CMN_4557_17",
+      "numero": "40",
+      "secao": null,
+      "tema": "Risco de liquidez",
+      "descricao": null
+    },
+    {
+      "id": 7,
+      "norma_id": "CIR_BCB_3978_20",
+      "numero": "6",
+      "secao": null,
+      "tema": "Avaliacao interna de risco PLD-FT",
+      "descricao": null
+    },
+    {
+      "id": 8,
+      "norma_id": "CIR_BCB_3978_20",
+      "numero": "20",
+      "secao": null,
+      "tema": "KYC - cadastro de clientes",
+      "descricao": null
+    },
+    {
+      "id": 9,
+      "norma_id": "CIR_BCB_3978_20",
+      "numero": "32",
+      "secao": null,
+      "tema": "Monitoramento e selecao de operacoes",
+      "descricao": null
+    },
+    {
+      "id": 10,
+      "norma_id": "CIR_BCB_3978_20",
+      "numero": "44",
+      "secao": null,
+      "tema": "Comunicacao ao COAF",
+      "descricao": null
+    },
+    {
+      "id": 11,
+      "norma_id": "RES_CMN_4893_21",
+      "numero": "3",
+      "secao": null,
+      "tema": "Politica de seguranca cibernetica",
+      "descricao": null
+    },
+    {
+      "id": 12,
+      "norma_id": "RES_CMN_4893_21",
+      "numero": "13",
+      "secao": null,
+      "tema": "Plano de acao e resposta a incidentes",
+      "descricao": null
+    },
+    {
+      "id": 13,
+      "norma_id": "RES_CMN_4893_21",
+      "numero": "18",
+      "secao": null,
+      "tema": "Contratacao de servicos em nuvem",
+      "descricao": null
+    }
+  ],
+  "norma_aplicabilidade_tipo_entidade": [
+    {
+      "norma_id": "RES_CMN_4557_17",
+      "tipo_entidade_id": "ENT_BANCO_MULTIPLO"
+    },
+    {
+      "norma_id": "RES_CMN_4557_17",
+      "tipo_entidade_id": "ENT_BANCO_COMERCIAL"
+    },
+    {
+      "norma_id": "RES_CMN_4557_17",
+      "tipo_entidade_id": "ENT_BANCO_INVESTIMENTO"
+    },
+    {
+      "norma_id": "RES_CMN_4557_17",
+      "tipo_entidade_id": "ENT_BANCO_DESENV"
+    },
+    {
+      "norma_id": "RES_CMN_4557_17",
+      "tipo_entidade_id": "ENT_BANCO_COOP"
+    },
+    {
+      "norma_id": "RES_CMN_4557_17",
+      "tipo_entidade_id": "ENT_CAIXA_ECON"
+    },
+    {
+      "norma_id": "RES_CMN_4557_17",
+      "tipo_entidade_id": "ENT_BANCO_CAMBIO"
+    },
+    {
+      "norma_id": "RES_CMN_4557_17",
+      "tipo_entidade_id": "ENT_SCFI"
+    },
+    {
+      "norma_id": "RES_CMN_4557_17",
+      "tipo_entidade_id": "ENT_DTVM"
+    },
+    {
+      "norma_id": "RES_CMN_4557_17",
+      "tipo_entidade_id": "ENT_CTVM"
+    },
+    {
+      "norma_id": "RES_CMN_4553_17",
+      "tipo_entidade_id": "ENT_BANCO_MULTIPLO"
+    },
+    {
+      "norma_id": "RES_CMN_4553_17",
+      "tipo_entidade_id": "ENT_BANCO_COMERCIAL"
+    },
+    {
+      "norma_id": "RES_CMN_4553_17",
+      "tipo_entidade_id": "ENT_BANCO_INVESTIMENTO"
+    },
+    {
+      "norma_id": "RES_CMN_4553_17",
+      "tipo_entidade_id": "ENT_BANCO_DESENV"
+    },
+    {
+      "norma_id": "RES_CMN_4553_17",
+      "tipo_entidade_id": "ENT_BANCO_COOP"
+    },
+    {
+      "norma_id": "RES_CMN_4553_17",
+      "tipo_entidade_id": "ENT_CAIXA_ECON"
+    },
+    {
+      "norma_id": "RES_CMN_4553_17",
+      "tipo_entidade_id": "ENT_BANCO_CAMBIO"
+    },
+    {
+      "norma_id": "RES_CMN_4553_17",
+      "tipo_entidade_id": "ENT_SCFI"
+    },
+    {
+      "norma_id": "RES_CMN_4553_17",
+      "tipo_entidade_id": "ENT_SCD"
+    },
+    {
+      "norma_id": "RES_CMN_4553_17",
+      "tipo_entidade_id": "ENT_SEP"
+    },
+    {
+      "norma_id": "RES_CMN_4553_17",
+      "tipo_entidade_id": "ENT_COOP_CRED"
+    },
+    {
+      "norma_id": "RES_CMN_4553_17",
+      "tipo_entidade_id": "ENT_IP"
+    },
+    {
+      "norma_id": "RES_CMN_4553_17",
+      "tipo_entidade_id": "ENT_AGENCIA_FOMENTO"
+    },
+    {
+      "norma_id": "RES_CMN_4553_17",
+      "tipo_entidade_id": "ENT_ARRENDAMENTO"
+    },
+    {
+      "norma_id": "RES_CMN_4553_17",
+      "tipo_entidade_id": "ENT_DTVM"
+    },
+    {
+      "norma_id": "RES_CMN_4553_17",
+      "tipo_entidade_id": "ENT_CTVM"
+    },
+    {
+      "norma_id": "RES_CMN_4553_17",
+      "tipo_entidade_id": "ENT_CUSTODIANTE"
+    },
+    {
+      "norma_id": "RES_CMN_4553_17",
+      "tipo_entidade_id": "ENT_ESCRITURADOR"
+    },
+    {
+      "norma_id": "RES_CMN_4193_13",
+      "tipo_entidade_id": "ENT_BANCO_MULTIPLO"
+    },
+    {
+      "norma_id": "RES_CMN_4193_13",
+      "tipo_entidade_id": "ENT_BANCO_COMERCIAL"
+    },
+    {
+      "norma_id": "RES_CMN_4193_13",
+      "tipo_entidade_id": "ENT_BANCO_INVESTIMENTO"
+    },
+    {
+      "norma_id": "RES_CMN_4193_13",
+      "tipo_entidade_id": "ENT_BANCO_DESENV"
+    },
+    {
+      "norma_id": "RES_CMN_4193_13",
+      "tipo_entidade_id": "ENT_BANCO_COOP"
+    },
+    {
+      "norma_id": "RES_CMN_4193_13",
+      "tipo_entidade_id": "ENT_CAIXA_ECON"
+    },
+    {
+      "norma_id": "RES_CMN_4193_13",
+      "tipo_entidade_id": "ENT_BANCO_CAMBIO"
+    },
+    {
+      "norma_id": "RES_BCB_200_22",
+      "tipo_entidade_id": "ENT_BANCO_MULTIPLO"
+    },
+    {
+      "norma_id": "RES_BCB_200_22",
+      "tipo_entidade_id": "ENT_BANCO_COMERCIAL"
+    },
+    {
+      "norma_id": "RES_BCB_200_22",
+      "tipo_entidade_id": "ENT_SCFI"
+    },
+    {
+      "norma_id": "RES_BCB_200_22",
+      "tipo_entidade_id": "ENT_SCD"
+    },
+    {
+      "norma_id": "RES_BCB_200_22",
+      "tipo_entidade_id": "ENT_SEP"
+    },
+    {
+      "norma_id": "RES_BCB_200_22",
+      "tipo_entidade_id": "ENT_COOP_CRED"
+    },
+    {
+      "norma_id": "RES_BCB_200_22",
+      "tipo_entidade_id": "ENT_IP"
+    },
+    {
+      "norma_id": "RES_CMN_4893_21",
+      "tipo_entidade_id": "ENT_BANCO_MULTIPLO"
+    },
+    {
+      "norma_id": "RES_CMN_4893_21",
+      "tipo_entidade_id": "ENT_BANCO_COMERCIAL"
+    },
+    {
+      "norma_id": "RES_CMN_4893_21",
+      "tipo_entidade_id": "ENT_BANCO_INVESTIMENTO"
+    },
+    {
+      "norma_id": "RES_CMN_4893_21",
+      "tipo_entidade_id": "ENT_BANCO_DESENV"
+    },
+    {
+      "norma_id": "RES_CMN_4893_21",
+      "tipo_entidade_id": "ENT_BANCO_COOP"
+    },
+    {
+      "norma_id": "RES_CMN_4893_21",
+      "tipo_entidade_id": "ENT_CAIXA_ECON"
+    },
+    {
+      "norma_id": "RES_CMN_4893_21",
+      "tipo_entidade_id": "ENT_BANCO_CAMBIO"
+    },
+    {
+      "norma_id": "RES_CMN_4893_21",
+      "tipo_entidade_id": "ENT_SCFI"
+    },
+    {
+      "norma_id": "RES_CMN_4893_21",
+      "tipo_entidade_id": "ENT_SCD"
+    },
+    {
+      "norma_id": "RES_CMN_4893_21",
+      "tipo_entidade_id": "ENT_SEP"
+    },
+    {
+      "norma_id": "RES_CMN_4893_21",
+      "tipo_entidade_id": "ENT_COOP_CRED"
+    },
+    {
+      "norma_id": "RES_CMN_4893_21",
+      "tipo_entidade_id": "ENT_IP"
+    },
+    {
+      "norma_id": "RES_CMN_4893_21",
+      "tipo_entidade_id": "ENT_AGENCIA_FOMENTO"
+    },
+    {
+      "norma_id": "RES_CMN_4893_21",
+      "tipo_entidade_id": "ENT_ARRENDAMENTO"
+    },
+    {
+      "norma_id": "RES_CMN_4943_21",
+      "tipo_entidade_id": "ENT_BANCO_MULTIPLO"
+    },
+    {
+      "norma_id": "RES_CMN_4943_21",
+      "tipo_entidade_id": "ENT_BANCO_COMERCIAL"
+    },
+    {
+      "norma_id": "RES_CMN_4943_21",
+      "tipo_entidade_id": "ENT_BANCO_INVESTIMENTO"
+    },
+    {
+      "norma_id": "RES_CMN_4943_21",
+      "tipo_entidade_id": "ENT_BANCO_DESENV"
+    },
+    {
+      "norma_id": "RES_CMN_4943_21",
+      "tipo_entidade_id": "ENT_BANCO_COOP"
+    },
+    {
+      "norma_id": "RES_CMN_4943_21",
+      "tipo_entidade_id": "ENT_CAIXA_ECON"
+    },
+    {
+      "norma_id": "RES_CMN_4943_21",
+      "tipo_entidade_id": "ENT_BANCO_CAMBIO"
+    },
+    {
+      "norma_id": "RES_CMN_4943_21",
+      "tipo_entidade_id": "ENT_SCFI"
+    },
+    {
+      "norma_id": "RES_CMN_4943_21",
+      "tipo_entidade_id": "ENT_SCD"
+    },
+    {
+      "norma_id": "RES_CMN_4943_21",
+      "tipo_entidade_id": "ENT_SEP"
+    },
+    {
+      "norma_id": "RES_CMN_4943_21",
+      "tipo_entidade_id": "ENT_COOP_CRED"
+    },
+    {
+      "norma_id": "RES_CMN_4943_21",
+      "tipo_entidade_id": "ENT_IP"
+    },
+    {
+      "norma_id": "RES_CMN_4943_21",
+      "tipo_entidade_id": "ENT_AGENCIA_FOMENTO"
+    },
+    {
+      "norma_id": "RES_CMN_4943_21",
+      "tipo_entidade_id": "ENT_ARRENDAMENTO"
+    },
+    {
+      "norma_id": "RES_CMN_4945_21",
+      "tipo_entidade_id": "ENT_BANCO_MULTIPLO"
+    },
+    {
+      "norma_id": "RES_CMN_4945_21",
+      "tipo_entidade_id": "ENT_BANCO_COMERCIAL"
+    },
+    {
+      "norma_id": "RES_CMN_4945_21",
+      "tipo_entidade_id": "ENT_BANCO_INVESTIMENTO"
+    },
+    {
+      "norma_id": "RES_CMN_4945_21",
+      "tipo_entidade_id": "ENT_BANCO_DESENV"
+    },
+    {
+      "norma_id": "RES_CMN_4945_21",
+      "tipo_entidade_id": "ENT_BANCO_COOP"
+    },
+    {
+      "norma_id": "RES_CMN_4945_21",
+      "tipo_entidade_id": "ENT_CAIXA_ECON"
+    },
+    {
+      "norma_id": "RES_CMN_4945_21",
+      "tipo_entidade_id": "ENT_BANCO_CAMBIO"
+    },
+    {
+      "norma_id": "RES_CMN_4945_21",
+      "tipo_entidade_id": "ENT_SCFI"
+    },
+    {
+      "norma_id": "RES_CMN_4945_21",
+      "tipo_entidade_id": "ENT_SCD"
+    },
+    {
+      "norma_id": "RES_CMN_4945_21",
+      "tipo_entidade_id": "ENT_SEP"
+    },
+    {
+      "norma_id": "RES_CMN_4945_21",
+      "tipo_entidade_id": "ENT_COOP_CRED"
+    },
+    {
+      "norma_id": "RES_CMN_4945_21",
+      "tipo_entidade_id": "ENT_IP"
+    },
+    {
+      "norma_id": "RES_CMN_4945_21",
+      "tipo_entidade_id": "ENT_AGENCIA_FOMENTO"
+    },
+    {
+      "norma_id": "RES_CMN_4945_21",
+      "tipo_entidade_id": "ENT_ARRENDAMENTO"
+    },
+    {
+      "norma_id": "RES_CMN_4860_20",
+      "tipo_entidade_id": "ENT_BANCO_MULTIPLO"
+    },
+    {
+      "norma_id": "RES_CMN_4860_20",
+      "tipo_entidade_id": "ENT_BANCO_COMERCIAL"
+    },
+    {
+      "norma_id": "RES_CMN_4860_20",
+      "tipo_entidade_id": "ENT_BANCO_INVESTIMENTO"
+    },
+    {
+      "norma_id": "RES_CMN_4860_20",
+      "tipo_entidade_id": "ENT_BANCO_DESENV"
+    },
+    {
+      "norma_id": "RES_CMN_4860_20",
+      "tipo_entidade_id": "ENT_BANCO_COOP"
+    },
+    {
+      "norma_id": "RES_CMN_4860_20",
+      "tipo_entidade_id": "ENT_CAIXA_ECON"
+    },
+    {
+      "norma_id": "RES_CMN_4860_20",
+      "tipo_entidade_id": "ENT_BANCO_CAMBIO"
+    },
+    {
+      "norma_id": "RES_CMN_4860_20",
+      "tipo_entidade_id": "ENT_SCFI"
+    },
+    {
+      "norma_id": "RES_CMN_4860_20",
+      "tipo_entidade_id": "ENT_SCD"
+    },
+    {
+      "norma_id": "RES_CMN_4860_20",
+      "tipo_entidade_id": "ENT_SEP"
+    },
+    {
+      "norma_id": "RES_CMN_4860_20",
+      "tipo_entidade_id": "ENT_COOP_CRED"
+    },
+    {
+      "norma_id": "RES_CMN_4860_20",
+      "tipo_entidade_id": "ENT_IP"
+    },
+    {
+      "norma_id": "RES_CMN_4860_20",
+      "tipo_entidade_id": "ENT_AGENCIA_FOMENTO"
+    },
+    {
+      "norma_id": "RES_CMN_4860_20",
+      "tipo_entidade_id": "ENT_ARRENDAMENTO"
+    },
+    {
+      "norma_id": "CIR_BCB_3978_20",
+      "tipo_entidade_id": "ENT_BANCO_MULTIPLO"
+    },
+    {
+      "norma_id": "CIR_BCB_3978_20",
+      "tipo_entidade_id": "ENT_BANCO_COMERCIAL"
+    },
+    {
+      "norma_id": "CIR_BCB_3978_20",
+      "tipo_entidade_id": "ENT_BANCO_INVESTIMENTO"
+    },
+    {
+      "norma_id": "CIR_BCB_3978_20",
+      "tipo_entidade_id": "ENT_BANCO_DESENV"
+    },
+    {
+      "norma_id": "CIR_BCB_3978_20",
+      "tipo_entidade_id": "ENT_BANCO_COOP"
+    },
+    {
+      "norma_id": "CIR_BCB_3978_20",
+      "tipo_entidade_id": "ENT_CAIXA_ECON"
+    },
+    {
+      "norma_id": "CIR_BCB_3978_20",
+      "tipo_entidade_id": "ENT_BANCO_CAMBIO"
+    },
+    {
+      "norma_id": "CIR_BCB_3978_20",
+      "tipo_entidade_id": "ENT_SCFI"
+    },
+    {
+      "norma_id": "CIR_BCB_3978_20",
+      "tipo_entidade_id": "ENT_SCD"
+    },
+    {
+      "norma_id": "CIR_BCB_3978_20",
+      "tipo_entidade_id": "ENT_SEP"
+    },
+    {
+      "norma_id": "CIR_BCB_3978_20",
+      "tipo_entidade_id": "ENT_COOP_CRED"
+    },
+    {
+      "norma_id": "CIR_BCB_3978_20",
+      "tipo_entidade_id": "ENT_IP"
+    },
+    {
+      "norma_id": "CIR_BCB_3978_20",
+      "tipo_entidade_id": "ENT_AGENCIA_FOMENTO"
+    },
+    {
+      "norma_id": "CIR_BCB_3978_20",
+      "tipo_entidade_id": "ENT_ARRENDAMENTO"
+    },
+    {
+      "norma_id": "RES_CMN_4502_16",
+      "tipo_entidade_id": "ENT_BANCO_MULTIPLO"
+    },
+    {
+      "norma_id": "RES_CMN_4502_16",
+      "tipo_entidade_id": "ENT_BANCO_COMERCIAL"
+    },
+    {
+      "norma_id": "RES_CMN_4502_16",
+      "tipo_entidade_id": "ENT_BANCO_INVESTIMENTO"
+    },
+    {
+      "norma_id": "RES_CMN_4502_16",
+      "tipo_entidade_id": "ENT_CAIXA_ECON"
+    },
+    {
+      "norma_id": "RES_CMN_4966_21",
+      "tipo_entidade_id": "ENT_BANCO_MULTIPLO"
+    },
+    {
+      "norma_id": "RES_CMN_4966_21",
+      "tipo_entidade_id": "ENT_BANCO_COMERCIAL"
+    },
+    {
+      "norma_id": "RES_CMN_4966_21",
+      "tipo_entidade_id": "ENT_BANCO_INVESTIMENTO"
+    },
+    {
+      "norma_id": "RES_CMN_4966_21",
+      "tipo_entidade_id": "ENT_BANCO_DESENV"
+    },
+    {
+      "norma_id": "RES_CMN_4966_21",
+      "tipo_entidade_id": "ENT_BANCO_COOP"
+    },
+    {
+      "norma_id": "RES_CMN_4966_21",
+      "tipo_entidade_id": "ENT_CAIXA_ECON"
+    },
+    {
+      "norma_id": "RES_CMN_4966_21",
+      "tipo_entidade_id": "ENT_BANCO_CAMBIO"
+    },
+    {
+      "norma_id": "RES_CMN_4966_21",
+      "tipo_entidade_id": "ENT_SCFI"
+    },
+    {
+      "norma_id": "RES_CMN_4966_21",
+      "tipo_entidade_id": "ENT_SCD"
+    },
+    {
+      "norma_id": "RES_CMN_4966_21",
+      "tipo_entidade_id": "ENT_SEP"
+    },
+    {
+      "norma_id": "RES_CMN_4966_21",
+      "tipo_entidade_id": "ENT_COOP_CRED"
+    },
+    {
+      "norma_id": "RES_CMN_4966_21",
+      "tipo_entidade_id": "ENT_IP"
+    },
+    {
+      "norma_id": "RES_CMN_4966_21",
+      "tipo_entidade_id": "ENT_AGENCIA_FOMENTO"
+    },
+    {
+      "norma_id": "RES_CMN_4966_21",
+      "tipo_entidade_id": "ENT_ARRENDAMENTO"
+    },
+    {
+      "norma_id": "RES_CVM_35_21",
+      "tipo_entidade_id": "ENT_DTVM"
+    },
+    {
+      "norma_id": "RES_CVM_35_21",
+      "tipo_entidade_id": "ENT_CTVM"
+    },
+    {
+      "norma_id": "RES_CVM_35_21",
+      "tipo_entidade_id": "ENT_BANCO_INVESTIMENTO"
+    },
+    {
+      "norma_id": "RES_CVM_50_21",
+      "tipo_entidade_id": "ENT_DTVM"
+    },
+    {
+      "norma_id": "RES_CVM_50_21",
+      "tipo_entidade_id": "ENT_CTVM"
+    },
+    {
+      "norma_id": "RES_CVM_50_21",
+      "tipo_entidade_id": "ENT_ADM_CARTEIRAS"
+    },
+    {
+      "norma_id": "RES_CVM_50_21",
+      "tipo_entidade_id": "ENT_CUSTODIANTE"
+    },
+    {
+      "norma_id": "RES_CVM_21_21",
+      "tipo_entidade_id": "ENT_ADM_CARTEIRAS"
+    },
+    {
+      "norma_id": "RES_CVM_175_22",
+      "tipo_entidade_id": "ENT_ADM_CARTEIRAS"
+    },
+    {
+      "norma_id": "RES_CVM_175_22",
+      "tipo_entidade_id": "ENT_CUSTODIANTE"
+    },
+    {
+      "norma_id": "RES_CVM_175_22",
+      "tipo_entidade_id": "ENT_DTVM"
+    },
+    {
+      "norma_id": "RES_CVM_175_22",
+      "tipo_entidade_id": "ENT_CTVM"
+    },
+    {
+      "norma_id": "RES_CNSP_416_21",
+      "tipo_entidade_id": "ENT_SEGURADORA"
+    },
+    {
+      "norma_id": "RES_CNSP_416_21",
+      "tipo_entidade_id": "ENT_RESSEG_LOCAL"
+    },
+    {
+      "norma_id": "RES_CNSP_416_21",
+      "tipo_entidade_id": "ENT_CAPITALIZACAO"
+    },
+    {
+      "norma_id": "RES_CNSP_416_21",
+      "tipo_entidade_id": "ENT_EAPC"
+    },
+    {
+      "norma_id": "CIR_SUSEP_648_21",
+      "tipo_entidade_id": "ENT_SEGURADORA"
+    },
+    {
+      "norma_id": "CIR_SUSEP_648_21",
+      "tipo_entidade_id": "ENT_RESSEG_LOCAL"
+    },
+    {
+      "norma_id": "COD_ANBIMA_DISTR",
+      "tipo_entidade_id": "ENT_DTVM"
+    },
+    {
+      "norma_id": "COD_ANBIMA_DISTR",
+      "tipo_entidade_id": "ENT_CTVM"
+    },
+    {
+      "norma_id": "COD_ANBIMA_DISTR",
+      "tipo_entidade_id": "ENT_BANCO_INVESTIMENTO"
+    },
+    {
+      "norma_id": "COD_ANBIMA_GEST",
+      "tipo_entidade_id": "ENT_ADM_CARTEIRAS"
+    },
+    {
+      "norma_id": "LEX_13709_18",
+      "tipo_entidade_id": "ENT_BANCO_MULTIPLO"
+    },
+    {
+      "norma_id": "LEX_13709_18",
+      "tipo_entidade_id": "ENT_BANCO_COMERCIAL"
+    },
+    {
+      "norma_id": "LEX_13709_18",
+      "tipo_entidade_id": "ENT_BANCO_INVESTIMENTO"
+    },
+    {
+      "norma_id": "LEX_13709_18",
+      "tipo_entidade_id": "ENT_BANCO_DESENV"
+    },
+    {
+      "norma_id": "LEX_13709_18",
+      "tipo_entidade_id": "ENT_BANCO_COOP"
+    },
+    {
+      "norma_id": "LEX_13709_18",
+      "tipo_entidade_id": "ENT_CAIXA_ECON"
+    },
+    {
+      "norma_id": "LEX_13709_18",
+      "tipo_entidade_id": "ENT_BANCO_CAMBIO"
+    },
+    {
+      "norma_id": "LEX_13709_18",
+      "tipo_entidade_id": "ENT_SCFI"
+    },
+    {
+      "norma_id": "LEX_13709_18",
+      "tipo_entidade_id": "ENT_SCD"
+    },
+    {
+      "norma_id": "LEX_13709_18",
+      "tipo_entidade_id": "ENT_SEP"
+    },
+    {
+      "norma_id": "LEX_13709_18",
+      "tipo_entidade_id": "ENT_COOP_CRED"
+    },
+    {
+      "norma_id": "LEX_13709_18",
+      "tipo_entidade_id": "ENT_IP"
+    },
+    {
+      "norma_id": "LEX_13709_18",
+      "tipo_entidade_id": "ENT_AGENCIA_FOMENTO"
+    },
+    {
+      "norma_id": "LEX_13709_18",
+      "tipo_entidade_id": "ENT_ARRENDAMENTO"
+    },
+    {
+      "norma_id": "LEX_13709_18",
+      "tipo_entidade_id": "ENT_DTVM"
+    },
+    {
+      "norma_id": "LEX_13709_18",
+      "tipo_entidade_id": "ENT_CTVM"
+    },
+    {
+      "norma_id": "LEX_13709_18",
+      "tipo_entidade_id": "ENT_ADM_CARTEIRAS"
+    },
+    {
+      "norma_id": "LEX_13709_18",
+      "tipo_entidade_id": "ENT_CUSTODIANTE"
+    },
+    {
+      "norma_id": "LEX_13709_18",
+      "tipo_entidade_id": "ENT_ESCRITURADOR"
+    },
+    {
+      "norma_id": "LEX_13709_18",
+      "tipo_entidade_id": "ENT_SEGURADORA"
+    },
+    {
+      "norma_id": "LEX_13709_18",
+      "tipo_entidade_id": "ENT_RESSEG_LOCAL"
+    },
+    {
+      "norma_id": "LEX_13709_18",
+      "tipo_entidade_id": "ENT_CAPITALIZACAO"
+    },
+    {
+      "norma_id": "LEX_13709_18",
+      "tipo_entidade_id": "ENT_EAPC"
+    },
+    {
+      "norma_id": "LEX_13709_18",
+      "tipo_entidade_id": "ENT_EFPC"
+    },
+    {
+      "norma_id": "LEX_9613_98",
+      "tipo_entidade_id": "ENT_BANCO_MULTIPLO"
+    },
+    {
+      "norma_id": "LEX_9613_98",
+      "tipo_entidade_id": "ENT_BANCO_COMERCIAL"
+    },
+    {
+      "norma_id": "LEX_9613_98",
+      "tipo_entidade_id": "ENT_BANCO_INVESTIMENTO"
+    },
+    {
+      "norma_id": "LEX_9613_98",
+      "tipo_entidade_id": "ENT_BANCO_DESENV"
+    },
+    {
+      "norma_id": "LEX_9613_98",
+      "tipo_entidade_id": "ENT_BANCO_COOP"
+    },
+    {
+      "norma_id": "LEX_9613_98",
+      "tipo_entidade_id": "ENT_CAIXA_ECON"
+    },
+    {
+      "norma_id": "LEX_9613_98",
+      "tipo_entidade_id": "ENT_BANCO_CAMBIO"
+    },
+    {
+      "norma_id": "LEX_9613_98",
+      "tipo_entidade_id": "ENT_SCFI"
+    },
+    {
+      "norma_id": "LEX_9613_98",
+      "tipo_entidade_id": "ENT_SCD"
+    },
+    {
+      "norma_id": "LEX_9613_98",
+      "tipo_entidade_id": "ENT_SEP"
+    },
+    {
+      "norma_id": "LEX_9613_98",
+      "tipo_entidade_id": "ENT_COOP_CRED"
+    },
+    {
+      "norma_id": "LEX_9613_98",
+      "tipo_entidade_id": "ENT_IP"
+    },
+    {
+      "norma_id": "LEX_9613_98",
+      "tipo_entidade_id": "ENT_AGENCIA_FOMENTO"
+    },
+    {
+      "norma_id": "LEX_9613_98",
+      "tipo_entidade_id": "ENT_ARRENDAMENTO"
+    },
+    {
+      "norma_id": "LEX_9613_98",
+      "tipo_entidade_id": "ENT_DTVM"
+    },
+    {
+      "norma_id": "LEX_9613_98",
+      "tipo_entidade_id": "ENT_CTVM"
+    },
+    {
+      "norma_id": "LEX_9613_98",
+      "tipo_entidade_id": "ENT_ADM_CARTEIRAS"
+    },
+    {
+      "norma_id": "LEX_9613_98",
+      "tipo_entidade_id": "ENT_CUSTODIANTE"
+    },
+    {
+      "norma_id": "LEX_9613_98",
+      "tipo_entidade_id": "ENT_ESCRITURADOR"
+    },
+    {
+      "norma_id": "LEX_9613_98",
+      "tipo_entidade_id": "ENT_SEGURADORA"
+    },
+    {
+      "norma_id": "LEX_9613_98",
+      "tipo_entidade_id": "ENT_RESSEG_LOCAL"
+    },
+    {
+      "norma_id": "LEX_9613_98",
+      "tipo_entidade_id": "ENT_CAPITALIZACAO"
+    },
+    {
+      "norma_id": "LEX_9613_98",
+      "tipo_entidade_id": "ENT_EAPC"
+    },
+    {
+      "norma_id": "LEX_9613_98",
+      "tipo_entidade_id": "ENT_EFPC"
+    },
+    {
+      "norma_id": "LEX_12846_13",
+      "tipo_entidade_id": "ENT_BANCO_MULTIPLO"
+    },
+    {
+      "norma_id": "LEX_12846_13",
+      "tipo_entidade_id": "ENT_BANCO_COMERCIAL"
+    },
+    {
+      "norma_id": "LEX_12846_13",
+      "tipo_entidade_id": "ENT_BANCO_INVESTIMENTO"
+    },
+    {
+      "norma_id": "LEX_12846_13",
+      "tipo_entidade_id": "ENT_BANCO_DESENV"
+    },
+    {
+      "norma_id": "LEX_12846_13",
+      "tipo_entidade_id": "ENT_BANCO_COOP"
+    },
+    {
+      "norma_id": "LEX_12846_13",
+      "tipo_entidade_id": "ENT_CAIXA_ECON"
+    },
+    {
+      "norma_id": "LEX_12846_13",
+      "tipo_entidade_id": "ENT_BANCO_CAMBIO"
+    },
+    {
+      "norma_id": "LEX_12846_13",
+      "tipo_entidade_id": "ENT_SCFI"
+    },
+    {
+      "norma_id": "LEX_12846_13",
+      "tipo_entidade_id": "ENT_SCD"
+    },
+    {
+      "norma_id": "LEX_12846_13",
+      "tipo_entidade_id": "ENT_SEP"
+    },
+    {
+      "norma_id": "LEX_12846_13",
+      "tipo_entidade_id": "ENT_COOP_CRED"
+    },
+    {
+      "norma_id": "LEX_12846_13",
+      "tipo_entidade_id": "ENT_IP"
+    },
+    {
+      "norma_id": "LEX_12846_13",
+      "tipo_entidade_id": "ENT_AGENCIA_FOMENTO"
+    },
+    {
+      "norma_id": "LEX_12846_13",
+      "tipo_entidade_id": "ENT_ARRENDAMENTO"
+    },
+    {
+      "norma_id": "LEX_12846_13",
+      "tipo_entidade_id": "ENT_DTVM"
+    },
+    {
+      "norma_id": "LEX_12846_13",
+      "tipo_entidade_id": "ENT_CTVM"
+    },
+    {
+      "norma_id": "LEX_12846_13",
+      "tipo_entidade_id": "ENT_ADM_CARTEIRAS"
+    },
+    {
+      "norma_id": "LEX_12846_13",
+      "tipo_entidade_id": "ENT_CUSTODIANTE"
+    },
+    {
+      "norma_id": "LEX_12846_13",
+      "tipo_entidade_id": "ENT_ESCRITURADOR"
+    },
+    {
+      "norma_id": "LEX_12846_13",
+      "tipo_entidade_id": "ENT_SEGURADORA"
+    },
+    {
+      "norma_id": "LEX_12846_13",
+      "tipo_entidade_id": "ENT_RESSEG_LOCAL"
+    },
+    {
+      "norma_id": "LEX_12846_13",
+      "tipo_entidade_id": "ENT_CAPITALIZACAO"
+    },
+    {
+      "norma_id": "LEX_12846_13",
+      "tipo_entidade_id": "ENT_EAPC"
+    },
+    {
+      "norma_id": "LEX_12846_13",
+      "tipo_entidade_id": "ENT_EFPC"
+    }
+  ],
+  "norma_aplicabilidade_segmento": [
+    {
+      "norma_id": "RES_CMN_4557_17",
+      "segmento_id": "S1"
+    },
+    {
+      "norma_id": "RES_CMN_4557_17",
+      "segmento_id": "S2"
+    },
+    {
+      "norma_id": "RES_CMN_4557_17",
+      "segmento_id": "S3"
+    },
+    {
+      "norma_id": "RES_CMN_4557_17",
+      "segmento_id": "S4"
+    },
+    {
+      "norma_id": "RES_BCB_200_22",
+      "segmento_id": "S3"
+    },
+    {
+      "norma_id": "RES_BCB_200_22",
+      "segmento_id": "S4"
+    },
+    {
+      "norma_id": "RES_BCB_200_22",
+      "segmento_id": "S5"
+    },
+    {
+      "norma_id": "RES_CMN_4502_16",
+      "segmento_id": "S1"
+    }
+  ],
+  "norma_aplicabilidade_atividade": [
+    {
+      "norma_id": "COD_ANBIMA_DISTR",
+      "atividade_id": "ATV_DISTRIBUICAO_VM"
+    },
+    {
+      "norma_id": "COD_ANBIMA_GEST",
+      "atividade_id": "ATV_GESTAO_RECURSOS"
+    },
+    {
+      "norma_id": "COD_ANBIMA_GEST",
+      "atividade_id": "ATV_ADM_FIDUCIARIA"
+    },
+    {
+      "norma_id": "RES_CVM_35_21",
+      "atividade_id": "ATV_DISTRIBUICAO_VM"
+    },
+    {
+      "norma_id": "RES_CVM_175_22",
+      "atividade_id": "ATV_GESTAO_RECURSOS"
+    },
+    {
+      "norma_id": "RES_CVM_175_22",
+      "atividade_id": "ATV_ADM_FIDUCIARIA"
+    },
+    {
+      "norma_id": "RES_CVM_175_22",
+      "atividade_id": "ATV_CUSTODIA_QUALIFICADA"
+    }
+  ],
+  "vinculo_norma_processo": [
+    {
+      "id": 1,
+      "norma_id": "RES_CMN_4557_17",
+      "processo_id": "P0.U.2",
+      "artigo_ref": null,
+      "tipo_vinculo": "primaria",
+      "notas": null
+    },
+    {
+      "id": 2,
+      "norma_id": "RES_CMN_4557_17",
+      "processo_id": "P1.U.2.1",
+      "artigo_ref": null,
+      "tipo_vinculo": "primaria",
+      "notas": null
+    },
+    {
+      "id": 3,
+      "norma_id": "RES_CMN_4557_17",
+      "processo_id": "P1.U.2.2",
+      "artigo_ref": null,
+      "tipo_vinculo": "primaria",
+      "notas": null
+    },
+    {
+      "id": 4,
+      "norma_id": "RES_CMN_4557_17",
+      "processo_id": "P1.U.2.3",
+      "artigo_ref": null,
+      "tipo_vinculo": "primaria",
+      "notas": null
+    },
+    {
+      "id": 5,
+      "norma_id": "RES_CMN_4557_17",
+      "processo_id": "P1.U.2.4",
+      "artigo_ref": null,
+      "tipo_vinculo": "primaria",
+      "notas": null
+    },
+    {
+      "id": 6,
+      "norma_id": "RES_CMN_4557_17",
+      "processo_id": "P1.U.2.5",
+      "artigo_ref": null,
+      "tipo_vinculo": "primaria",
+      "notas": null
+    },
+    {
+      "id": 7,
+      "norma_id": "RES_CMN_4557_17",
+      "processo_id": "P1.U.2.7",
+      "artigo_ref": null,
+      "tipo_vinculo": "primaria",
+      "notas": null
+    },
+    {
+      "id": 8,
+      "norma_id": "RES_CMN_4557_17",
+      "processo_id": "P2.U.2.2.1",
+      "artigo_ref": "38",
+      "tipo_vinculo": "primaria",
+      "notas": null
+    },
+    {
+      "id": 9,
+      "norma_id": "RES_CMN_4557_17",
+      "processo_id": "P0.U.9",
+      "artigo_ref": "50",
+      "tipo_vinculo": "secundaria",
+      "notas": null
+    },
+    {
+      "id": 10,
+      "norma_id": "RES_CMN_4557_17",
+      "processo_id": "P1.U.1.3",
+      "artigo_ref": "56",
+      "tipo_vinculo": "primaria",
+      "notas": null
+    },
+    {
+      "id": 11,
+      "norma_id": "RES_CMN_4553_17",
+      "processo_id": "P0.U.1",
+      "artigo_ref": null,
+      "tipo_vinculo": "primaria",
+      "notas": null
+    },
+    {
+      "id": 12,
+      "norma_id": "RES_CMN_4553_17",
+      "processo_id": "P1.U.12.4",
+      "artigo_ref": null,
+      "tipo_vinculo": "primaria",
+      "notas": null
+    },
+    {
+      "id": 13,
+      "norma_id": "RES_CMN_4193_13",
+      "processo_id": "P0.B.3",
+      "artigo_ref": null,
+      "tipo_vinculo": "primaria",
+      "notas": null
+    },
+    {
+      "id": 14,
+      "norma_id": "RES_CMN_4193_13",
+      "processo_id": "P0.U.12",
+      "artigo_ref": null,
+      "tipo_vinculo": "primaria",
+      "notas": null
+    },
+    {
+      "id": 15,
+      "norma_id": "RES_CMN_4193_13",
+      "processo_id": "P1.U.2.7",
+      "artigo_ref": null,
+      "tipo_vinculo": "primaria",
+      "notas": null
+    },
+    {
+      "id": 16,
+      "norma_id": "RES_CMN_4193_13",
+      "processo_id": "P0.CG.2",
+      "artigo_ref": null,
+      "tipo_vinculo": "primaria",
+      "notas": null
+    },
+    {
+      "id": 17,
+      "norma_id": "RES_BCB_200_22",
+      "processo_id": "P0.U.2",
+      "artigo_ref": null,
+      "tipo_vinculo": "primaria",
+      "notas": null
+    },
+    {
+      "id": 18,
+      "norma_id": "RES_BCB_200_22",
+      "processo_id": "P1.U.2.2",
+      "artigo_ref": null,
+      "tipo_vinculo": "primaria",
+      "notas": null
+    },
+    {
+      "id": 19,
+      "norma_id": "RES_BCB_200_22",
+      "processo_id": "P1.U.2.5",
+      "artigo_ref": null,
+      "tipo_vinculo": "primaria",
+      "notas": null
+    },
+    {
+      "id": 20,
+      "norma_id": "RES_CMN_4893_21",
+      "processo_id": "P0.U.8",
+      "artigo_ref": "3",
+      "tipo_vinculo": "primaria",
+      "notas": null
+    },
+    {
+      "id": 21,
+      "norma_id": "RES_CMN_4893_21",
+      "processo_id": "P1.U.8.1",
+      "artigo_ref": "3",
+      "tipo_vinculo": "primaria",
+      "notas": null
+    },
+    {
+      "id": 22,
+      "norma_id": "RES_CMN_4893_21",
+      "processo_id": "P1.U.8.4",
+      "artigo_ref": "13",
+      "tipo_vinculo": "primaria",
+      "notas": null
+    },
+    {
+      "id": 23,
+      "norma_id": "RES_CMN_4893_21",
+      "processo_id": "P1.U.7.3",
+      "artigo_ref": "18",
+      "tipo_vinculo": "primaria",
+      "notas": null
+    },
+    {
+      "id": 24,
+      "norma_id": "RES_CMN_4893_21",
+      "processo_id": "P0.U.10",
+      "artigo_ref": "18",
+      "tipo_vinculo": "secundaria",
+      "notas": null
+    },
+    {
+      "id": 25,
+      "norma_id": "RES_CMN_4943_21",
+      "processo_id": "P0.U.3",
+      "artigo_ref": null,
+      "tipo_vinculo": "primaria",
+      "notas": null
+    },
+    {
+      "id": 26,
+      "norma_id": "RES_CMN_4943_21",
+      "processo_id": "P0.U.5",
+      "artigo_ref": null,
+      "tipo_vinculo": "primaria",
+      "notas": null
+    },
+    {
+      "id": 27,
+      "norma_id": "RES_CMN_4943_21",
+      "processo_id": "P1.U.3.2",
+      "artigo_ref": null,
+      "tipo_vinculo": "primaria",
+      "notas": null
+    },
+    {
+      "id": 28,
+      "norma_id": "RES_CMN_4945_21",
+      "processo_id": "P0.U.1",
+      "artigo_ref": null,
+      "tipo_vinculo": "primaria",
+      "notas": null
+    },
+    {
+      "id": 29,
+      "norma_id": "RES_CMN_4945_21",
+      "processo_id": "P0.U.2",
+      "artigo_ref": null,
+      "tipo_vinculo": "secundaria",
+      "notas": null
+    },
+    {
+      "id": 30,
+      "norma_id": "RES_CMN_4945_21",
+      "processo_id": "P1.U.1.2",
+      "artigo_ref": null,
+      "tipo_vinculo": "primaria",
+      "notas": null
+    },
+    {
+      "id": 31,
+      "norma_id": "RES_CMN_4860_20",
+      "processo_id": "P0.U.13",
+      "artigo_ref": null,
+      "tipo_vinculo": "primaria",
+      "notas": null
+    },
+    {
+      "id": 32,
+      "norma_id": "RES_CMN_4860_20",
+      "processo_id": "P1.U.13.2",
+      "artigo_ref": null,
+      "tipo_vinculo": "primaria",
+      "notas": null
+    },
+    {
+      "id": 33,
+      "norma_id": "RES_CMN_4860_20",
+      "processo_id": "P1.U.13.3",
+      "artigo_ref": null,
+      "tipo_vinculo": "primaria",
+      "notas": null
+    },
+    {
+      "id": 34,
+      "norma_id": "CIR_BCB_3978_20",
+      "processo_id": "P0.U.4",
+      "artigo_ref": null,
+      "tipo_vinculo": "primaria",
+      "notas": null
+    },
+    {
+      "id": 35,
+      "norma_id": "CIR_BCB_3978_20",
+      "processo_id": "P1.U.4.1",
+      "artigo_ref": "20",
+      "tipo_vinculo": "primaria",
+      "notas": null
+    },
+    {
+      "id": 36,
+      "norma_id": "CIR_BCB_3978_20",
+      "processo_id": "P1.U.4.2",
+      "artigo_ref": "32",
+      "tipo_vinculo": "primaria",
+      "notas": null
+    },
+    {
+      "id": 37,
+      "norma_id": "CIR_BCB_3978_20",
+      "processo_id": "P1.U.4.3",
+      "artigo_ref": "44",
+      "tipo_vinculo": "primaria",
+      "notas": null
+    },
+    {
+      "id": 38,
+      "norma_id": "CIR_BCB_3978_20",
+      "processo_id": "P1.U.4.5",
+      "artigo_ref": "6",
+      "tipo_vinculo": "primaria",
+      "notas": null
+    },
+    {
+      "id": 39,
+      "norma_id": "CIR_BCB_3978_20",
+      "processo_id": "P1.U.4.6",
+      "artigo_ref": null,
+      "tipo_vinculo": "primaria",
+      "notas": null
+    },
+    {
+      "id": 40,
+      "norma_id": "CIR_BCB_3978_20",
+      "processo_id": "P2.U.4.1.1",
+      "artigo_ref": "20",
+      "tipo_vinculo": "primaria",
+      "notas": null
+    },
+    {
+      "id": 41,
+      "norma_id": "CIR_BCB_3978_20",
+      "processo_id": "P2.U.4.1.2",
+      "artigo_ref": null,
+      "tipo_vinculo": "primaria",
+      "notas": null
+    },
+    {
+      "id": 42,
+      "norma_id": "CIR_BCB_3978_20",
+      "processo_id": "P2.U.4.1.3",
+      "artigo_ref": null,
+      "tipo_vinculo": "primaria",
+      "notas": null
+    },
+    {
+      "id": 43,
+      "norma_id": "RES_CMN_4502_16",
+      "processo_id": "P0.CG.3",
+      "artigo_ref": null,
+      "tipo_vinculo": "primaria",
+      "notas": null
+    },
+    {
+      "id": 44,
+      "norma_id": "RES_CMN_4502_16",
+      "processo_id": "P1.U.2.6",
+      "artigo_ref": null,
+      "tipo_vinculo": "primaria",
+      "notas": null
+    },
+    {
+      "id": 45,
+      "norma_id": "RES_CMN_4502_16",
+      "processo_id": "P1.CG.3.1",
+      "artigo_ref": null,
+      "tipo_vinculo": "primaria",
+      "notas": null
+    },
+    {
+      "id": 46,
+      "norma_id": "RES_CMN_4502_16",
+      "processo_id": "P1.CG.3.2",
+      "artigo_ref": null,
+      "tipo_vinculo": "primaria",
+      "notas": null
+    },
+    {
+      "id": 47,
+      "norma_id": "RES_CMN_4502_16",
+      "processo_id": "P1.CG.3.3",
+      "artigo_ref": null,
+      "tipo_vinculo": "primaria",
+      "notas": null
+    },
+    {
+      "id": 48,
+      "norma_id": "RES_CMN_4966_21",
+      "processo_id": "P1.B.2.6",
+      "artigo_ref": null,
+      "tipo_vinculo": "primaria",
+      "notas": null
+    },
+    {
+      "id": 49,
+      "norma_id": "RES_CMN_4966_21",
+      "processo_id": "P1.U.12.1",
+      "artigo_ref": null,
+      "tipo_vinculo": "secundaria",
+      "notas": null
+    },
+    {
+      "id": 50,
+      "norma_id": "LEX_13709_18",
+      "processo_id": "P0.U.15",
+      "artigo_ref": null,
+      "tipo_vinculo": "primaria",
+      "notas": null
+    },
+    {
+      "id": 51,
+      "norma_id": "LEX_13709_18",
+      "processo_id": "P1.U.15.1",
+      "artigo_ref": null,
+      "tipo_vinculo": "primaria",
+      "notas": null
+    },
+    {
+      "id": 52,
+      "norma_id": "LEX_13709_18",
+      "processo_id": "P1.U.15.2",
+      "artigo_ref": null,
+      "tipo_vinculo": "primaria",
+      "notas": null
+    },
+    {
+      "id": 53,
+      "norma_id": "LEX_13709_18",
+      "processo_id": "P1.U.15.3",
+      "artigo_ref": null,
+      "tipo_vinculo": "primaria",
+      "notas": null
+    },
+    {
+      "id": 54,
+      "norma_id": "LEX_13709_18",
+      "processo_id": "P1.U.15.4",
+      "artigo_ref": null,
+      "tipo_vinculo": "primaria",
+      "notas": null
+    },
+    {
+      "id": 55,
+      "norma_id": "LEX_13709_18",
+      "processo_id": "P1.U.15.5",
+      "artigo_ref": null,
+      "tipo_vinculo": "primaria",
+      "notas": null
+    },
+    {
+      "id": 56,
+      "norma_id": "LEX_13709_18",
+      "processo_id": "P1.U.15.6",
+      "artigo_ref": null,
+      "tipo_vinculo": "primaria",
+      "notas": null
+    },
+    {
+      "id": 57,
+      "norma_id": "LEX_13709_18",
+      "processo_id": "P0.U.7",
+      "artigo_ref": null,
+      "tipo_vinculo": "secundaria",
+      "notas": null
+    },
+    {
+      "id": 58,
+      "norma_id": "LEX_13709_18",
+      "processo_id": "P0.U.8",
+      "artigo_ref": null,
+      "tipo_vinculo": "secundaria",
+      "notas": null
+    },
+    {
+      "id": 59,
+      "norma_id": "LEX_13709_18",
+      "processo_id": "P2.U.4.1.1",
+      "artigo_ref": null,
+      "tipo_vinculo": "secundaria",
+      "notas": null
+    },
+    {
+      "id": 60,
+      "norma_id": "LEX_9613_98",
+      "processo_id": "P0.U.4",
+      "artigo_ref": null,
+      "tipo_vinculo": "primaria",
+      "notas": null
+    },
+    {
+      "id": 61,
+      "norma_id": "LEX_9613_98",
+      "processo_id": "P1.U.4.3",
+      "artigo_ref": null,
+      "tipo_vinculo": "primaria",
+      "notas": null
+    },
+    {
+      "id": 62,
+      "norma_id": "LEX_12846_13",
+      "processo_id": "P1.U.3.3",
+      "artigo_ref": null,
+      "tipo_vinculo": "primaria",
+      "notas": null
+    },
+    {
+      "id": 63,
+      "norma_id": "LEX_12846_13",
+      "processo_id": "P1.U.3.4",
+      "artigo_ref": null,
+      "tipo_vinculo": "primaria",
+      "notas": null
+    },
+    {
+      "id": 64,
+      "norma_id": "LEX_12846_13",
+      "processo_id": "P1.U.3.5",
+      "artigo_ref": null,
+      "tipo_vinculo": "secundaria",
+      "notas": null
+    },
+    {
+      "id": 65,
+      "norma_id": "LEX_LC_105_01",
+      "processo_id": "P0.U.3",
+      "artigo_ref": null,
+      "tipo_vinculo": "informativa",
+      "notas": null
+    },
+    {
+      "id": 66,
+      "norma_id": "LEX_LC_105_01",
+      "processo_id": "P0.U.7",
+      "artigo_ref": null,
+      "tipo_vinculo": "informativa",
+      "notas": null
+    },
+    {
+      "id": 67,
+      "norma_id": "LEX_LC_105_01",
+      "processo_id": "P0.U.15",
+      "artigo_ref": null,
+      "tipo_vinculo": "secundaria",
+      "notas": null
+    },
+    {
+      "id": 68,
+      "norma_id": "LEX_8078_90",
+      "processo_id": "P0.U.13",
+      "artigo_ref": null,
+      "tipo_vinculo": "primaria",
+      "notas": null
+    },
+    {
+      "id": 69,
+      "norma_id": "LEX_8078_90",
+      "processo_id": "P1.U.14.3",
+      "artigo_ref": null,
+      "tipo_vinculo": "primaria",
+      "notas": null
+    },
+    {
+      "id": 70,
+      "norma_id": "RES_CVM_35_21",
+      "processo_id": "P0.MC.1",
+      "artigo_ref": null,
+      "tipo_vinculo": "primaria",
+      "notas": null
+    },
+    {
+      "id": 71,
+      "norma_id": "RES_CVM_35_21",
+      "processo_id": "P1.MC.1.1",
+      "artigo_ref": null,
+      "tipo_vinculo": "primaria",
+      "notas": null
+    },
+    {
+      "id": 72,
+      "norma_id": "RES_CVM_35_21",
+      "processo_id": "P1.MC.1.3",
+      "artigo_ref": null,
+      "tipo_vinculo": "primaria",
+      "notas": null
+    },
+    {
+      "id": 73,
+      "norma_id": "RES_CVM_35_21",
+      "processo_id": "P1.U.3.6",
+      "artigo_ref": null,
+      "tipo_vinculo": "secundaria",
+      "notas": null
+    },
+    {
+      "id": 74,
+      "norma_id": "RES_CVM_50_21",
+      "processo_id": "P0.U.4",
+      "artigo_ref": null,
+      "tipo_vinculo": "primaria",
+      "notas": null
+    },
+    {
+      "id": 75,
+      "norma_id": "RES_CVM_50_21",
+      "processo_id": "P1.U.4.1",
+      "artigo_ref": null,
+      "tipo_vinculo": "primaria",
+      "notas": null
+    },
+    {
+      "id": 76,
+      "norma_id": "RES_CVM_50_21",
+      "processo_id": "P1.U.4.2",
+      "artigo_ref": null,
+      "tipo_vinculo": "primaria",
+      "notas": null
+    },
+    {
+      "id": 77,
+      "norma_id": "RES_CVM_21_21",
+      "processo_id": "P0.MC.2",
+      "artigo_ref": null,
+      "tipo_vinculo": "primaria",
+      "notas": null
+    },
+    {
+      "id": 78,
+      "norma_id": "RES_CVM_21_21",
+      "processo_id": "P0.MC.3",
+      "artigo_ref": null,
+      "tipo_vinculo": "primaria",
+      "notas": null
+    },
+    {
+      "id": 79,
+      "norma_id": "RES_CVM_21_21",
+      "processo_id": "P1.MC.2.2",
+      "artigo_ref": null,
+      "tipo_vinculo": "primaria",
+      "notas": null
+    },
+    {
+      "id": 80,
+      "norma_id": "RES_CVM_21_21",
+      "processo_id": "P1.MC.2.4",
+      "artigo_ref": null,
+      "tipo_vinculo": "primaria",
+      "notas": null
+    },
+    {
+      "id": 81,
+      "norma_id": "RES_CVM_175_22",
+      "processo_id": "P0.MC.2",
+      "artigo_ref": null,
+      "tipo_vinculo": "primaria",
+      "notas": null
+    },
+    {
+      "id": 82,
+      "norma_id": "RES_CVM_175_22",
+      "processo_id": "P0.MC.3",
+      "artigo_ref": null,
+      "tipo_vinculo": "primaria",
+      "notas": null
+    },
+    {
+      "id": 83,
+      "norma_id": "RES_CVM_175_22",
+      "processo_id": "P0.MC.4",
+      "artigo_ref": null,
+      "tipo_vinculo": "primaria",
+      "notas": null
+    },
+    {
+      "id": 84,
+      "norma_id": "RES_CVM_175_22",
+      "processo_id": "P1.MC.2.1",
+      "artigo_ref": null,
+      "tipo_vinculo": "primaria",
+      "notas": null
+    },
+    {
+      "id": 85,
+      "norma_id": "RES_CVM_175_22",
+      "processo_id": "P1.MC.2.5",
+      "artigo_ref": null,
+      "tipo_vinculo": "primaria",
+      "notas": null
+    },
+    {
+      "id": 86,
+      "norma_id": "RES_CVM_175_22",
+      "processo_id": "P1.MC.3.2",
+      "artigo_ref": null,
+      "tipo_vinculo": "primaria",
+      "notas": null
+    },
+    {
+      "id": 87,
+      "norma_id": "RES_CNSP_416_21",
+      "processo_id": "P0.U.2",
+      "artigo_ref": null,
+      "tipo_vinculo": "primaria",
+      "notas": null
+    },
+    {
+      "id": 88,
+      "norma_id": "RES_CNSP_416_21",
+      "processo_id": "P0.U.3",
+      "artigo_ref": null,
+      "tipo_vinculo": "primaria",
+      "notas": null
+    },
+    {
+      "id": 89,
+      "norma_id": "RES_CNSP_416_21",
+      "processo_id": "P0.U.5",
+      "artigo_ref": null,
+      "tipo_vinculo": "primaria",
+      "notas": null
+    },
+    {
+      "id": 90,
+      "norma_id": "RES_CNSP_416_21",
+      "processo_id": "P0.S.3",
+      "artigo_ref": null,
+      "tipo_vinculo": "secundaria",
+      "notas": null
+    },
+    {
+      "id": 91,
+      "norma_id": "CIR_SUSEP_648_21",
+      "processo_id": "P1.U.2.7",
+      "artigo_ref": null,
+      "tipo_vinculo": "primaria",
+      "notas": null
+    },
+    {
+      "id": 92,
+      "norma_id": "CIR_SUSEP_648_21",
+      "processo_id": "P1.U.2.2",
+      "artigo_ref": null,
+      "tipo_vinculo": "primaria",
+      "notas": null
+    },
+    {
+      "id": 93,
+      "norma_id": "CIR_SUSEP_648_21",
+      "processo_id": "P0.S.3",
+      "artigo_ref": null,
+      "tipo_vinculo": "secundaria",
+      "notas": null
+    },
+    {
+      "id": 94,
+      "norma_id": "COD_ANBIMA_DISTR",
+      "processo_id": "P0.MC.1",
+      "artigo_ref": null,
+      "tipo_vinculo": "primaria",
+      "notas": null
+    },
+    {
+      "id": 95,
+      "norma_id": "COD_ANBIMA_DISTR",
+      "processo_id": "P1.MC.1.1",
+      "artigo_ref": null,
+      "tipo_vinculo": "primaria",
+      "notas": null
+    },
+    {
+      "id": 96,
+      "norma_id": "COD_ANBIMA_GEST",
+      "processo_id": "P0.MC.2",
+      "artigo_ref": null,
+      "tipo_vinculo": "primaria",
+      "notas": null
+    },
+    {
+      "id": 97,
+      "norma_id": "COD_ANBIMA_GEST",
+      "processo_id": "P0.MC.3",
+      "artigo_ref": null,
+      "tipo_vinculo": "primaria",
+      "notas": null
+    }
+  ],
+  "vinculo_norma_risco": [
+    {
+      "id": 1,
+      "norma_id": "RES_CMN_4557_17",
+      "risco_id": "R0.U.1",
+      "tipo_vinculo": "primaria",
+      "notas": null
+    },
+    {
+      "id": 2,
+      "norma_id": "RES_CMN_4557_17",
+      "risco_id": "R0.U.2",
+      "tipo_vinculo": "primaria",
+      "notas": null
+    },
+    {
+      "id": 3,
+      "norma_id": "RES_CMN_4557_17",
+      "risco_id": "R0.U.3",
+      "tipo_vinculo": "primaria",
+      "notas": null
+    },
+    {
+      "id": 4,
+      "norma_id": "RES_CMN_4557_17",
+      "risco_id": "R0.U.4",
+      "tipo_vinculo": "primaria",
+      "notas": null
+    },
+    {
+      "id": 5,
+      "norma_id": "RES_CMN_4557_17",
+      "risco_id": "R0.U.6",
+      "tipo_vinculo": "secundaria",
+      "notas": null
+    },
+    {
+      "id": 6,
+      "norma_id": "RES_CMN_4193_13",
+      "risco_id": "R0.U.1",
+      "tipo_vinculo": "primaria",
+      "notas": null
+    },
+    {
+      "id": 7,
+      "norma_id": "RES_CMN_4193_13",
+      "risco_id": "R0.U.2",
+      "tipo_vinculo": "primaria",
+      "notas": null
+    },
+    {
+      "id": 8,
+      "norma_id": "RES_CMN_4193_13",
+      "risco_id": "R0.U.4",
+      "tipo_vinculo": "primaria",
+      "notas": null
+    },
+    {
+      "id": 9,
+      "norma_id": "RES_CMN_4893_21",
+      "risco_id": "R0.U.5",
+      "tipo_vinculo": "primaria",
+      "notas": null
+    },
+    {
+      "id": 10,
+      "norma_id": "RES_CMN_4893_21",
+      "risco_id": "R0.U.4",
+      "tipo_vinculo": "secundaria",
+      "notas": null
+    },
+    {
+      "id": 11,
+      "norma_id": "RES_CMN_4943_21",
+      "risco_id": "R0.U.4",
+      "tipo_vinculo": "primaria",
+      "notas": null
+    },
+    {
+      "id": 12,
+      "norma_id": "RES_CMN_4943_21",
+      "risco_id": "R0.U.6",
+      "tipo_vinculo": "primaria",
+      "notas": null
+    },
+    {
+      "id": 13,
+      "norma_id": "RES_CMN_4945_21",
+      "risco_id": "R0.U.11",
+      "tipo_vinculo": "primaria",
+      "notas": null
+    },
+    {
+      "id": 14,
+      "norma_id": "RES_CMN_4945_21",
+      "risco_id": "R0.U.10",
+      "tipo_vinculo": "secundaria",
+      "notas": null
+    },
+    {
+      "id": 15,
+      "norma_id": "CIR_BCB_3978_20",
+      "risco_id": "R0.U.8",
+      "tipo_vinculo": "primaria",
+      "notas": null
+    },
+    {
+      "id": 16,
+      "norma_id": "LEX_9613_98",
+      "risco_id": "R0.U.8",
+      "tipo_vinculo": "primaria",
+      "notas": null
+    },
+    {
+      "id": 17,
+      "norma_id": "LEX_13709_18",
+      "risco_id": "R0.U.13",
+      "tipo_vinculo": "primaria",
+      "notas": null
+    },
+    {
+      "id": 18,
+      "norma_id": "LEX_13709_18",
+      "risco_id": "R0.U.5",
+      "tipo_vinculo": "secundaria",
+      "notas": null
+    },
+    {
+      "id": 19,
+      "norma_id": "LEX_12846_13",
+      "risco_id": "R0.U.8",
+      "tipo_vinculo": "secundaria",
+      "notas": null
+    },
+    {
+      "id": 20,
+      "norma_id": "LEX_12846_13",
+      "risco_id": "R0.U.7",
+      "tipo_vinculo": "secundaria",
+      "notas": null
+    },
+    {
+      "id": 21,
+      "norma_id": "RES_CMN_4502_16",
+      "risco_id": "R0.U.3",
+      "tipo_vinculo": "primaria",
+      "notas": null
+    },
+    {
+      "id": 22,
+      "norma_id": "RES_CMN_4502_16",
+      "risco_id": "R0.U.9",
+      "tipo_vinculo": "secundaria",
+      "notas": null
+    },
+    {
+      "id": 23,
+      "norma_id": "RES_CMN_4966_21",
+      "risco_id": "R0.U.1",
+      "tipo_vinculo": "primaria",
+      "notas": null
+    },
+    {
+      "id": 24,
+      "norma_id": "RES_CVM_35_21",
+      "risco_id": "R0.MC.1",
+      "tipo_vinculo": "primaria",
+      "notas": null
+    },
+    {
+      "id": 25,
+      "norma_id": "RES_CVM_35_21",
+      "risco_id": "R0.U.7",
+      "tipo_vinculo": "primaria",
+      "notas": null
+    },
+    {
+      "id": 26,
+      "norma_id": "RES_CVM_21_21",
+      "risco_id": "R0.MC.4",
+      "tipo_vinculo": "primaria",
+      "notas": null
+    },
+    {
+      "id": 27,
+      "norma_id": "RES_CVM_21_21",
+      "risco_id": "R0.U.4",
+      "tipo_vinculo": "secundaria",
+      "notas": null
+    },
+    {
+      "id": 28,
+      "norma_id": "RES_CVM_175_22",
+      "risco_id": "R0.MC.3",
+      "tipo_vinculo": "primaria",
+      "notas": null
+    },
+    {
+      "id": 29,
+      "norma_id": "RES_CVM_175_22",
+      "risco_id": "R0.MC.4",
+      "tipo_vinculo": "primaria",
+      "notas": null
+    },
+    {
+      "id": 30,
+      "norma_id": "RES_CNSP_416_21",
+      "risco_id": "R0.U.4",
+      "tipo_vinculo": "primaria",
+      "notas": null
+    },
+    {
+      "id": 31,
+      "norma_id": "RES_CNSP_416_21",
+      "risco_id": "R0.S.1",
+      "tipo_vinculo": "primaria",
+      "notas": null
+    },
+    {
+      "id": 32,
+      "norma_id": "RES_CNSP_416_21",
+      "risco_id": "R0.S.2",
+      "tipo_vinculo": "primaria",
+      "notas": null
+    },
+    {
+      "id": 33,
+      "norma_id": "CIR_SUSEP_648_21",
+      "risco_id": "R0.S.2",
+      "tipo_vinculo": "primaria",
+      "notas": null
+    },
+    {
+      "id": 34,
+      "norma_id": "CIR_SUSEP_648_21",
+      "risco_id": "R0.U.3",
+      "tipo_vinculo": "primaria",
+      "notas": null
+    }
+  ],
+  "vinculo_processo_risco": [
+    {
+      "id": 1,
+      "processo_id": "P0.B.2",
+      "risco_id": "R0.U.1",
+      "materialidade_default": 5,
+      "notas": null
+    },
+    {
+      "id": 2,
+      "processo_id": "P0.B.2",
+      "risco_id": "R0.U.4",
+      "materialidade_default": 4,
+      "notas": null
+    },
+    {
+      "id": 3,
+      "processo_id": "P0.B.2",
+      "risco_id": "R0.U.6",
+      "materialidade_default": 3,
+      "notas": null
+    },
+    {
+      "id": 4,
+      "processo_id": "P1.B.2.1",
+      "risco_id": "R0.U.1",
+      "materialidade_default": 5,
+      "notas": null
+    },
+    {
+      "id": 5,
+      "processo_id": "P1.B.2.1",
+      "risco_id": "R0.U.4",
+      "materialidade_default": 3,
+      "notas": null
+    },
+    {
+      "id": 6,
+      "processo_id": "P1.B.2.2",
+      "risco_id": "R0.U.1",
+      "materialidade_default": 5,
+      "notas": null
+    },
+    {
+      "id": 7,
+      "processo_id": "P1.B.2.2",
+      "risco_id": "R0.U.12",
+      "materialidade_default": 4,
+      "notas": null
+    },
+    {
+      "id": 8,
+      "processo_id": "P1.B.2.6",
+      "risco_id": "R0.U.1",
+      "materialidade_default": 5,
+      "notas": null
+    },
+    {
+      "id": 9,
+      "processo_id": "P1.B.2.6",
+      "risco_id": "R0.U.12",
+      "materialidade_default": 4,
+      "notas": null
+    },
+    {
+      "id": 10,
+      "processo_id": "P2.B.2.2.1",
+      "risco_id": "R0.U.12",
+      "materialidade_default": 5,
+      "notas": null
+    },
+    {
+      "id": 11,
+      "processo_id": "P2.B.2.2.1",
+      "risco_id": "R0.U.1",
+      "materialidade_default": 5,
+      "notas": null
+    },
+    {
+      "id": 12,
+      "processo_id": "P0.B.3",
+      "risco_id": "R0.U.2",
+      "materialidade_default": 5,
+      "notas": null
+    },
+    {
+      "id": 13,
+      "processo_id": "P0.B.3",
+      "risco_id": "R0.U.3",
+      "materialidade_default": 5,
+      "notas": null
+    },
+    {
+      "id": 14,
+      "processo_id": "P0.B.3",
+      "risco_id": "R0.U.4",
+      "materialidade_default": 3,
+      "notas": null
+    },
+    {
+      "id": 15,
+      "processo_id": "P0.B.3",
+      "risco_id": "R0.B.1",
+      "materialidade_default": 5,
+      "notas": null
+    },
+    {
+      "id": 16,
+      "processo_id": "P0.B.3",
+      "risco_id": "R0.B.3",
+      "materialidade_default": 4,
+      "notas": null
+    },
+    {
+      "id": 17,
+      "processo_id": "P0.B.4",
+      "risco_id": "R0.U.2",
+      "materialidade_default": 5,
+      "notas": null
+    },
+    {
+      "id": 18,
+      "processo_id": "P0.B.4",
+      "risco_id": "R0.U.4",
+      "materialidade_default": 4,
+      "notas": null
+    },
+    {
+      "id": 19,
+      "processo_id": "P0.B.4",
+      "risco_id": "R0.U.6",
+      "materialidade_default": 4,
+      "notas": null
+    },
+    {
+      "id": 20,
+      "processo_id": "P0.B.4",
+      "risco_id": "R0.U.8",
+      "materialidade_default": 3,
+      "notas": null
+    },
+    {
+      "id": 21,
+      "processo_id": "P0.B.5",
+      "risco_id": "R0.U.4",
+      "materialidade_default": 5,
+      "notas": null
+    },
+    {
+      "id": 22,
+      "processo_id": "P0.B.5",
+      "risco_id": "R0.U.5",
+      "materialidade_default": 5,
+      "notas": null
+    },
+    {
+      "id": 23,
+      "processo_id": "P0.B.5",
+      "risco_id": "R0.U.6",
+      "materialidade_default": 4,
+      "notas": null
+    },
+    {
+      "id": 24,
+      "processo_id": "P0.B.5",
+      "risco_id": "R0.U.8",
+      "materialidade_default": 4,
+      "notas": null
+    },
+    {
+      "id": 25,
+      "processo_id": "P1.B.5.2",
+      "risco_id": "R0.U.5",
+      "materialidade_default": 5,
+      "notas": null
+    },
+    {
+      "id": 26,
+      "processo_id": "P1.B.5.2",
+      "risco_id": "R0.U.8",
+      "materialidade_default": 4,
+      "notas": null
+    },
+    {
+      "id": 27,
+      "processo_id": "P1.B.5.6",
+      "risco_id": "R0.U.13",
+      "materialidade_default": 4,
+      "notas": null
+    },
+    {
+      "id": 28,
+      "processo_id": "P1.B.5.6",
+      "risco_id": "R0.U.6",
+      "materialidade_default": 4,
+      "notas": null
+    },
+    {
+      "id": 29,
+      "processo_id": "P0.U.7",
+      "risco_id": "R0.U.4",
+      "materialidade_default": 5,
+      "notas": null
+    },
+    {
+      "id": 30,
+      "processo_id": "P0.U.7",
+      "risco_id": "R0.U.5",
+      "materialidade_default": 5,
+      "notas": null
+    },
+    {
+      "id": 31,
+      "processo_id": "P0.U.7",
+      "risco_id": "R0.U.13",
+      "materialidade_default": 4,
+      "notas": null
+    },
+    {
+      "id": 32,
+      "processo_id": "P0.U.8",
+      "risco_id": "R0.U.5",
+      "materialidade_default": 5,
+      "notas": null
+    },
+    {
+      "id": 33,
+      "processo_id": "P0.U.8",
+      "risco_id": "R0.U.4",
+      "materialidade_default": 4,
+      "notas": null
+    },
+    {
+      "id": 34,
+      "processo_id": "P0.U.8",
+      "risco_id": "R0.U.13",
+      "materialidade_default": 4,
+      "notas": null
+    },
+    {
+      "id": 35,
+      "processo_id": "P0.U.4",
+      "risco_id": "R0.U.8",
+      "materialidade_default": 5,
+      "notas": null
+    },
+    {
+      "id": 36,
+      "processo_id": "P0.U.4",
+      "risco_id": "R0.U.6",
+      "materialidade_default": 4,
+      "notas": null
+    },
+    {
+      "id": 37,
+      "processo_id": "P0.U.4",
+      "risco_id": "R0.U.10",
+      "materialidade_default": 3,
+      "notas": null
+    },
+    {
+      "id": 38,
+      "processo_id": "P1.U.4.1",
+      "risco_id": "R0.U.8",
+      "materialidade_default": 5,
+      "notas": null
+    },
+    {
+      "id": 39,
+      "processo_id": "P1.U.4.2",
+      "risco_id": "R0.U.8",
+      "materialidade_default": 5,
+      "notas": null
+    },
+    {
+      "id": 40,
+      "processo_id": "P1.U.4.3",
+      "risco_id": "R0.U.8",
+      "materialidade_default": 4,
+      "notas": null
+    },
+    {
+      "id": 41,
+      "processo_id": "P0.U.15",
+      "risco_id": "R0.U.13",
+      "materialidade_default": 5,
+      "notas": null
+    },
+    {
+      "id": 42,
+      "processo_id": "P0.U.15",
+      "risco_id": "R0.U.10",
+      "materialidade_default": 3,
+      "notas": null
+    },
+    {
+      "id": 43,
+      "processo_id": "P1.U.15.4",
+      "risco_id": "R0.U.13",
+      "materialidade_default": 5,
+      "notas": null
+    },
+    {
+      "id": 44,
+      "processo_id": "P1.U.15.4",
+      "risco_id": "R0.U.5",
+      "materialidade_default": 4,
+      "notas": null
+    },
+    {
+      "id": 45,
+      "processo_id": "P0.MC.1",
+      "risco_id": "R0.MC.1",
+      "materialidade_default": 5,
+      "notas": null
+    },
+    {
+      "id": 46,
+      "processo_id": "P0.MC.1",
+      "risco_id": "R0.MC.2",
+      "materialidade_default": 4,
+      "notas": null
+    },
+    {
+      "id": 47,
+      "processo_id": "P0.MC.1",
+      "risco_id": "R0.U.7",
+      "materialidade_default": 5,
+      "notas": null
+    },
+    {
+      "id": 48,
+      "processo_id": "P1.MC.1.1",
+      "risco_id": "R0.MC.1",
+      "materialidade_default": 5,
+      "notas": null
+    },
+    {
+      "id": 49,
+      "processo_id": "P1.MC.1.3",
+      "risco_id": "R0.MC.2",
+      "materialidade_default": 5,
+      "notas": null
+    },
+    {
+      "id": 50,
+      "processo_id": "P0.MC.2",
+      "risco_id": "R0.MC.3",
+      "materialidade_default": 5,
+      "notas": null
+    },
+    {
+      "id": 51,
+      "processo_id": "P0.MC.2",
+      "risco_id": "R0.MC.4",
+      "materialidade_default": 5,
+      "notas": null
+    },
+    {
+      "id": 52,
+      "processo_id": "P0.MC.2",
+      "risco_id": "R0.MC.7",
+      "materialidade_default": 4,
+      "notas": null
+    },
+    {
+      "id": 53,
+      "processo_id": "P0.MC.2",
+      "risco_id": "R0.U.12",
+      "materialidade_default": 4,
+      "notas": null
+    },
+    {
+      "id": 54,
+      "processo_id": "P1.MC.2.5",
+      "risco_id": "R0.MC.3",
+      "materialidade_default": 5,
+      "notas": null
+    },
+    {
+      "id": 55,
+      "processo_id": "P0.S.1",
+      "risco_id": "R0.S.1",
+      "materialidade_default": 5,
+      "notas": null
+    },
+    {
+      "id": 56,
+      "processo_id": "P0.S.1",
+      "risco_id": "R0.U.4",
+      "materialidade_default": 3,
+      "notas": null
+    },
+    {
+      "id": 57,
+      "processo_id": "P0.S.1",
+      "risco_id": "R0.U.7",
+      "materialidade_default": 4,
+      "notas": null
+    },
+    {
+      "id": 58,
+      "processo_id": "P0.S.2",
+      "risco_id": "R0.S.3",
+      "materialidade_default": 5,
+      "notas": null
+    },
+    {
+      "id": 59,
+      "processo_id": "P0.S.2",
+      "risco_id": "R0.U.4",
+      "materialidade_default": 4,
+      "notas": null
+    },
+    {
+      "id": 60,
+      "processo_id": "P0.S.2",
+      "risco_id": "R0.S.4",
+      "materialidade_default": 4,
+      "notas": null
+    },
+    {
+      "id": 61,
+      "processo_id": "P0.S.3",
+      "risco_id": "R0.S.2",
+      "materialidade_default": 5,
+      "notas": null
+    },
+    {
+      "id": 62,
+      "processo_id": "P0.S.3",
+      "risco_id": "R0.U.12",
+      "materialidade_default": 4,
+      "notas": null
+    },
+    {
+      "id": 63,
+      "processo_id": "P0.S.3",
+      "risco_id": "R0.S.5",
+      "materialidade_default": 4,
+      "notas": null
+    },
+    {
+      "id": 64,
+      "processo_id": "P0.CG.1",
+      "risco_id": "R0.CG.2",
+      "materialidade_default": 5,
+      "notas": null
+    },
+    {
+      "id": 65,
+      "processo_id": "P0.CG.1",
+      "risco_id": "R0.CG.1",
+      "materialidade_default": 4,
+      "notas": null
+    },
+    {
+      "id": 66,
+      "processo_id": "P0.CG.4",
+      "risco_id": "R0.CG.3",
+      "materialidade_default": 5,
+      "notas": null
+    },
+    {
+      "id": 67,
+      "processo_id": "P0.CG.4",
+      "risco_id": "R0.CG.4",
+      "materialidade_default": 4,
+      "notas": null
+    },
+    {
+      "id": 68,
+      "processo_id": "P0.CG.4",
+      "risco_id": "R0.CG.1",
+      "materialidade_default": 5,
+      "notas": null
+    }
+  ],
+  "chassi_versions": [
+    {
+      "id": "CV_0_1_0",
+      "version": "0.1.0",
+      "released_at": "2026-04-30T15:47:02.226414-03:00",
+      "notas": "Versao inicial do Chassi de Controles Internos.\n\nCobertura:\n- 12 reguladores\n- 25 tipos de entidade\n- 9 segmentos prudenciais (S1-S5 BCB + 4 SUSEP)\n- 38 atividades canonicas\n- ~30 normas estruturantes (Leis, CMN, BCB, CVM, SUSEP, ANBIMA)\n- ~140 processos (P0+P1 universal/bancario completos; P2 seletivos; P0+P1 demais nucleos)\n- ~70 riscos (R0+R1 universal completo; R0 demais nucleos)\n- Vinculos qualificados norma-processo, norma-risco e processo-risco\n\nAtencao: numeros, datas e status de normas devem ser revalidados contra\na base oficial dos reguladores antes de uso operacional.\n\nPendentes para v0.2:\n- P3/P4 detalhados com controles-modelo\n- Biblioteca de KRIs por risco\n- Top-150 normas BACEN incluindo cartas-circulares\n- Integracao com BacenProcedentes para indicadores de denuncia",
+      "is_current": true
+    }
+  ],
+  "chassi_changelog": [
+    {
+      "id": 1,
+      "version_id": "CV_0_1_0",
+      "change_type": "add",
+      "entity_type": "chassi",
+      "entity_id": "v0.1.0",
+      "description": "Versao inicial completa do Chassi de Controles Internos",
+      "created_at": "2026-04-30T15:47:02.226414-03:00"
+    }
+  ]
+}

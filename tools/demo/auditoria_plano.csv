@@ -1,0 +1,26 @@
+﻿audit_id;nome;area;trimestre;ano;status;achados_preliminares;categoria_interna
+AUD-001;PLD - Revisão de Tipologias 2026;PLD;Q1;2026;Atrasado;Início previsto fev/26 ainda não iniciado por demanda do regulador. Reagendar Q2.;Lavagem - tipologia nova
+AUD-002;PLD - KYC Base Ativa PJ;PLD;Q1;2026;Em execução;Em andamento. Coverage 60%. Achado preliminar: 3.4% de pendência.;Lavagem - documentação cliente
+AUD-003;Tesouraria - Marcação a Mercado;Tesouraria;Q1;2026;Concluído;Achados materiais: divergências em NTN-B longas. Reportado ao Comitê de Auditoria.;Marcação a mercado divergente
+AUD-004;Tesouraria - Limites e Controles Intradia;Tesouraria;Q2;2026;Planejado;Foco em limites de liquidez intradia após apontamento BCB.;Risco de liquidez intradia
+AUD-005;Cyber - Pentest infra crítica;Cibersegurança;Q1;2026;Concluído;12 vulnerabilidades altas, 3 críticas remediadas em P1.;Cyber - phishing
+AUD-006;Cyber - Identity Access Management;Cibersegurança;Q2;2026;Em execução;PAM em 67% de cobertura. Achado preliminar: contas privilegiadas órfãs.;Falha em controle de acesso
+AUD-007;Cyber - DLP / UEBA;Cibersegurança;Q3;2026;Planejado;;
+AUD-008;Crédito PJ - Validação de Modelo;Crédito PJ;Q1;2026;Concluído;Modelo PJ Mid-Market com performance abaixo do esperado em backtesting 2025.;Modelo de credito desatualizado
+AUD-009;Crédito PJ - Concentração e Garantias;Crédito PJ;Q2;2026;Em execução;Sample de 50 contratos. 14 com documentação de garantia incompleta.;Concentração de carteira
+AUD-010;Crédito PF - Cobrança;Crédito PF;Q3;2026;Planejado;;
+AUD-011;PIX - Anti-fraude e Resiliência;PIX e Pagamentos;Q1;2026;Em execução;Análise de incidentes de fraude jan-mar/26. Sistema de detecção em revisão.;Risco de fraude externa
+AUD-012;Pagamentos - Conciliação Liquidação;BackOffice Custódia;Q2;2026;Planejado;;
+AUD-013;Compliance - Programa de Treinamento;Compliance;Q1;2026;Concluído;Adesão a Código de Conduta em 87% (target 95%).;Conduta de mercado
+AUD-014;Compliance - Política de Presentes;Compliance;Q2;2026;Planejado;;
+AUD-015;Asset - Suitability e Best Execution;Asset Management;Q1;2026;Concluído;Sem achados materiais. Controles maduros.;Best execution
+AUD-016;Asset - Chinese Walls;Asset Management;Q2;2026;Planejado;;
+AUD-017;Distribuição - Material Promocional;Distribuição;Q3;2026;Planejado;;
+AUD-018;LGPD - DPIA produtos novos;Privacidade e Dados;Q1;2026;Em execução;DPIA pendentes em open finance e cartões corporativos.;Vazamento de dados pessoais
+AUD-019;LGPD - Direitos de Titulares;Privacidade e Dados;Q2;2026;Planejado;;
+AUD-020;Continuidade - Teste de DR Anual;Continuidade;Q2;2026;Planejado;Teste atrasado 45 dias. Reagendamento aprovado.;Continuidade - falha em DR
+AUD-021;RH - Mesas críticas (chinese wall + segregação);Recursos Humanos;Q3;2026;Planejado;;
+AUD-022;Ouvidoria - SLA e Procedência;Ouvidoria;Q2;2026;Planejado;;
+AUD-023;Conglomerado - Operações Intragrupo;Compliance;Q3;2026;Planejado;;
+AUD-024;Conglomerado - Concentração Consolidada;Tesouraria;Q4;2026;Planejado;;
+AUD-025;Auditoria 2026 - Self Assessment Anual;Auditoria Interna;Q4;2026;Planejado;;

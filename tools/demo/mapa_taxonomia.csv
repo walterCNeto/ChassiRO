@@ -1,0 +1,65 @@
+﻿termo_interno;risco_id_chassi;confianca;risco_nome_chassi
+Risco de fraude interna;R1.U.4.1;alta;Pessoas (erro humano, fraude interna)
+Risco de fraude externa;R1.U.4.4;alta;Eventos externos (fraude externa, desastres)
+Falha de processamento;R1.U.4.2;alta;Processos (falha de processo, modelagem)
+Indisponibilidade de sistemas;R1.U.5.1;alta;Indisponibilidade
+Falha em controle de acesso;R1.U.5.3;alta;Integridade e fraude por intrusao
+Acesso indevido a sistema;R1.U.5.3;alta;Integridade e fraude por intrusao
+Vazamento de dados pessoais;R0.U.13;alta;Risco de Privacidade (LGPD)
+Inadimplência relevante;R1.U.1.1;alta;Inadimplencia (counterparty default)
+Concentração de carteira;R1.U.1.3;alta;Concentracao
+Modelo de credito desatualizado;R0.U.12;alta;Risco de Modelo
+Erro em provisão (4966);R1.U.1.4;media;Recuperacao (LGD)
+Descasamento ALM;R0.B.1;alta;Descasamento de prazos (gap)
+Volatilidade cambial;R1.U.2.2;alta;Cambial
+Limite de exposição cambial;R1.U.2.2;alta;Cambial
+Funding wholesale;R0.B.3;alta;Funding wholesale
+Risco de liquidez intradia;R1.U.3.3;alta;Intradia
+Cyber - phishing;R1.U.5.3;alta;Integridade e fraude por intrusao
+Cyber - ransomware;R1.U.5.4;alta;Ransomware e extorsao
+Lavagem - tipologia nova;R0.U.8;alta;Risco de PLD-FT
+Lavagem - documentação cliente;R0.U.8;alta;Risco de PLD-FT
+Sanções OFAC;R0.U.8;alta;Risco de PLD-FT
+Atraso em RDR (regulador);R1.U.6.2;alta;Falha em tempestividade de adequacao
+Suitability inadequado;R0.MC.1;alta;Risco de adequacao (suitability)
+Best execution;R0.MC.2;alta;Risco de execucao (best execution)
+Marcação a mercado divergente;R0.MC.3;alta;Risco de marcacao a mercado
+Falha em segregação patrimonial;R0.MC.4;alta;Risco de segregacao patrimonial
+Falha em chinese wall;R0.MC.6;alta;Risco de chinese wall
+Conflito de interesse fundo x banco;R0.MC.7;alta;Risco de conflito (gestor x distribuidor)
+Custódia - reconciliação;R1.U.4.2;media;Processos (proxy custodia)
+Continuidade - falha em DR;R1.U.5.1;alta;Indisponibilidade (DR)
+Reclamação BCB Procedente;R1.U.7.2;alta;Praticas comerciais abusivas
+Reputação - mídia adversa;R0.U.10;alta;Risco Reputacional
+ESG - greenwashing;R0.U.11;alta;Risco Socioambiental e Climatico
+Conduta de mercado;R0.U.7;media;Risco de Conduta
+Reclamação Procon;R1.U.7.2;media;Praticas comerciais abusivas
+Falha em fechamento contábil;R1.U.4.2;media;Processos (falha de processo, modelagem)
+Ouvidoria - resposta fora do prazo;R1.U.6.2;media;Falha em tempestividade de adequacao
+Cartao de credito - cobranca indevida;R1.U.7.2;alta;Praticas comerciais abusivas
+Cartao de credito - clonagem/fraude;R1.U.4.4;alta;Eventos externos (fraude externa, desastres)
+Conta corrente - debitos nao autorizados;R1.U.4.4;alta;Eventos externos (fraude externa, desastres)
+Credito - oferta inadequada;R0.MC.1;alta;Risco de adequacao (suitability)
+Credito - juros e tarifas;R0.U.7;alta;Risco de Conduta
+PIX - estorno nao realizado;R1.U.4.4;alta;Eventos externos (fraude externa, desastres)
+PIX - desvio de chave;R1.U.4.4;alta;Eventos externos (fraude externa, desastres)
+Sigilo bancario;R0.U.13;alta;Risco de Privacidade (LGPD)
+Atendimento - acessibilidade;R0.U.7;media;Risco de Conduta
+Atendimento - prazo de resposta;R1.U.6.2;alta;Falha em tempestividade de adequacao
+Cambio - operacao;R1.U.2.2;media;Cambial
+LGPD - tratamento de dados;R0.U.13;alta;Risco de Privacidade (LGPD)
+Credito consignado;R0.U.7;alta;Risco de Conduta
+Tarifas bancarias;R0.U.7;alta;Risco de Conduta
+Cartao de credito;R1.U.7.2;alta;Praticas comerciais abusivas
+Conta corrente;R1.U.7.2;alta;Praticas comerciais abusivas
+Servico nao prestado;R0.U.7;alta;Risco de Conduta
+Cobranca indevida;R1.U.7.2;alta;Praticas comerciais abusivas
+Vazamento de dados;R0.U.13;alta;Risco de Privacidade (LGPD)
+Multa regulatoria;R1.U.6.3;alta;Sancao regulatoria
+Falha em sistema critico;R1.U.5.1;alta;Indisponibilidade
+Reclamacao em massa;R0.U.10;alta;Risco Reputacional
+Investigacao judicial;R0.U.10;alta;Risco Reputacional
+Esg / Greenwashing;R0.U.11;alta;Risco Socioambiental e Climatico
+Conduta executiva;R0.U.7;media;Risco de Conduta
+Conduta - manipulacao;R1.U.7.4;alta;Manipulacao de mercado / insider
+Não cumprimento de norma;R1.U.6.1;alta;Nao cumprimento de norma vigente

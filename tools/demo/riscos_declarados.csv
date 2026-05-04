@@ -1,0 +1,77 @@
+﻿id;processo_chassi_id;processo_nome;risco_chassi_id;risco_nome;severidade_inerente;declarado_por;data_declaracao;observacao
+RD-0001;P0.B.2;Intermediacao Financeira (Credito);R0.U.1;Risco de Credito;5;Crédito PJ;15/01/2026;Risco principal do processo - inadimplência de contrapartes
+RD-0002;P0.B.2;Intermediacao Financeira (Credito);R1.U.1.1;Inadimplencia (counterparty default);5;Crédito PJ;15/01/2026;Default counterparty
+RD-0003;P0.B.2;Intermediacao Financeira (Credito);R1.U.1.3;Concentracao;4;Crédito PJ;15/01/2026;Concentração setorial em construção e agro
+RD-0004;P0.B.2;Intermediacao Financeira (Credito);R1.U.1.4;Recuperacao (LGD);4;Crédito PJ;15/01/2026;Recuperação - LGD em revisão
+RD-0005;P0.B.2;Intermediacao Financeira (Credito);R1.U.1.5;Garantias;3;Crédito PJ;15/01/2026;Garantias - documentação
+RD-0006;P0.B.2;Intermediacao Financeira (Credito);R0.U.12;Risco de Modelo;4;Crédito PJ;15/01/2026;Modelo de rating PJ Mid-Market vencido
+RD-0007;P0.B.2;Intermediacao Financeira (Credito);R0.U.4;Risco Operacional;3;Crédito PJ;15/01/2026;Operacional - falhas de processo
+RD-0008;P0.B.2;Intermediacao Financeira (Credito);R0.U.6;Risco de Conformidade;3;Compliance;15/01/2026;Conformidade política de crédito
+RD-0009;P0.B.3;Tesouraria e Mercados;R0.U.2;Risco de Mercado;5;Tesouraria;15/01/2026;Risco de mercado primary
+RD-0010;P0.B.3;Tesouraria e Mercados;R0.U.3;Risco de Liquidez;5;Tesouraria;15/01/2026;Liquidez - LCR e NSFR
+RD-0011;P0.B.3;Tesouraria e Mercados;R0.U.4;Risco Operacional;3;Tesouraria;15/01/2026;Operacional
+RD-0012;P0.B.3;Tesouraria e Mercados;R0.B.1;Risco de descasamento de prazos (gap);5;Tesouraria;15/01/2026;Descasamento ALM
+RD-0013;P0.B.3;Tesouraria e Mercados;R0.B.3;Risco de funding wholesale;4;Tesouraria;15/01/2026;Funding wholesale concentração
+RD-0014;P0.B.3;Tesouraria e Mercados;R1.U.2.1;Taxa de juros (banking + trading book);4;Tesouraria;15/01/2026;Taxa de juros banking + trading book
+RD-0015;P0.B.3;Tesouraria e Mercados;R1.U.3.1;Funding;5;Tesouraria;15/01/2026;Funding
+RD-0016;P0.B.3;Tesouraria e Mercados;R1.U.3.3;Intradia;4;Tesouraria;15/01/2026;Liquidez intradia
+RD-0017;P0.B.4;Cambio e Comercio Exterior;R0.U.2;Risco de Mercado;4;Mesa de Câmbio;15/01/2026;Risco cambial
+RD-0018;P0.B.4;Cambio e Comercio Exterior;R0.U.4;Risco Operacional;3;Mesa de Câmbio;15/01/2026;Operacional - settlement
+RD-0019;P0.B.4;Cambio e Comercio Exterior;R0.U.6;Risco de Conformidade;4;Mesa de Câmbio;15/01/2026;Conformidade RMCCI
+RD-0020;P0.B.4;Cambio e Comercio Exterior;R0.U.8;Risco de PLD-FT;4;Mesa de Câmbio;15/01/2026;PLD em câmbio
+RD-0021;P0.B.4;Cambio e Comercio Exterior;R1.U.2.2;Cambial;4;Mesa de Câmbio;15/01/2026;Cambial específico
+RD-0022;P0.B.5;Meios de Pagamento e Liquidacao;R0.U.4;Risco Operacional;5;PIX e Pagamentos;15/01/2026;Operacional - core do PIX
+RD-0023;P0.B.5;Meios de Pagamento e Liquidacao;R0.U.5;Risco Cibernetico;5;PIX e Pagamentos;15/01/2026;Cibersegurança - vetor crítico
+RD-0024;P0.B.5;Meios de Pagamento e Liquidacao;R1.U.4.4;Eventos externos (fraude externa, desastres);5;PIX e Pagamentos;15/01/2026;Fraude externa
+RD-0025;P0.B.5;Meios de Pagamento e Liquidacao;R1.U.5.1;Indisponibilidade;4;PIX e Pagamentos;15/01/2026;Indisponibilidade
+RD-0026;P0.U.4;PLD-FT e Sancoes;R0.U.8;Risco de PLD-FT;5;PLD;15/01/2026;Risco principal do processo
+RD-0027;P0.U.4;PLD-FT e Sancoes;R0.U.6;Risco de Conformidade;4;PLD;15/01/2026;Conformidade Circular 3978
+RD-0028;P0.U.4;PLD-FT e Sancoes;R0.U.4;Risco Operacional;3;PLD;15/01/2026;Operacional
+RD-0029;P0.U.7;Tecnologia da Informacao;R0.U.4;Risco Operacional;4;TI Corporativo;15/01/2026;Operacional - sistemas
+RD-0030;P0.U.7;Tecnologia da Informacao;R0.U.5;Risco Cibernetico;5;TI Corporativo;15/01/2026;Cibersegurança
+RD-0031;P0.U.7;Tecnologia da Informacao;R1.U.4.3;Sistemas e tecnologia;4;TI Corporativo;15/01/2026;Falha de sistemas
+RD-0032;P0.U.7;Tecnologia da Informacao;R1.U.5.1;Indisponibilidade;4;TI Corporativo;15/01/2026;Indisponibilidade
+RD-0033;P0.U.8;Seguranca Cibernetica;R0.U.5;Risco Cibernetico;5;Cibersegurança;15/01/2026;Risco principal
+RD-0034;P0.U.8;Seguranca Cibernetica;R1.U.5.1;Indisponibilidade;4;Cibersegurança;15/01/2026;Indisponibilidade
+RD-0035;P0.U.8;Seguranca Cibernetica;R1.U.5.2;Vazamento e confidencialidade;5;Cibersegurança;15/01/2026;Vazamento e confidencialidade
+RD-0036;P0.U.8;Seguranca Cibernetica;R1.U.5.3;Integridade e fraude por intrusao;5;Cibersegurança;15/01/2026;Integridade e fraude por intrusão
+RD-0037;P0.U.8;Seguranca Cibernetica;R1.U.5.4;Ransomware e extorsao;5;Cibersegurança;15/01/2026;Ransomware
+RD-0038;P0.U.8;Seguranca Cibernetica;R0.U.13;Risco de Privacidade (LGPD);4;Cibersegurança;15/01/2026;Privacidade - vazamentos
+RD-0039;P0.U.13;Ouvidoria e Atendimento ao Cliente;R0.U.7;Risco de Conduta;4;Ouvidoria;15/01/2026;Conduta - reclamações procedentes
+RD-0040;P0.U.13;Ouvidoria e Atendimento ao Cliente;R0.U.10;Risco Reputacional;3;Ouvidoria;15/01/2026;Reputacional
+RD-0041;P0.U.13;Ouvidoria e Atendimento ao Cliente;R0.U.6;Risco de Conformidade;3;Ouvidoria;15/01/2026;Conformidade SLA
+RD-0042;P0.U.15;Privacidade e Protecao de Dados (LGPD);R0.U.13;Risco de Privacidade (LGPD);5;Privacidade e Dados;15/01/2026;Risco principal LGPD
+RD-0043;P0.U.15;Privacidade e Protecao de Dados (LGPD);R0.U.5;Risco Cibernetico;4;Privacidade e Dados;15/01/2026;Cibersegurança - vazamento
+RD-0044;P0.U.15;Privacidade e Protecao de Dados (LGPD);R0.U.6;Risco de Conformidade;4;Privacidade e Dados;15/01/2026;Conformidade ANPD
+RD-0045;P0.U.3;Conformidade e Etica;R0.U.6;Risco de Conformidade;5;Compliance;15/01/2026;Risco principal
+RD-0046;P0.U.3;Conformidade e Etica;R0.U.7;Risco de Conduta;4;Compliance;15/01/2026;Conduta
+RD-0047;P0.U.3;Conformidade e Etica;R1.U.6.1;Nao cumprimento de norma vigente;4;Compliance;15/01/2026;Não cumprimento de norma
+RD-0048;P0.U.3;Conformidade e Etica;R1.U.6.2;Falha em tempestividade de adequacao;4;Compliance;15/01/2026;Tempestividade
+RD-0049;P0.U.3;Conformidade e Etica;R1.U.6.3;Sancao regulatoria;3;Compliance;15/01/2026;Sanção regulatória
+RD-0050;P0.U.5;Auditoria Interna;R0.U.6;Risco de Conformidade;3;Auditoria Interna;15/01/2026;Cobertura do plano
+RD-0051;P0.U.5;Auditoria Interna;R0.U.4;Risco Operacional;2;Auditoria Interna;15/01/2026;Operacional - processos próprios
+RD-0052;P0.U.6;Recursos Humanos;R0.U.4;Risco Operacional;3;Recursos Humanos;15/01/2026;Operacional - pessoas
+RD-0053;P0.U.6;Recursos Humanos;R1.U.4.1;Pessoas (erro humano, fraude interna);4;Recursos Humanos;15/01/2026;Erro humano e fraude interna
+RD-0054;P0.U.6;Recursos Humanos;R0.U.7;Risco de Conduta;3;Recursos Humanos;15/01/2026;Conduta
+RD-0055;P0.U.9;Continuidade de Negocio (BCM);R0.U.4;Risco Operacional;4;Continuidade;15/01/2026;Operacional - DR
+RD-0056;P0.U.9;Continuidade de Negocio (BCM);R1.U.5.1;Indisponibilidade;4;Continuidade;15/01/2026;Indisponibilidade
+RD-0057;P0.U.10;Terceiros e Suprimentos;R0.U.4;Risco Operacional;3;Compliance;15/01/2026;Operacional - quarteirização
+RD-0058;P0.U.10;Terceiros e Suprimentos;R1.U.4.6;Terceiros e quarteirizacao;4;Compliance;15/01/2026;Terceiros e quarteirização
+RD-0059;P0.U.11;Juridico e Contencioso;R0.U.4;Risco Operacional;3;Jurídico;15/01/2026;Operacional - legal
+RD-0060;P0.U.11;Juridico e Contencioso;R1.U.4.5;Risco legal;4;Jurídico;15/01/2026;Risco legal
+RD-0061;P0.U.12;Financeiro Proprio e Contabilidade;R0.U.4;Risco Operacional;3;Compliance;15/01/2026;Falha em fechamento contábil
+RD-0062;P0.U.12;Financeiro Proprio e Contabilidade;R0.U.6;Risco de Conformidade;3;Compliance;15/01/2026;Conformidade contábil 4966
+RD-0063;P0.U.14;Comunicacao Institucional e Marketing;R0.U.10;Risco Reputacional;4;Comunicação Institucional;15/01/2026;Reputacional
+RD-0064;P0.MC.1;Distribuicao de Valores Mobiliarios;R0.MC.1;Risco de adequacao (suitability);4;Distribuição;15/01/2026;Adequação suitability
+RD-0065;P0.MC.1;Distribuicao de Valores Mobiliarios;R0.U.7;Risco de Conduta;4;Distribuição;15/01/2026;Conduta - misselling
+RD-0066;P0.MC.1;Distribuicao de Valores Mobiliarios;R0.U.6;Risco de Conformidade;3;Distribuição;15/01/2026;Conformidade CVM 30
+RD-0067;P0.MC.2;Gestao de Recursos (Asset Management);R0.MC.2;Risco de execucao (best execution);3;Asset Management;15/01/2026;Best execution
+RD-0068;P0.MC.2;Gestao de Recursos (Asset Management);R0.MC.3;Risco de marcacao a mercado;4;Asset Management;15/01/2026;Marcação a mercado
+RD-0069;P0.MC.2;Gestao de Recursos (Asset Management);R0.MC.4;Risco de segregacao patrimonial;4;Asset Management;15/01/2026;Segregação patrimonial
+RD-0070;P0.MC.2;Gestao de Recursos (Asset Management);R0.MC.7;Risco de conflito (gestor x distribuidor);3;Asset Management;15/01/2026;Conflito gestor x distribuidor
+RD-0071;P0.MC.3;Administracao Fiduciaria;R0.MC.4;Risco de segregacao patrimonial;4;Asset Management;15/01/2026;Segregação patrimonial
+RD-0072;P0.MC.3;Administracao Fiduciaria;R0.U.6;Risco de Conformidade;3;Asset Management;15/01/2026;Conformidade CVM 21
+RD-0073;P0.MC.4;Custodia Qualificada;R0.MC.5;Risco de liquidacao (settlement);4;BackOffice Custódia;15/01/2026;Settlement
+RD-0074;P0.MC.4;Custodia Qualificada;R0.U.4;Risco Operacional;3;BackOffice Custódia;15/01/2026;Operacional
+RD-0075;P0.MC.6;Negociacao por Conta Propria (Trading);R0.MC.6;Risco de chinese wall;3;Tesouraria;15/01/2026;Chinese walls
+RD-0076;P0.MC.6;Negociacao por Conta Propria (Trading);R0.U.7;Risco de Conduta;3;Tesouraria;15/01/2026;Insider/conduta
